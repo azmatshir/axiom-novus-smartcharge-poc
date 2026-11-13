@@ -381,6 +381,62 @@ html[data-theme=dark] .choice .ic[style*="#161C3B"]{background:#3A4580!important
 @media (max-width:640px){.pill.ai{padding:0 10px}.avatar{padding:4px}}
 .kbd,.avatar .nm{white-space:nowrap}
 @media (max-width:1500px){.avatar .nm{display:none}.avatar{padding:4px}}
+
+/* ---------- brand palettes: lime (light family) + teal (dark family) ---------- */
+:root{--ov:22,28,59}
+.dot-sw{width:18px;height:18px;border-radius:50%;display:block;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.switch button.on .dot-sw{box-shadow:0 0 0 2px var(--solid-fg)}
+.hero .eyebrow .i{width:14px;height:14px;vertical-align:-2px}
+
+html[data-palette=lime]{--ov:24,40,14;
+  --bg:#EEF3DF; --ink:#1B2A12; --ink-2:rgba(27,42,18,.68); --ink-3:rgba(27,42,18,.46); --soft:rgba(27,42,18,.05); --line:rgba(27,42,18,.09);
+  --solid:#BCD630; --solid-fg:#1B2A12; --solid-hover:#C9E24A; --indigo:#7FA015; --indigo-2:#A9C61E; --navy:#1B2A12; --pos:#16957C}
+html[data-palette=lime] body{background-image:radial-gradient(1200px 600px at 85% -10%,rgba(188,214,48,.28),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(22,149,124,.16),transparent 60%)}
+html[data-palette=lime] .attn{background:linear-gradient(160deg,#DCEC74,#BCD630 60%,#A8C41E);color:#1B2A12;box-shadow:0 24px 60px rgba(140,170,20,.3)}
+html[data-palette=lime] .attn .card-h small,html[data-palette=lime] .attn .section,html[data-palette=lime] .attn small{color:rgba(27,42,18,.72)}
+html[data-palette=lime] .attn .card-h .ic,html[data-palette=lime] .attn-row .ai{background:rgba(27,42,18,.1);color:#1B2A12}
+html[data-palette=lime] .attn-row.urgent .ai{background:var(--orange);color:#fff}
+html[data-palette=lime] .attn-row{background:rgba(255,255,255,.35)}
+html[data-palette=lime] .attn [style*="color:#fff"]{color:#1B2A12!important}
+html[data-palette=lime] .attn [style*="rgba(255,255,255,.2)"],html[data-palette=lime] .attn [style*="rgba(255,255,255,.18)"]{background:rgba(27,42,18,.12)!important}
+html[data-palette=lime] .attn .bar i{background:#1B2A12!important}
+html[data-palette=lime] .attn .seg{background:rgba(27,42,18,.12)}
+html[data-palette=lime] .attn .seg button{color:rgba(27,42,18,.8)}
+html[data-palette=lime] .attn .seg button.on{background:#1B2A12;color:#EEF6C4}
+html[data-palette=lime] .attn .btn-white{background:#1B2A12;color:#EEF6C4}
+html[data-palette=lime] .dark-card,html[data-palette=lime] .wsteps,html[data-palette=lime] .supp .card.feature,html[data-palette=lime] .toast,html[data-palette=lime] .chart .tip{background:#1F3315;color:#F1F6E2}
+html[data-palette=lime] .weather-now{background:linear-gradient(140deg,#24391A,#16957C)}
+html[data-palette=lime] .lock-timer .d{background:#1B2A12;color:#DCEC74}
+html[data-palette=lime] .hours div.now{background:#1B2A12;color:#DCEC74}
+html[data-palette=lime] .choice.sel{border-color:#9DBB1E;background:rgba(188,214,48,.12);box-shadow:0 0 0 4px rgba(188,214,48,.25)}
+html[data-palette=lime] .input:focus,html[data-palette=lime] .select:focus{border-color:#9DBB1E;box-shadow:0 0 0 4px rgba(188,214,48,.25)}
+html[data-palette=lime] .toggle.on{background:#16957C}
+html[data-palette=lime] .logo span{color:#16957C}
+html[data-palette=lime] .wstep.cur .n{background:#BCD630;border-color:#BCD630;color:#1B2A12}
+
+html[data-palette=teal]{--ov:3,33,28;
+  --bg:#03211C; --card:rgba(9,58,50,.78); --surface:#0D463C; --ink:#E6F5F1; --ink-2:rgba(230,245,241,.68); --ink-3:rgba(230,245,241,.46);
+  --soft:rgba(255,255,255,.06); --line:rgba(255,255,255,.1); --panel:rgba(9,58,50,.72); --rail:rgba(9,58,50,.8);
+  --solid:#BCD630; --solid-fg:#0B2A18; --solid-hover:#C9E24A; --indigo:#16957C; --indigo-2:#2BC3A0; --pos:#BCD630}
+html[data-palette=teal] body{background-image:radial-gradient(1200px 600px at 85% -10%,rgba(43,195,160,.22),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(188,214,48,.12),transparent 60%)}
+html[data-palette=teal] .attn{background:linear-gradient(160deg,#2BC3A0,#16957C 60%,#0F7D66);box-shadow:0 24px 60px rgba(22,149,124,.35)}
+html[data-palette=teal] .wizard,html[data-palette=teal] .modal,html[data-palette=teal] .login-card,html[data-palette=teal] .menu{background:#072E27}
+html[data-palette=teal] .dark-card,html[data-palette=teal] .wsteps,html[data-palette=teal] .supp .card.feature,html[data-palette=teal] .toast,html[data-palette=teal] .chart .tip{background:#0D463C;color:#E6F5F1}
+html[data-palette=teal] .weather-now{background:linear-gradient(140deg,#11665A,#073229)}
+html[data-palette=teal] .lock-timer .d,html[data-palette=teal] .seg button.on,html[data-palette=teal] .health span.on{background:#BCD630;color:#0B2A18}
+html[data-palette=teal] .attn .seg button.on{background:#fff;color:#0B3A31}
+html[data-palette=teal] .hours div.now{background:#16957C}
+html[data-palette=teal] .choice.sel{border-color:#2BC3A0;background:rgba(43,195,160,.12);box-shadow:0 0 0 4px rgba(43,195,160,.18)}
+html[data-palette=teal] .input:focus,html[data-palette=teal] .select:focus{border-color:#2BC3A0;box-shadow:0 0 0 4px rgba(43,195,160,.18)}
+html[data-palette=teal] .toggle.on{background:#16957C}
+html[data-palette=teal] .logo span{color:#2BC3A0}
+html[data-palette=teal] .choice .ic[style*="#161C3B"]{background:#11665A!important}
+html[data-palette=teal] .wstep.cur .n{background:#BCD630;border-color:#BCD630;color:#0B2A18}
+html[data-palette=teal] .plist .item.active .ic{background:rgba(11,42,24,.12);color:#0B2A18}
+html[data-palette=teal] .rail button[data-tip]:hover::after{background:#BCD630;color:#0B2A18}
+html[data-palette=lime] .attn [style*="rgba(255,255,255,.8)"]{color:rgba(27,42,18,.7)!important}
+html[data-palette=teal]{--navy:#06362E}
+html[data-palette=teal] .btn-white,html[data-palette=teal] .hero-times button.on{color:#06362E}
 </style></head><body><script>
 /* ===== Axiom Novus SmartCharge – clickable POC (mock data, in-memory only) ===== */
 const IMG = {
@@ -616,14 +672,20 @@ const DA = {
 "Morning":"Morgen","Afternoon":"Eftermiddag","Evening":"Aften","AI plan for tomorrow is ready":"AI-plan for i morgen er klar","Price spike expected 17:00–19:00":"Prisstigning ventet 17:00–19:00","Welcome to SmartCharge":"Velkommen til SmartCharge",
 "AI management is inactive for {n}.":"AI-styring er inaktiv for {n}.","All":"Alle","Wind":"Vind","Humidity":"Fugtighed","hrs":"timer","mins":"min","secs":"sek","0-export correction":"0-eksport-korrektion","This would delete your account and all {n} plants. In this demo nothing is deleted.":"Dette ville slette din konto og alle {n} anlæg. I demoen slettes intet.",
 "Plant name":"Anlægsnavn","Authorization":"Godkendelse","Inverter & battery":"Inverter og batteri",
+"Lime mode":"Lime-tema","Teal mode":"Petrol-tema","Private home":"Privat bolig","Commercial site":"Erhvervsanlæg",
 "Enter demo as {n}":"Gå til demo som {n}","Escape":"Escape"
 };
 const t = (s, p) => { let r = (S.lang==='da' && DA[s]!=null) ? DA[s] : s; if (p) for (const k in p) r = r.split('{'+k+'}').join(p[k]); return r; };
 const loc = () => S.lang==='da' ? 'da-DK' : 'en-GB';
 
 /* ---------- theme ---------- */
-function applyTheme(){ document.documentElement.dataset.theme = S.theme; document.documentElement.lang = S.lang; }
-const themeSwitch = () => `<div class="switch" role="group" aria-label="Theme"><button class="${S.theme==='light'?'on':''}" data-theme-set="light" title="${t('Light mode')}">${ic('sun',18)}</button><button class="${S.theme==='dark'?'on':''}" data-theme-set="dark" title="${t('Dark mode')}"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div>`;
+const isDark = () => S.theme==='dark' || S.theme==='teal';
+function applyTheme(){ const h=document.documentElement; h.dataset.theme = isDark()?'dark':'light'; h.dataset.palette = (S.theme==='lime'||S.theme==='teal') ? S.theme : ''; h.lang = S.lang; }
+const themeSwitch = () => `<div class="switch" role="group" aria-label="Theme">
+  <button class="${S.theme==='light'?'on':''}" data-theme-set="light" title="${t('Light mode')}">${ic('sun',18)}</button>
+  <button class="${S.theme==='dark'?'on':''}" data-theme-set="dark" title="${t('Dark mode')}"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  <button class="${S.theme==='lime'?'on':''}" data-theme-set="lime" title="${t('Lime mode')}"><span class="dot-sw" style="background:linear-gradient(135deg,#D7EA5A,#A9C61E)"></span></button>
+  <button class="${S.theme==='teal'?'on':''}" data-theme-set="teal" title="${t('Teal mode')}"><span class="dot-sw" style="background:linear-gradient(135deg,#3CC9A5,#0F7D66)"></span></button></div>`;
 const langSwitch = () => `<div class="switch" role="group" aria-label="Language"><button class="${S.lang==='da'?'on':''}" data-lang-set="da">DA</button><button class="${S.lang==='en'?'on':''}" data-lang-set="en">EN</button></div>`;
 function bindSwitches(after){
   $$('[data-theme-set]').forEach(b=>b.onclick=()=>{ S.theme=b.dataset.themeSet; applyTheme(); after(); });
@@ -631,20 +693,21 @@ function bindSwitches(after){
 }
 
 /* ---------- hero by time of day (photos from axiomnovus.com) ---------- */
+const UP = 'https://axiomnovus.com/wp-content/uploads/';
 const HERO = {
-  morning:'https://axiomnovus.com/wp-content/uploads/2023/08/istock-1310384629-scaled.jpg',
-  afternoon:'https://axiomnovus.com/wp-content/uploads/2023/08/istock-895028314-min-scaled.jpg',
-  evening:'https://axiomnovus.com/wp-content/uploads/2023/08/istock-1288630738-scaled.jpg',
-  login:'https://axiomnovus.com/wp-content/uploads/2023/10/istock-1192897531.jpg'
+  home:{ morning:UP+'2023/08/istock-1310384629-scaled.jpg', afternoon:UP+'2023/08/istock-895028314-min-scaled.jpg', evening:UP+'2023/08/istock-1288630738-scaled.jpg' },
+  ci:{ morning:UP+'2023/10/istock-1192897531.jpg', afternoon:UP+'2025/08/picture1.jpg', evening:UP+'2023/10/istock-1455358887.jpg' },
+  login:UP+'2023/08/istock-1456887971-scaled.jpg'
 };
 const dayPart = () => S.heroPart || (h => h>=5&&h<12 ? 'morning' : h>=12&&h<18 ? 'afternoon' : 'evening')(new Date().getHours());
 /* ---------- charts (hand-rolled SVG) ---------- */
-const CC = () => S.theme==='dark' ? {grid:'rgba(238,241,247,.08)', axis:'rgba(238,241,247,.2)', lab:'rgba(238,241,247,.5)', ink:'#EEF1F7', inkFg:'#161C3B', hold:'rgba(238,241,247,.14)'} : {grid:'rgba(22,28,59,.07)', axis:'rgba(22,28,59,.15)', lab:'rgba(22,28,59,.45)', ink:'#161C3B', inkFg:'#fff', hold:'rgba(22,28,59,.12)'};
+const ACC = {light:['#4F6CF5','#6D84F7'], dark:['#4F6CF5','#6D84F7'], lime:['#7FA015','#A9C61E'], teal:['#2BC3A0','#5FD9BC']};
+const CC = () => Object.assign(isDark() ? {grid:'rgba(238,241,247,.08)', axis:'rgba(238,241,247,.2)', lab:'rgba(238,241,247,.5)', ink:'#EEF1F7', inkFg:'#161C3B', hold:'rgba(238,241,247,.14)'} : {grid:'rgba(22,28,59,.07)', axis:'rgba(22,28,59,.15)', lab:'rgba(22,28,59,.45)', ink:'#161C3B', inkFg:'#fff', hold:'rgba(22,28,59,.12)'}, {acc:ACC[S.theme][0], acc2:ACC[S.theme][1]});
 function priceChart(p){
   const d = prices(p, S.date); const W=720, H=260, L=44, R=12, T=14, B=30;
   const series = S.priceView==='basic'
-    ? [{k:'buy', c:'#4F6CF5', n:t('Purchase price')},{k:'sell', c:'#FF6000', n:t('Sell price')}]
-    : [{k:'spot', c:CC().ink, n:t('Spot')},{k:'tariff', c:'#96CCC2', n:t('Grid tariff')},{k:'buy', c:'#4F6CF5', n:t('Total purchase')},{k:'sell', c:'#FF6000', n:t('Sell')}];
+    ? [{k:'buy', c:CC().acc, n:t('Purchase price')},{k:'sell', c:'#FF6000', n:t('Sell price')}]
+    : [{k:'spot', c:CC().ink, n:t('Spot')},{k:'tariff', c:'#96CCC2', n:t('Grid tariff')},{k:'buy', c:CC().acc, n:t('Total purchase')},{k:'sell', c:'#FF6000', n:t('Sell')}];
   const max = Math.ceil(Math.max(...d.map(x=>x.buy))*10)/10; const X = h => L + h*(W-L-R)/24, Y = v => T + (1 - v/max)*(H-T-B);
   const step = k => d.map((x,i)=>`${i?'H':'M'}${X(x.h)} ${Y(x[k])}${i?'':''}`).join('') ;
   const path = k => { let s=''; d.forEach((x,i)=>{ s += (i? `V${Y(x[k])}`:`M${X(0)} ${Y(x[k])}`) + `H${X(x.h+1)}`; }); return s; };
@@ -669,14 +732,14 @@ function planChart(p){
     ${[-4,-2,2,4].map(v=>`<line x1="${L}" x2="${W-R}" y1="${mid-v*sc}" y2="${mid-v*sc}" stroke="${CC().grid}"/><text x="${L-8}" y="${mid-v*sc+4}" font-size="11" text-anchor="end" fill="${CC().lab}">${v}</text>`).join('')}
     <text x="${L-8}" y="${mid+4}" font-size="11" text-anchor="end" fill="${CC().lab}">0 kW</text>
     ${[0,25,50,75,100].map(v=>`<text x="${W-R+8}" y="${Ys(v)+4}" font-size="11" fill="rgba(47,107,96,.8)">${v}%</text>`).join('')}
-    ${d.map(x=>{ const h=Math.abs(x.kw)*sc; const y = x.kw>=0 ? mid-h : mid; const c = x.act==='charge' ? '#4F6CF5' : x.act==='discharge' ? '#FF6000' : CC().hold;
+    ${d.map(x=>{ const h=Math.abs(x.kw)*sc; const y = x.kw>=0 ? mid-h : mid; const c = x.act==='charge' ? CC().acc : x.act==='discharge' ? '#FF6000' : CC().hold;
       return `<rect x="${X(x.h)+3}" y="${y}" width="${bw}" height="${Math.max(2,h)}" rx="4" fill="${c}"/>`; }).join('')}
     <path d="${pv}" fill="none" stroke="#F5B400" stroke-width="2" stroke-dasharray="5 4"/>
     <path d="${soc}" fill="none" stroke="#2F6B60" stroke-width="2.4"/>
     ${[0,3,6,9,12,15,18,21].map(h=>`<text x="${X(h)+bw/2+3}" y="${H-8}" font-size="11" text-anchor="middle" fill="${CC().lab}">${String(h).padStart(2,'0')}:00</text>`).join('')}
     <rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent" class="hover"/>
   </svg><div class="tip hidden"></div></div>
-  <div class="legend" style="margin-top:8px"><span><i style="background:#4F6CF5"></i>${t("Charge")}</span><span><i style="background:#FF6000"></i>${t("Discharge")}</span><span><i style="background:#2F6B60"></i>${t("Battery SoC")}</span><span><i style="background:#F5B400"></i>${t("Solar forecast")}</span></div>`;
+  <div class="legend" style="margin-top:8px"><span><i style="background:${CC().acc}"></i>${t("Charge")}</span><span><i style="background:#FF6000"></i>${t("Discharge")}</span><span><i style="background:#2F6B60"></i>${t("Battery SoC")}</span><span><i style="background:#F5B400"></i>${t("Solar forecast")}</span></div>`;
 }
 function bindChartHover(){
   $$('svg[data-chart]').forEach(svg=>{
@@ -718,7 +781,7 @@ window.addEventListener('hashchange', route);
 /* ---------- login ---------- */
 function renderLogin(){
   document.body.innerHTML = `<div class="login">
-    <div class="login-hero" style="background-image:linear-gradient(180deg,rgba(22,28,59,.15),rgba(22,28,59,.85)),url('${HERO.login}')"><div class="eyebrow" style="color:rgba(255,255,255,.75)">${t("Axiom Novus \u00b7 SmartCharge")}</div>
+    <div class="login-hero" style="background-image:linear-gradient(180deg,rgba(var(--ov),.15),rgba(var(--ov),.85)),url('${HERO.login}')"><div class="eyebrow" style="color:rgba(255,255,255,.75)">${t("Axiom Novus \u00b7 SmartCharge")}</div>
       <h1>${t("Let your solar plant")}<br>${t("trade energy for you.")}</h1>
       <p>${t("Register your PV system, connect your inverter and let the AI planner buy, store, use and sell power at the right hour.")}</p></div>
     <div class="login-card"><div class="login-top">${langSwitch()}${themeSwitch()}</div><img class="lc-logo" src="${IMG.logo}" alt="Axiom Novus" style="height:52px">
@@ -797,9 +860,9 @@ function renderDashboard(){
   const bbox = `${p.loc.lng-0.03},${p.loc.lat-0.015},${p.loc.lng+0.03},${p.loc.lat+0.015}`;
   $('#main').innerHTML = `<div class="page">
   ${!p.key?`<div class="banner">${ic('key')}<div><b>${t('AI management is inactive for {n}.',{n:esc(p.name)})}</b> ${t("Add a product key from your installer, or subscribe to activate AI plans.")}</div><button class="btn btn-orange btn-sm" id="bKey">${t("Add product key")}</button></div>`:''}
-  <section class="hero" style="background-image:linear-gradient(100deg,rgba(22,28,59,.88) 0%,rgba(22,28,59,.55) 45%,rgba(22,28,59,.1) 100%),url('${HERO[part]}')">
+  <section class="hero" style="background-image:linear-gradient(100deg,rgba(var(--ov),.88) 0%,rgba(var(--ov),.55) 45%,rgba(var(--ov),.1) 100%),url('${(HERO[p.type]||HERO.home)[part]}')">
     <div class="hero-times">${['morning','afternoon','evening'].map(k=>`<button class="${k===part?'on':''}" data-part="${k}">${t(k[0].toUpperCase()+k.slice(1))}</button>`).join('')}</div>
-    <div><div class="eyebrow">${esc(dateStr)} · ${t('Week')} ${wk}</div>
+    <div><div class="eyebrow">${ic(p.type==='ci'?'factory':'home',14)} ${esc(p.name)} · ${t(p.type==='ci'?'Commercial site':'Private home')}</div><div class="eyebrow" style="margin-top:8px">${esc(dateStr)} · ${t('Week')} ${wk}</div>
       <h1>${greet},<br>${esc(S.user.first)}</h1>
       <p>${t('{n} things need you today.',{n:open.length})}${urgent?` <span style="color:var(--orange)">●</span> <b>${t(urgent>1?'{n} are urgent.':'{n} is urgent.',{n:urgent})}</b>`:''}</p>
       <div class="actions"><button class="btn btn-white" data-go="#/plants/${p.id}/plant">${t('Open')} ${esc(p.name)} <span style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center">${ic('arrow',16)}</span></button>
@@ -835,7 +898,7 @@ function renderDashboard(){
       <section class="dark-card" style="border-radius:var(--r-xl);padding:22px"><div style="display:flex;align-items:center;gap:8px"><span style="color:var(--orange)">●</span><small style="letter-spacing:.1em;font-weight:600">${t('COMMAND THIS HOUR')} · ${String(nowH).padStart(2,'0')}:00</small></div>
         <div style="font-size:26px;font-weight:400;margin:10px 0 4px">${cur? (cur.act==='charge'?t('Charging {v} kW',{v:fmt(cur.kw,1)}):cur.act==='discharge'?t('Discharging {v} kW',{v:fmt(-cur.kw,1)}):t('Holding battery')) : t('No new command')}</div>
         <small>${cur? `${t('Buy price')} ${fmt(cur.buy,3)} EUR/kWh · SoC ${Math.round(cur.soc)}%` : t('No command was sent this hour; the system is in self-consumption mode or following the last command.')}</small>
-        <div style="display:flex;gap:6px;margin-top:16px">${(pl||Array(24).fill({act:'hold'})).map((x,h)=>`<i title="${String(h).padStart(2,'0')}:00 ${x.act}" style="flex:1;height:22px;border-radius:4px;background:${x.act==='charge'?'#6D84F7':x.act==='discharge'?'#FF6000':'rgba(255,255,255,.15)'};${h===nowH?'outline:2px solid #fff;outline-offset:1px':''}"></i>`).join('')}</div></section>
+        <div style="display:flex;gap:6px;margin-top:16px">${(pl||Array(24).fill({act:'hold'})).map((x,h)=>`<i title="${String(h).padStart(2,'0')}:00 ${x.act}" style="flex:1;height:22px;border-radius:4px;background:${x.act==='charge'?CC().acc2:x.act==='discharge'?'#FF6000':'rgba(255,255,255,.15)'};${h===nowH?'outline:2px solid #fff;outline-offset:1px':''}"></i>`).join('')}</div></section>
       <section class="card"><div class="card-h"><div class="ic">${ic('wallet')}</div><div><h3>${t("Savings")}</h3><small>${t('Up to {n} days',{n:S.savingsRange})}</small></div></div>
         <div class="kpis"><div class="kpi"><div class="v pos">${p.key?fmt(sv.purchase):'–'}</div><div class="l">${t("Purchase savings (EUR)")}</div></div><div class="kpi"><div class="v pos">${p.key?fmt(sv.sale):'–'}</div><div class="l">${t("Sale earnings (EUR)")}</div></div>
           <div class="kpi"><div class="v">${p.key?fmt(sv.saved):'–'}</div><div class="l">${t("Saved (EUR)")}</div></div><div class="kpi"><div class="v">${p.key?Math.round(sv.pct)+' %':'– %'}</div><div class="l">${t("Saved %")}</div></div></div>
@@ -1199,7 +1262,7 @@ function finishWizard(){
 function renderSupport(){
   const cards = [['mail',t('Email us'),'info@axiomnovus.com',t('Typical reply within one working day'),false],['phone',t('Call us'),'+45 00 00 00 00',t('Check phone hours on axiomnovus.com'),false],['chat',t('Chat now'),t('Talk to an energy advisor'),t('Online now'),true],
     ['card',t('Change subscription'),t('SmartCharge DK Annual'),t('Upgrade, downgrade or cancel'),false],['book',t('Guides'),t('Set-up and inverter guides'),t('Huawei, SolaX, Fronius and more'),false],['help','FAQ',t('Common questions'),t('Savings, AI plans, EV lock'),false]];
-  $('#main').innerHTML = `<div class="page"><section class="hero" style="min-height:240px;grid-template-columns:1fr;background:linear-gradient(100deg,rgba(22,28,59,.9),rgba(22,28,59,.35)),url('https://axiomnovus.com/wp-content/uploads/2023/08/istock-1206142686-scaled.jpg') center/cover,var(--navy)">
+  $('#main').innerHTML = `<div class="page"><section class="hero" style="min-height:240px;grid-template-columns:1fr;background:linear-gradient(100deg,rgba(var(--ov),.9),rgba(var(--ov),.35)),url('https://axiomnovus.com/wp-content/uploads/2023/08/istock-1206142686-scaled.jpg') center/cover,var(--navy)">
     <div><div class="eyebrow">${t("Support")}</div><h1 style="font-size:48px">${t("How can we help?")}</h1><p>${t("Axiom Novus engineers support you from design to daily operation.")}</p></div></section>
     <div class="supp">${cards.map(([i,t,s,n,f],x)=>`<div class="card ${f?'feature':''}" data-sup="${x}"><div class="ic">${ic(i,24)}</div><b style="font-size:18px">${t}</b><div>${esc(s)}</div><small>${esc(n)}</small></div>`).join('')}</div></div>`;
   $$('[data-sup]').forEach(c=>c.onclick=()=>toast(t('Demo: “{n}” would open here',{n:cards[+c.dataset.sup][1]})));
