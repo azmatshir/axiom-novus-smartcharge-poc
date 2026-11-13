@@ -437,6 +437,27 @@ html[data-palette=teal] .rail button[data-tip]:hover::after{background:#BCD630;c
 html[data-palette=lime] .attn [style*="rgba(255,255,255,.8)"]{color:rgba(27,42,18,.7)!important}
 html[data-palette=teal]{--navy:#06362E}
 html[data-palette=teal] .btn-white,html[data-palette=teal] .hero-times button.on{color:#06362E}
+
+/* ---------- Lime & Teal brand mode (uses palette=lime + teal accents) ---------- */
+html[data-palette=lime]{--ov:6,52,44; --solid:#16957C; --solid-fg:#FFFFFF; --solid-hover:#12836C; --indigo:#16957C; --indigo-2:#BCD630; --pos:#16957C; --navy:#0B4D40;
+  --bg:#EEF4E4; --ink:#0F2A22; --ink-2:rgba(15,42,34,.68); --ink-3:rgba(15,42,34,.46); --soft:rgba(15,42,34,.05); --line:rgba(15,42,34,.09)}
+html[data-palette=lime] body{background-image:radial-gradient(1100px 560px at 90% -10%,rgba(188,214,48,.32),transparent 60%),radial-gradient(900px 520px at -10% 110%,rgba(22,149,124,.22),transparent 60%)}
+html[data-palette=lime] .attn{background:linear-gradient(135deg,#C6DC3A 0%,#8CC651 42%,#16957C 100%);color:#0F2A22;box-shadow:0 24px 60px rgba(22,149,124,.28)}
+html[data-palette=lime] .attn .btn-white,html[data-palette=lime] .attn .seg button.on{background:#0B4D40;color:#E4F29A}
+html[data-palette=lime] .dark-card,html[data-palette=lime] .wsteps,html[data-palette=lime] .supp .card.feature,html[data-palette=lime] .toast,html[data-palette=lime] .chart .tip{background:#0B4D40;color:#EAF6F0}
+html[data-palette=lime] .weather-now{background:linear-gradient(140deg,#0B4D40,#16957C 70%,#7DBF4E)}
+html[data-palette=lime] .lock-timer .d{background:#0B4D40;color:#D7EA5A}
+html[data-palette=lime] .hours div.now{background:#16957C;color:#fff}
+html[data-palette=lime] .health span.on{background:#BCD630;color:#0F2A22}
+html[data-palette=lime] .bar i{background:linear-gradient(90deg,#BCD630,#16957C)}
+html[data-palette=lime] .avatar .av{background:linear-gradient(135deg,#BCD630,#16957C);color:#fff}
+html[data-palette=lime] .rail .brandmark{box-shadow:0 6px 16px rgba(22,149,124,.3)}
+html[data-palette=lime] .switch button.on{background:#16957C;color:#fff}
+html[data-palette=lime] .chip.mint,html[data-palette=lime] .status.ok{background:rgba(188,214,48,.3);color:#3E5A06}
+html[data-palette=lime] .choice.sel{border-color:#16957C;background:rgba(22,149,124,.07);box-shadow:0 0 0 4px rgba(188,214,48,.3)}
+html[data-palette=lime] .btn-outline-danger{color:var(--orange-ink)}
+html[data-palette=lime] .hero-panel .bar i{background:linear-gradient(90deg,#BCD630,#16957C)}
+.hero .hero-panel .eyebrow{color:var(--ink-3)}
 </style></head><body><script>
 /* ===== Axiom Novus SmartCharge – clickable POC (mock data, in-memory only) ===== */
 const IMG = {
@@ -672,20 +693,19 @@ const DA = {
 "Morning":"Morgen","Afternoon":"Eftermiddag","Evening":"Aften","AI plan for tomorrow is ready":"AI-plan for i morgen er klar","Price spike expected 17:00–19:00":"Prisstigning ventet 17:00–19:00","Welcome to SmartCharge":"Velkommen til SmartCharge",
 "AI management is inactive for {n}.":"AI-styring er inaktiv for {n}.","All":"Alle","Wind":"Vind","Humidity":"Fugtighed","hrs":"timer","mins":"min","secs":"sek","0-export correction":"0-eksport-korrektion","This would delete your account and all {n} plants. In this demo nothing is deleted.":"Dette ville slette din konto og alle {n} anlæg. I demoen slettes intet.",
 "Plant name":"Anlægsnavn","Authorization":"Godkendelse","Inverter & battery":"Inverter og batteri",
-"Lime mode":"Lime-tema","Teal mode":"Petrol-tema","Private home":"Privat bolig","Commercial site":"Erhvervsanlæg",
+"Lime & Teal mode":"Lime og petrol-tema","Private home":"Privat bolig","Commercial site":"Erhvervsanlæg",
 "Enter demo as {n}":"Gå til demo som {n}","Escape":"Escape"
 };
 const t = (s, p) => { let r = (S.lang==='da' && DA[s]!=null) ? DA[s] : s; if (p) for (const k in p) r = r.split('{'+k+'}').join(p[k]); return r; };
 const loc = () => S.lang==='da' ? 'da-DK' : 'en-GB';
 
 /* ---------- theme ---------- */
-const isDark = () => S.theme==='dark' || S.theme==='teal';
-function applyTheme(){ const h=document.documentElement; h.dataset.theme = isDark()?'dark':'light'; h.dataset.palette = (S.theme==='lime'||S.theme==='teal') ? S.theme : ''; h.lang = S.lang; }
+const isDark = () => S.theme==='dark';
+function applyTheme(){ const h=document.documentElement; h.dataset.theme = isDark()?'dark':'light'; h.dataset.palette = S.theme==='brand' ? 'lime' : ''; h.lang = S.lang; }
 const themeSwitch = () => `<div class="switch" role="group" aria-label="Theme">
   <button class="${S.theme==='light'?'on':''}" data-theme-set="light" title="${t('Light mode')}">${ic('sun',18)}</button>
   <button class="${S.theme==='dark'?'on':''}" data-theme-set="dark" title="${t('Dark mode')}"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-  <button class="${S.theme==='lime'?'on':''}" data-theme-set="lime" title="${t('Lime mode')}"><span class="dot-sw" style="background:linear-gradient(135deg,#D7EA5A,#A9C61E)"></span></button>
-  <button class="${S.theme==='teal'?'on':''}" data-theme-set="teal" title="${t('Teal mode')}"><span class="dot-sw" style="background:linear-gradient(135deg,#3CC9A5,#0F7D66)"></span></button></div>`;
+  <button class="${S.theme==='brand'?'on':''}" data-theme-set="brand" title="${t('Lime & Teal mode')}"><span class="dot-sw" style="background:linear-gradient(135deg,#C6DC3A 0%,#BCD630 35%,#16957C 70%,#0F7D66 100%)"></span></button></div>`;
 const langSwitch = () => `<div class="switch" role="group" aria-label="Language"><button class="${S.lang==='da'?'on':''}" data-lang-set="da">DA</button><button class="${S.lang==='en'?'on':''}" data-lang-set="en">EN</button></div>`;
 function bindSwitches(after){
   $$('[data-theme-set]').forEach(b=>b.onclick=()=>{ S.theme=b.dataset.themeSet; applyTheme(); after(); });
@@ -694,14 +714,16 @@ function bindSwitches(after){
 
 /* ---------- hero by time of day (photos from axiomnovus.com) ---------- */
 const UP = 'https://axiomnovus.com/wp-content/uploads/';
+const US = id => 'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w=1800&q=75';
+// Free photos from Unsplash (Unsplash License)
 const HERO = {
-  home:{ morning:UP+'2023/08/istock-1310384629-scaled.jpg', afternoon:UP+'2023/08/istock-895028314-min-scaled.jpg', evening:UP+'2023/08/istock-1288630738-scaled.jpg' },
-  ci:{ morning:UP+'2023/10/istock-1192897531.jpg', afternoon:UP+'2025/08/picture1.jpg', evening:UP+'2023/10/istock-1455358887.jpg' },
+  home:{ morning:US('photo-1761472823286-9f6093ed6663'), afternoon:US('flagged/photo-1566838803980-56bfa5300e8c'), evening:US('flagged/photo-1566838616838-c3a720672aad') },
+  ci:{ morning:US('photo-1786913507799-0ddbb3e7dbb6'), afternoon:US('photo-1786913508408-7dfb8ae2d937'), evening:US('photo-1770121696398-6084654c1364') },
   login:UP+'2023/08/istock-1456887971-scaled.jpg'
 };
 const dayPart = () => S.heroPart || (h => h>=5&&h<12 ? 'morning' : h>=12&&h<18 ? 'afternoon' : 'evening')(new Date().getHours());
 /* ---------- charts (hand-rolled SVG) ---------- */
-const ACC = {light:['#4F6CF5','#6D84F7'], dark:['#4F6CF5','#6D84F7'], lime:['#7FA015','#A9C61E'], teal:['#2BC3A0','#5FD9BC']};
+const ACC = {light:['#4F6CF5','#6D84F7'], dark:['#4F6CF5','#6D84F7'], brand:['#16957C','#A9C61E']};
 const CC = () => Object.assign(isDark() ? {grid:'rgba(238,241,247,.08)', axis:'rgba(238,241,247,.2)', lab:'rgba(238,241,247,.5)', ink:'#EEF1F7', inkFg:'#161C3B', hold:'rgba(238,241,247,.14)'} : {grid:'rgba(22,28,59,.07)', axis:'rgba(22,28,59,.15)', lab:'rgba(22,28,59,.45)', ink:'#161C3B', inkFg:'#fff', hold:'rgba(22,28,59,.12)'}, {acc:ACC[S.theme][0], acc2:ACC[S.theme][1]});
 function priceChart(p){
   const d = prices(p, S.date); const W=720, H=260, L=44, R=12, T=14, B=30;
