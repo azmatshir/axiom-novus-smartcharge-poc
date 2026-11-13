@@ -5,7 +5,7 @@
 :root{
   --navy:#161C3B; --navy-2:#232A52; --indigo:#4F6CF5; --indigo-2:#6D84F7; --orange:#FF6000; --orange-ink:#C24A00;
   --mint:#96CCC2; --teal:#2F6B60; --bg:#E6E9F2; --card:#FFFFFF; --line:rgba(22,28,59,.08);
-  --ink:#161C3B; --ink-2:rgba(22,28,59,.66); --ink-3:rgba(22,28,59,.45); --soft:rgba(22,28,59,.05);
+  --ink:#161C3B; --surface:#FFFFFF; --solid:#161C3B; --solid-fg:#FFFFFF; --solid-hover:#232A52; --panel:rgba(255,255,255,.82); --rail:rgba(255,255,255,.85); --pos:#2F6B60; --ink-2:rgba(22,28,59,.66); --ink-3:rgba(22,28,59,.45); --soft:rgba(22,28,59,.05);
   --shadow:0 18px 48px rgba(22,28,59,.08); --r-xl:30px; --r-lg:22px; --r-md:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -25,19 +25,19 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
   color:#fff;padding:48px;display:flex;flex-direction:column;justify-content:flex-end;min-height:560px}
 .login-hero h1{font-size:56px;font-weight:400;line-height:1.05;letter-spacing:-1px}
 .login-hero p{margin-top:16px;color:rgba(255,255,255,.82);max-width:460px;font-size:17px}
-.login-card{align-self:center;justify-self:center;width:min(440px,100%);background:#fff;border-radius:var(--r-xl);padding:40px;box-shadow:var(--shadow)}
+.login-card{align-self:center;justify-self:center;width:min(440px,100%);background:var(--surface);border-radius:var(--r-xl);padding:40px;box-shadow:var(--shadow)}
 .login-card img{height:52px}
 .login-card h2{font-size:28px;font-weight:600;margin:28px 0 6px}
 .login-card .muted{margin-bottom:24px}
 
 /* ---------- shell ---------- */
 .app{display:grid;grid-template-columns:88px 1fr;gap:20px;padding:20px 24px 40px 12px;min-height:100vh}
-.rail{position:sticky;top:96px;align-self:start;height:calc(100vh - 116px);min-height:520px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-radius:40px;
+.rail{position:sticky;top:96px;align-self:start;height:calc(100vh - 116px);min-height:520px;background:var(--rail);backdrop-filter:blur(10px);border-radius:40px;
   display:flex;flex-direction:column;align-items:center;padding:16px 0;gap:8px;box-shadow:var(--shadow)}
 .rail .brandmark{width:46px;height:46px;border-radius:14px;background:#fff;box-shadow:0 6px 16px rgba(22,149,124,.25);display:grid;place-items:center;margin-bottom:14px;color:#fff;font-weight:700}
 .rail button{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:var(--ink-2);position:relative}
 .rail button:hover{background:var(--soft);color:var(--ink)}
-.rail button.active{background:var(--navy);color:#fff}
+.rail button.active{background:var(--solid);color:var(--solid-fg)}
 .rail .spacer{flex:1}
 .rail button[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:58px;background:var(--navy);color:#fff;font-size:12px;padding:6px 10px;border-radius:999px;white-space:nowrap;z-index:5}
 .main{min-width:0}
@@ -45,17 +45,17 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .logo{display:flex;align-items:center;gap:10px;min-width:250px}
 .logo img{height:38px}
 .logo span{color:var(--indigo);font-size:20px;font-weight:500;margin-top:6px}
-.search{flex:1;max-width:520px;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:0 10px 0 18px;height:50px;box-shadow:var(--shadow);color:var(--ink-3)}
+.search{flex:1;max-width:520px;display:flex;align-items:center;gap:10px;background:var(--surface);border-radius:999px;padding:0 10px 0 18px;height:50px;box-shadow:var(--shadow);color:var(--ink-3)}
 .search input{border:0;outline:0;flex:1;background:none;color:var(--ink)}
 .kbd{font-size:12px;background:var(--soft);border-radius:8px;padding:4px 8px;color:var(--ink-2)}
 .top-right{margin-left:auto;display:flex;align-items:center;gap:10px}
-.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;height:46px;padding:0 16px;box-shadow:var(--shadow);font-weight:500}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border-radius:999px;height:46px;padding:0 16px;box-shadow:var(--shadow);font-weight:500}
 .pill select{border:0;outline:0;background:none;font-weight:600;cursor:pointer}
-.iconbtn{width:46px;height:46px;border-radius:999px;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow);position:relative}
-.iconbtn .dot{position:absolute;top:10px;right:11px;width:8px;height:8px;border-radius:50%;background:var(--orange);border:2px solid #fff}
-.avatar{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:4px 14px 4px 4px;box-shadow:var(--shadow);font-weight:600;position:relative}
-.avatar .av{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:13px}
-.menu{position:absolute;top:56px;right:0;background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(22,28,59,.18);padding:8px;min-width:220px;z-index:40}
+.iconbtn{width:46px;height:46px;border-radius:999px;background:var(--surface);display:grid;place-items:center;box-shadow:var(--shadow);position:relative}
+.iconbtn .dot{position:absolute;top:10px;right:11px;width:8px;height:8px;border-radius:50%;background:var(--orange);border:2px solid var(--surface)}
+.avatar{display:flex;align-items:center;gap:10px;background:var(--surface);border-radius:999px;padding:4px 14px 4px 4px;box-shadow:var(--shadow);font-weight:600;position:relative}
+.avatar .av{width:38px;height:38px;border-radius:50%;background:var(--solid);color:var(--solid-fg);display:grid;place-items:center;font-size:13px}
+.menu{position:absolute;top:56px;right:0;background:var(--surface);border-radius:18px;box-shadow:0 24px 60px rgba(22,28,59,.18);padding:8px;min-width:220px;z-index:40}
 .menu a,.menu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:12px;text-align:left;font-weight:500}
 .menu a:hover,.menu button:hover{background:var(--soft)}
 .menu .danger{color:var(--orange-ink)}
@@ -84,8 +84,8 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .muted{color:var(--ink-2)}
 .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink-3)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font-weight:600;transition:.15s;white-space:nowrap}
-.btn-dark{background:var(--navy);color:#fff}
-.btn-dark:hover{background:var(--navy-2)}
+.btn-dark{background:var(--solid);color:var(--solid-fg)}
+.btn-dark:hover{background:var(--solid-hover)}
 .btn-indigo{background:var(--indigo);color:#fff}
 .btn-white{background:#fff;color:var(--navy)}
 .btn-ghost{background:var(--soft);color:var(--ink)}
@@ -96,7 +96,7 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .btn-sm{height:36px;padding:0 14px;font-size:14px}
 .seg{display:inline-flex;background:var(--soft);border-radius:999px;padding:4px}
 .seg button{height:34px;padding:0 14px;border-radius:999px;font-weight:600;color:var(--ink-2);font-size:14px}
-.seg button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(22,28,59,.08)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:0 2px 8px rgba(22,28,59,.08)}
 .chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:600;background:var(--soft)}
 .chip.orange{background:var(--orange);color:#fff}
 .chip.mint{background:rgba(150,204,194,.35);color:var(--teal)}
@@ -106,7 +106,7 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 /* forms */
 .field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:13px;font-weight:600;color:var(--ink-2)}
-.input,.select{height:46px;border-radius:14px;border:1.5px solid var(--line);background:#fff;padding:0 14px;outline:0;width:100%;transition:.15s}
+.input,.select{height:46px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);padding:0 14px;outline:0;width:100%;transition:.15s}
 .input:focus,.select:focus{border-color:var(--indigo);box-shadow:0 0 0 4px rgba(79,108,245,.12)}
 .input.err{border-color:var(--orange)}
 .err-text{font-size:12px;color:var(--orange-ink)}
@@ -130,17 +130,17 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .hero p b{font-weight:700}
 .hero .actions{display:flex;gap:12px;margin-top:40px}
 .btn-glass{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(8px)}
-.hero-panel{background:rgba(255,255,255,.82);backdrop-filter:blur(16px);border-radius:26px;color:var(--ink);padding:22px;align-self:stretch;display:flex;flex-direction:column;gap:14px}
+.hero-panel{background:var(--panel);backdrop-filter:blur(16px);border-radius:26px;color:var(--ink);padding:22px;align-self:stretch;display:flex;flex-direction:column;gap:14px}
 .big-num{font-size:52px;font-weight:300;letter-spacing:-1.5px;line-height:1}
 .big-num small{font-size:16px;font-weight:500;color:var(--ink-3);margin-left:4px;letter-spacing:0}
 .bar{height:6px;border-radius:999px;background:rgba(22,28,59,.1);overflow:hidden}
-.bar i{display:block;height:100%;background:var(--navy);border-radius:999px}
+.bar i{display:block;height:100%;background:var(--solid);border-radius:999px}
 .mini{background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:18px;padding:12px 14px}
 .mini .v{font-size:28px;font-weight:300}
-.mini .d{color:var(--teal);font-size:13px;font-weight:600}
+.mini .d{color:var(--pos);font-size:13px;font-weight:600}
 .health{display:flex;gap:6px}
 .health span{flex:1;text-align:center;border-radius:999px;padding:8px 0;font-size:13px;font-weight:600;background:var(--soft)}
-.health span.on{background:var(--navy);color:#fff}
+.health span.on{background:var(--solid);color:var(--solid-fg)}
 
 .attn{background:linear-gradient(160deg,var(--indigo-2),var(--indigo) 60%,#4560E8);color:#fff;border-radius:var(--r-xl);padding:26px;box-shadow:0 24px 60px rgba(79,108,245,.3)}
 .attn .card-h .ic{background:rgba(255,255,255,.18);color:#fff}
@@ -167,7 +167,7 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .kpi{background:var(--soft);border-radius:18px;padding:14px}
 .kpi .v{font-size:26px;font-weight:600}
 .kpi .l{font-size:13px;color:var(--ink-3)}
-.kpi .v.pos{color:var(--teal)}
+.kpi .v.pos{color:var(--pos)}
 .legend{display:flex;gap:16px;font-size:13px;color:var(--ink-2)}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
 .chart svg{width:100%;height:auto;display:block}
@@ -191,7 +191,7 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .plist{position:sticky;top:96px}
 .plist .item{display:flex;align-items:center;gap:10px;padding:12px;border-radius:16px;font-weight:600;cursor:pointer}
 .plist .item:hover{background:var(--soft)}
-.plist .item.active{background:var(--navy);color:#fff}
+.plist .item.active{background:var(--solid);color:var(--solid-fg)}
 .plist .item .ic{width:36px;height:36px;border-radius:12px;background:rgba(150,204,194,.35);color:var(--teal);display:grid;place-items:center}
 .plist .item.active .ic{background:rgba(255,255,255,.14);color:#fff}
 .plist .sub{padding:4px 0 6px 58px;font-size:13px;color:var(--ink-3)}
@@ -201,9 +201,9 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .phead .star{color:var(--ink-3)}
 .phead .star.on{color:var(--orange)}
 .phead .acts{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
-.tabs{display:flex;gap:6px;background:#fff;border-radius:999px;padding:6px;box-shadow:var(--shadow);width:fit-content}
+.tabs{display:flex;gap:6px;background:var(--surface);border-radius:999px;padding:6px;box-shadow:var(--shadow);width:fit-content}
 .tabs button{height:42px;padding:0 24px;border-radius:999px;font-weight:600;color:var(--ink-2)}
-.tabs button.on{background:var(--navy);color:#fff}
+.tabs button.on{background:var(--solid);color:var(--solid-fg)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .status{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px}
 .status.bad{background:rgba(255,96,0,.12);color:var(--orange-ink)}
@@ -213,7 +213,7 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .empty{color:var(--ink-3);font-size:14px;padding:12px 0}
 
 /* ---------- wizard ---------- */
-.wizard{display:grid;grid-template-columns:300px 1fr;background:#fff;border-radius:var(--r-xl);box-shadow:var(--shadow);overflow:hidden;min-height:640px}
+.wizard{display:grid;grid-template-columns:300px 1fr;background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--shadow);overflow:hidden;min-height:640px}
 .wsteps{background:var(--navy);color:#fff;padding:28px 22px;position:relative;overflow:hidden}
 .wsteps::after{content:'';position:absolute;inset:auto -60px -60px auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(79,108,245,.45),transparent 70%)}
 .wsteps h3{font-size:18px;font-weight:600;margin-bottom:22px}
@@ -229,7 +229,7 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .wcontent{flex:1}
 .wfoot{display:flex;justify-content:space-between;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
 .choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-.choice{border:1.5px solid var(--line);border-radius:22px;padding:20px;text-align:left;transition:.15s;background:#fff}
+.choice{border:1.5px solid var(--line);border-radius:22px;padding:20px;text-align:left;transition:.15s;background:var(--surface)}
 .choice:hover{border-color:rgba(79,108,245,.4);transform:translateY(-1px)}
 .choice.sel{border-color:var(--indigo);background:rgba(79,108,245,.05);box-shadow:0 0 0 4px rgba(79,108,245,.1)}
 .choice .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;margin-bottom:14px;color:#fff;background:var(--navy)}
@@ -240,7 +240,7 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 .mfr .logo-box{height:70px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:22px;font-weight:800;letter-spacing:.5px;margin-bottom:10px}
 .loc{display:grid;grid-template-columns:1fr 300px;gap:20px}
 .results{border:1.5px solid var(--line);border-radius:20px;padding:14px;min-height:240px}
-.sugg{position:absolute;left:0;right:0;top:50px;background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(22,28,59,.15);z-index:5;overflow:hidden}
+.sugg{position:absolute;left:0;right:0;top:50px;background:var(--surface);border-radius:14px;box-shadow:0 20px 50px rgba(22,28,59,.15);z-index:5;overflow:hidden}
 .sugg div{padding:10px 14px;cursor:pointer}
 .sugg div:hover{background:var(--soft)}
 .kv{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
@@ -249,7 +249,7 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
 
 /* modal + toast */
 .overlay{position:fixed;inset:0;background:rgba(22,28,59,.4);backdrop-filter:blur(4px);display:grid;place-items:center;z-index:60;padding:20px}
-.modal{background:#fff;border-radius:var(--r-xl);width:min(520px,100%);padding:28px;box-shadow:0 40px 100px rgba(22,28,59,.3);max-height:90vh;overflow:auto}
+.modal{background:var(--surface);border-radius:var(--r-xl);width:min(520px,100%);padding:28px;box-shadow:0 40px 100px rgba(22,28,59,.3);max-height:90vh;overflow:auto}
 .modal h3{font-size:22px;font-weight:600;margin-bottom:18px;display:flex;align-items:center}
 .modal h3 button{margin-left:auto;color:var(--ink-3)}
 .modal .foot{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}
@@ -320,6 +320,67 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stro
   .menu.notif{width:300px;right:-60px}
   .card-h{flex-wrap:wrap}
 }
+
+/* ---------- theme + language switches (Newsec style) ---------- */
+html{color-scheme:light}
+body{transition:background-color .3s,color .3s}
+.switch{display:inline-flex;align-items:center;gap:2px;background:var(--surface);border-radius:999px;padding:4px;height:46px;box-shadow:var(--shadow)}
+.switch button{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--ink-3);font-weight:700;font-size:13px;transition:.2s}
+.switch button.on{background:var(--solid);color:var(--solid-fg)}
+.switch button:not(.on):hover{color:var(--ink)}
+.logo-dark{display:none;align-items:center;gap:8px}
+.logo-dark img{height:34px!important;width:34px}
+.logo-dark b{font-size:15px;line-height:1.05;font-weight:500;color:var(--ink)}
+.hero-times{position:absolute;left:52px;bottom:22px;display:flex;gap:6px}
+.hero-times button{height:28px;padding:0 12px;border-radius:999px;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px)}
+.hero-times button.on{background:#fff;color:var(--navy)}
+.login-top{display:flex;justify-content:flex-end;gap:8px;margin:-16px -16px 16px 0}
+.login-top .switch{box-shadow:none;background:var(--soft);height:42px}
+.login-top .switch button{width:34px;height:34px}
+
+/* ---------- dark theme ---------- */
+html[data-theme=dark]{color-scheme:dark;
+  --bg:#0A0D1F; --card:rgba(28,35,70,.8); --surface:#232B52; --ink:#EEF1F7; --ink-2:rgba(238,241,247,.66); --ink-3:rgba(238,241,247,.45);
+  --soft:rgba(255,255,255,.06); --line:rgba(255,255,255,.09); --shadow:0 18px 48px rgba(0,0,0,.35);
+  --solid:#EEF1F7; --solid-fg:#161C3B; --solid-hover:#FFFFFF; --panel:rgba(28,35,70,.72); --rail:rgba(28,35,70,.8); --pos:#96CCC2}
+html[data-theme=dark] body{background-image:radial-gradient(1200px 600px at 85% -10%,rgba(79,108,245,.18),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(47,107,96,.18),transparent 60%)}
+html[data-theme=dark] .card,html[data-theme=dark] .rail,html[data-theme=dark] .wizard,html[data-theme=dark] .modal{border:1px solid var(--line)}
+html[data-theme=dark] .card,html[data-theme=dark] .rail{backdrop-filter:blur(14px)}
+html[data-theme=dark] .wizard,html[data-theme=dark] .modal,html[data-theme=dark] .login-card,html[data-theme=dark] .menu{background:#151B3A}
+html[data-theme=dark] .dark-card,html[data-theme=dark] .wsteps,html[data-theme=dark] .supp .card.feature,html[data-theme=dark] .toast,html[data-theme=dark] .chart .tip{background:#232B52;color:#EEF1F7}
+html[data-theme=dark] .dark-card{border:1px solid var(--line)}
+html[data-theme=dark] .weather-now{background:linear-gradient(140deg,#2A3570,#1C2346)}
+html[data-theme=dark] .lock-timer .d{background:#EEF1F7;color:#161C3B}
+html[data-theme=dark] .seg button.on{background:#EEF1F7;color:#161C3B}
+html[data-theme=dark] .attn .seg button.on{background:#fff;color:var(--navy)}
+html[data-theme=dark] .chip.mint,html[data-theme=dark] .status.ok{background:rgba(150,204,194,.16);color:#96CCC2}
+html[data-theme=dark] .chip.warn,html[data-theme=dark] .status.bad{background:rgba(255,96,0,.18);color:#FFA066}
+html[data-theme=dark] .chip.indigo{color:#8FA2FF}
+html[data-theme=dark] .plist .item .ic,html[data-theme=dark] .cmd .ic{background:rgba(150,204,194,.14);color:#96CCC2}
+html[data-theme=dark] .plist .item.active .ic{background:rgba(22,28,59,.1);color:#161C3B}
+html[data-theme=dark] .banner{background:rgba(255,96,0,.12);color:#FFA066}
+html[data-theme=dark] .btn-outline-danger,html[data-theme=dark] .err-text{color:#FFA066}
+html[data-theme=dark] .mini{background:rgba(255,255,255,.06)}
+html[data-theme=dark] .health span{background:rgba(255,255,255,.08)}
+html[data-theme=dark] .health span.on{background:#EEF1F7;color:#161C3B}
+html[data-theme=dark] .mfr .logo-box{background:#EEF1F7}
+html[data-theme=dark] .choice{background:transparent}
+html[data-theme=dark] .choice.sel{background:rgba(79,108,245,.14)}
+html[data-theme=dark] .logo-full{display:none}
+html[data-theme=dark] .logo-dark{display:flex}
+html[data-theme=dark] .login-card img.lc-logo{background:#fff;border-radius:14px;padding:6px 12px;height:60px}
+html[data-theme=dark] .rail button[data-tip]:hover::after{background:#EEF1F7;color:#161C3B}
+html[data-theme=dark] .supp .card.feature .ic{background:rgba(255,255,255,.1)}
+html[data-theme=dark] .hero-panel .bar{background:rgba(255,255,255,.12)}
+@media (max-width:640px){.switch{height:42px}.switch button{width:34px;height:34px}.hero-times{left:28px;bottom:14px}}
+
+html[data-theme=dark] .toggle{background:rgba(255,255,255,.18)}
+html[data-theme=dark] .toggle.on{background:var(--indigo)}
+.pill{white-space:nowrap}
+html[data-theme=dark] .choice .ic[style*="#161C3B"]{background:#3A4580!important}
+@media (max-width:640px){.pill.ai{padding:0 10px}.avatar{padding:4px}}
+.kbd,.avatar .nm{white-space:nowrap}
+@media (max-width:1500px){.avatar .nm{display:none}.avatar{padding:4px}}
 </style></head><body><script>
 /* ===== Axiom Novus SmartCharge – clickable POC (mock data, in-memory only) ===== */
 const IMG = {
@@ -362,7 +423,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const $ = (s, el=document) => el.querySelector(s);
 const $$ = (s, el=document) => [...el.querySelectorAll(s)];
 const clone = o => JSON.parse(JSON.stringify(o));
-const fmt = (n, d=2) => Number(n).toLocaleString('en-GB',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmt = (n, d=2) => Number(n).toLocaleString(S.lang==='da'?'da-DK':'en-GB',{minimumFractionDigits:d,maximumFractionDigits:d});
 function rng(seed){ let s = seed % 2147483647; if (s <= 0) s += 2147483646; return () => (s = s * 16807 % 2147483647) / 2147483647; }
 
 /* ---------- reference data ---------- */
@@ -393,7 +454,8 @@ const defaultSettings = () => ({ai:true, zeroExport:0, modes:{self:true, gridCha
 
 /* ---------- state ---------- */
 const S = {
-  authed:false,
+  authed:false, lang:'en', heroPart:null,
+  theme:(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light',
   user:{first:'Azmat', last:'Shir', email:'azmat@teo-demo.com', phoneCode:'+45', phone:'20 30 40 50', lang:'English', report:'Monthly'},
   aiPlans:true,
   plantId:6301,
@@ -459,22 +521,140 @@ function weather(p){
   const r = rng(p.id*7+3); const base = p.loc.country==='Pakistan' ? 22 : 6;
   return Array.from({length:48},(_,i)=>{ const h=i%24; return {h, t:Math.round(base + 3*Math.sin(Math.PI*(h-9)/12) + (r()-.5)*2), hum:Math.round(70+20*Math.cos(Math.PI*h/12)+r()*5), cloud:Math.round(30+r()*60), wind:Math.round(4+r()*10)}; });
 }
+/* ---------- language (EN / DA) ---------- */
+const DA = {
+"AI Plans":"AI-planer","AI active":"AI aktiv","AI inactive":"AI inaktiv","AI plan and history":"AI-plan og historik","AI plans activated":"AI-planer aktiveret","AI plans":"AI-planer","AI":"AI",
+"Account":"Konto","Action":"Handling","Activate AI management now, or do it later from the plant page.":"Aktivér AI-styring nu, eller gør det senere fra anlægssiden.","Active":"Aktiv",
+"Add a product key from your installer, or subscribe to activate AI plans.":"Tilføj en produktnøgle fra din installatør, eller abonnér for at aktivere AI-planer.","Add a system":"Tilføj et system",
+"Add battery":"Tilføj batteri","Add inverter":"Tilføj inverter","Add new system":"Tilføj nyt system","Add plant":"Tilføj anlæg","Add product key":"Tilføj produktnøgle","Add rule":"Tilføj regel","Add":"Tilføj",
+"Advanced":"Avanceret","All additional purchase costs":"Alle øvrige købsomkostninger","All changes stay in this browser tab and reset on reload.":"Alle ændringer bliver i denne fane og nulstilles ved genindlæsning.",
+"Allowed battery modes":"Tilladte batteritilstande","Anything you like – it is only shown to you.":"Hvad du vil – det vises kun for dig.","Ask your installer to transfer the plant to":"Bed din installatør om at overdrage anlægget til",
+"Authorize":"Godkend","Axiom Novus EPC services":"Axiom Novus EPC-ydelser","Axiom Novus engineers support you from design to daily operation.":"Axiom Novus' ingeniører støtter dig fra design til daglig drift.",
+"Basic":"Basis","Battery SoC":"Batteriniveau","Battery depreciation cost":"Batteriets slidomkostning","Battery lock (EV)":"Batterilås (elbil)","Battery right now":"Batteri lige nu","Battery":"Batteri",
+"C&I":"Erhverv","Cancel":"Annullér","Charge from grid":"Oplad fra nettet","Charge":"Opladning","Charger":"Lader","Charging rules":"Opladningsregler","Choose inverter and battery":"Vælg inverter og batteri",
+"Choose the location of your plant":"Vælg anlæggets placering","Choose your product":"Vælg dit produkt","Choose your system type":"Vælg systemtype","City":"By","Cloud":"Cloud","Confirm email":"Bekræft e-mail",
+"Connect your system":"Forbind dit system","Control battery":"Styr batteriet","Country":"Land","Currency":"Valuta","Dashboard":"Overblik","Day-ahead spot price plus your costs":"Spotpris for næste døgn plus dine omkostninger",
+"Days":"Dage","Delete account":"Slet konto","Delete plant":"Slet anlæg","Delete":"Slet","Demo key":"Demonøgle","Denmark and Germany":"Danmark og Tyskland","Discharge":"Afladning","Distributor code":"Netselskab",
+"Download CSV":"Download CSV","EV charger":"Elbillader","EV lock status":"Elbil-lås","Electricity market":"Elmarked","Electricity price estimate":"Forventet elpris","Email":"E-mail",
+"End-to-end support for your solar project":"Hele vejen rundt om dit solcelleprojekt","Enter your key, or subscribe to get one":"Indtast din nøgle, eller abonnér for at få en",
+"Excl. spot price and distribution tariff":"Ekskl. spotpris og nettarif","Export battery to grid":"Eksportér batteri til nettet","Export of surplus solar energy during EV lock":"Eksport af overskudsstrøm under elbil-lås",
+"Favourite":"Favorit","Fees deducted when selling":"Gebyrer der trækkes ved salg","Fill a demo key":"Udfyld en demonøgle","First name":"Fornavn","Free":"Fri","From":"Fra","Give your plant a name":"Giv dit anlæg et navn",
+"Go to dashboard":"Gå til overblik","Health":"Status","Hourly battery actions planned by the optimiser":"Batterihandlinger time for time, planlagt af optimeringen","How can we help?":"Hvordan kan vi hjælpe?",
+"How would you like to set up your system?":"Hvordan vil du oprette dit system?","I accept the":"Jeg accepterer","I have an EV charger":"Jeg har en elbillader","I understand":"Jeg forstår",
+"Installer links":"Installatører","Installers who can view and support this plant":"Installatører der kan se og hjælpe med anlægget","Inverter serial number":"Inverterens serienummer","Inverter":"Inverter",
+"Inverters and batteries":"Invertere og batterier","It will appear under Plants as soon as you accept the transfer email.":"Det vises under Anlæg, så snart du accepterer overdragelses-mailen.",
+"Key must look like XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX":"Nøglen skal have formen XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX","Last name":"Efternavn","Latitude":"Breddegrad","Let your solar plant":"Lad dit solcelleanlæg",
+"Location":"Placering","Lock later":"Lås senere","Lock now":"Lås nu","Lock the house battery for":"Lås husets batteri i","Locked":"Låst","Log out":"Log ud","Longitude":"Længdegrad","Manufacturer":"Producent",
+"Mark all as read":"Markér alle som læst","Mark done":"Markér som klaret","Max power":"Maks. effekt","Modes the optimiser may use":"Tilstande optimeringen må bruge","NOW":"NU","Name":"Navn",
+"Needs your attention":"Kræver din opmærksomhed","No battery added. The planner needs a battery to shift energy.":"Intet batteri tilføjet. Planlæggeren skal bruge et batteri for at flytte energi.",
+"No installer links":"Ingen installatører","No inverter yet. Add one to start receiving data.":"Ingen inverter endnu. Tilføj en for at modtage data.","No match in demo geocoder":"Ingen match i demo-søgningen",
+"No notifications yet":"Ingen notifikationer endnu","No plants yet":"Ingen anlæg endnu","No results":"Ingen resultater","No rules yet.":"Ingen regler endnu.","Notifications":"Notifikationer","OR":"ELLER",
+"Optional. Lets SmartCharge protect the house battery while the car charges.":"Valgfrit. Lader SmartCharge beskytte husets batteri, mens bilen lader.","Per year":"Pr. år","Phone number":"Telefonnummer",
+"Plant information":"Anlægsoplysninger","Plant location":"Anlæggets placering","Postal code":"Postnummer","Power, energy and battery state":"Effekt, energi og batteritilstand","Preferred language":"Foretrukket sprog",
+"Price area":"Prisområde","Pricing preset":"Prisprofil","Private home":"Privat bolig","Product key":"Produktnøgle","Product":"Produkt","Profile":"Profil","Purchase savings (EUR)":"Besparelse på køb (EUR)",
+"Read plant data":"Læs anlægsdata","Recompute coordinates":"Genberegn koordinater","Reduce export when the grid limit is zero":"Begræns eksport når netgrænsen er nul",
+"Register your PV system, connect your inverter and let the AI planner buy, store, use and sell power at the right hour.":"Registrér dit solcelleanlæg, forbind din inverter, og lad AI-planlæggeren købe, lagre, bruge og sælge strøm på det rigtige tidspunkt.",
+"Register your first solar plant to get started.":"Registrér dit første solcelleanlæg for at komme i gang.","Remove":"Fjern","Replace it below if your installer gave you a new key.":"Erstat den nedenfor, hvis din installatør har givet dig en ny nøgle.",
+"Reset":"Nulstil","Sale earnings (EUR)":"Salgsindtægt (EUR)","Save":"Gem","Saved %":"Sparet %","Saved (EUR)":"Sparet (EUR)","Saved so far":"Sparet indtil nu","Savings":"Besparelser","Search a location":"Søg efter en placering",
+"Search for your address. Location sets the price area and weather forecast.":"Søg efter din adresse. Placeringen bestemmer prisområde og vejrudsigt.","Search location":"Søg placering",
+"Search plants, inverters, settings…":"Søg anlæg, invertere, indstillinger…","Search result":"Søgeresultat","Select model":"Vælg model","Select your inverter manufacturer":"Vælg producent af din inverter",
+"Self-consumption":"Egetforbrug","Send charge and discharge commands":"Sende kommandoer om op- og afladning","Send savings report":"Send besparelsesrapport","Serial number":"Serienummer","Setup choice":"Opsætning",
+"Solar forecast":"Solprognose","Sorted by urgency":"Sorteret efter hast","Start at":"Start kl.","Street and number":"Gade og nummer","Street name incl. number":"Vejnavn inkl. nummer","Street":"Gade",
+"Subscribe (demo)":"Abonnér (demo)","Subscription plans":"Abonnementer","Support":"Support","Switch to Advanced to add time-based rules.":"Skift til Avanceret for at tilføje tidsbaserede regler.","System type":"Systemtype",
+"Target SoC %":"Mål for batteri %","Terms & Conditions":"Vilkår og betingelser","The inverter's serial number must be 14 characters long":"Inverterens serienummer skal være 14 tegn langt",
+"This is a clickable prototype with demo data. No account details are needed.":"Dette er en klikbar prototype med demodata. Der kræves ingen kontooplysninger.","This removes":"Dette sletter",
+"This sets default tariffs and cost presets.":"Det bestemmer standardtariffer og prisprofiler.","To":"Til","Today":"I dag","Total cost of sale":"Samlede salgsomkostninger","Transfer plant":"Overdrag anlæg",
+"Try Copenhagen, Aarhus or Berlin":"Prøv København, Aarhus eller Berlin","Unlock":"Lås op","Used for reports and notifications":"Bruges til rapporter og notifikationer","Waiting for your installer":"Venter på din installatør",
+"Wear cost per kWh cycled":"Slid pr. kWh der cykles","Welcome back":"Velkommen tilbage","You can also continue and connect later from the plant page.":"Du kan også fortsætte og forbinde senere fra anlægssiden.",
+"You can change this later in plant settings.":"Du kan ændre det senere i anlæggets indstillinger.","You chose to receive an existing system. Do not register a new one.":"Du har valgt at modtage et eksisterende system. Opret ikke et nyt.",
+"Your own rules on top of the AI plan":"Dine egne regler oven på AI-planen","so it isn't drained while the car charges.":"så det ikke tømmes, mens bilen lader.","trade energy for you.":"handle energi for dig.",
+", its inverters, settings and history. Type the plant name to confirm.":", dets invertere, indstillinger og historik. Skriv anlæggets navn for at bekræfte.",
+"1 inverter · DK and DE · cancel anytime":"1 inverter · DK og DE · opsig når som helst","1 inverter":"1 inverter","AI management is inactive":"AI-styring er inaktiv",
+"AI plans are paused. Turn on AI Plans in the top bar.":"AI-planer er sat på pause. Slå AI-planer til i topbjælken.","AI plans are unavailable – add a product key to activate AI management.":"AI-planer er ikke tilgængelige – tilføj en produktnøgle for at aktivere AI-styring.",
+"Action needed":"Handling påkrævet","Add key":"Tilføj nøgle","Add system":"Tilføj system","Area based costs":"Områdebaserede omkostninger","Back":"Tilbage","Battery locked for {n} h":"Batteriet er låst i {n} t",
+"Battery storage":"Batterilager","Battery unlocked":"Batteriet er låst op","Billing":"Fakturering","Buy price":"Købspris","C&I (Commercial & Industrial)":"Erhverv og industri","COMMAND THIS HOUR":"KOMMANDO DENNE TIME",
+"Call us":"Ring til os","Change subscription":"Skift abonnement","Changes discarded":"Ændringer kasseret","Charging {v} kW":"Oplader {v} kW","Chat now":"Chat nu","Check phone hours on axiomnovus.com":"Se telefontider på axiomnovus.com",
+"Choose this if you are the system owner setting up your solar system for the first time.":"Vælg dette, hvis du ejer systemet og opretter dit solcelleanlæg for første gang.","City not found in demo geocoder":"Byen findes ikke i demo-søgningen",
+"Cloud connect via":"Cloud-forbindelse via","Cloud connection for live data and control":"Cloud-forbindelse til live data og styring","Common questions":"Ofte stillede spørgsmål","Connect":"Forbind","Connecting…":"Forbinder…",
+"Coordinates recomputed":"Koordinater genberegnet","Cost settings":"Omkostninger","Costs & tariffs":"Omkostninger og tariffer","Costs used by the AI planner":"Omkostninger som AI-planlæggeren bruger","Created":"Oprettet",
+"Demo: account deletion requested":"Demo: sletning af konto anmodet","Demo: the report would open as a PDF":"Demo: rapporten ville åbne som PDF","Demo: “{n}” would open here":"Demo: “{n}” ville åbne her",
+"Discharging {v} kW":"Aflader {v} kW","Due diligence":"Due diligence","EV battery lock":"Batterilås til elbil","EV lock scheduled at {a} for {n} h":"Elbil-lås planlagt kl. {a} i {n} t",
+"Earn money by using your system to support grid stability and flexibility services.":"Tjen penge ved at bruge dit system til at støtte netstabilitet og fleksibilitetsydelser.","Email us":"Skriv til os",
+"Emails do not match":"E-mails stemmer ikke overens","Energy":"Energi","Enter a valid email":"Indtast en gyldig e-mail","Finish":"Afslut","For installations at private homes.":"Til installationer i private boliger.",
+"For systems at a commercial or industrial facility.":"Til systemer på en erhvervs- eller industriejendom.","Good afternoon":"God eftermiddag","Good evening":"God aften","Good morning":"Godmorgen","Grid tariff":"Nettarif",
+"Guides":"Vejledninger","Holding battery":"Holder batteriet","House battery available":"Husets batteri er tilgængeligt","House battery locked for EV charging":"Husets batteri er låst til elbil-opladning",
+"Huawei, SolaX, Fronius and more":"Huawei, SolaX, Fronius m.fl.","In the live product this opens the {p} login in a new window. For the demo, simulate the owner approving access.":"I det rigtige produkt åbner {p}-login i et nyt vindue. I demoen simulerer du, at ejeren godkender adgangen.",
+"Installer key":"Installatørnøgle","Installer link added":"Installatør tilføjet","Inverter added":"Inverter tilføjet","Link not created":"Forbindelse ikke oprettet","Linked":"Forbundet","Local / manual integration":"Lokal / manuel integration",
+"Lock":"Lås","Manual setup":"Manuel opsætning","Market, price area and grid tariffs":"Marked, prisområde og nettariffer","Monthly savings report ready":"Månedlig besparelsesrapport klar","Mostly cloudy":"Overvejende skyet",
+"My installer will transfer a system to me":"Min installatør overdrager et system til mig","Needs a product key":"Kræver en produktnøgle","Next":"Næste","No EV charger registered":"Ingen elbillader registreret",
+"No command was sent this hour; the system is in self-consumption mode or following the last command.":"Ingen kommando sendt denne time; systemet kører egetforbrug eller følger sidste kommando.",
+"No inverter registered":"Ingen inverter registreret","No new command":"Ingen ny kommando","No product key":"Ingen produktnøgle","Notifications cleared":"Notifikationer ryddet","Online now":"Online nu",
+"Open the {p} link, log in with the owner account, accept the two permissions and click Authorize.":"Åbn {p}-linket, log ind med ejerkontoen, acceptér de to tilladelser og klik Godkend.","Open":"Åbn",
+"Optimiser controls the battery":"Optimeringen styrer batteriet","Partly cloudy":"Delvist skyet","Plant created successfully":"Anlægget er oprettet","Plants":"Anlæg","Please accept the terms":"Acceptér venligst vilkårene",
+"Please fill in the required fields":"Udfyld venligst de påkrævede felter","Price peak at {h}:00 · {v} EUR/kWh":"Pristop kl. {h}:00 · {v} EUR/kWh","Procurement":"Indkøb",
+"Product key activated – AI management is on":"Produktnøgle aktiveret – AI-styring er slået til","Purchase price":"Købspris","Re-connect":"Forbind igen","Register a new solar plant":"Registrér et nyt solcelleanlæg",
+"Removed":"Fjernet","Save money by optimising your solar system: buy, use and sell energy at the right times.":"Spar penge ved at optimere dit solcelleanlæg: køb, brug og sælg energi på de rigtige tidspunkter.",
+"Saved as plant":"Gemt som anlæg","Savings, AI plans, EV lock":"Besparelser, AI-planer, elbil-lås","Schedule":"Planlæg","Sell price":"Salgspris","Sell":"Salg","Set-up and inverter guides":"Opsætning og inverter-vejledninger",
+"Settings":"Indstillinger","Plant":"Anlæg","Costs":"Omkostninger","Setup":"Opsætning","SmartCharge DK Annual":"SmartCharge DK årligt","Solar PV EPC":"Solcelle-EPC","Spot":"Spot","Subscribed – key filled in":"Abonnement oprettet – nøgle udfyldt","Sunny":"Solrigt",
+"TODAY":"I DAG","Talk to an energy advisor":"Tal med en energirådgiver","The new owner gets an email to accept {n}. You lose access once they accept.":"Den nye ejer får en e-mail for at acceptere {n}. Du mister adgangen, når de accepterer.",
+"Total purchase":"Samlet købspris","Transfer invite sent to {a} (demo)":"Overdragelse sendt til {a} (demo)","Typical reply within one working day":"Svar normalt inden for én arbejdsdag","URGENT":"HASTER",
+"Up to {n} days":"Op til {n} dage","Upgrade, downgrade or cancel":"Opgradér, nedgradér eller opsig","View plan":"Se plan","We are waiting to connect to your system or analysing your data.":"Vi venter på forbindelse til dit system eller analyserer dine data.",
+"We could not retrieve the plant setup. Please enter your details manually.":"Vi kunne ikke hente anlæggets opsætning. Indtast oplysningerne manuelt.","We retrieved your plant setup from {p}. Check it and continue.":"Vi hentede anlæggets opsætning fra {p}. Tjek den og fortsæt.",
+"Week":"Uge","You registered a {m} inverter. Click the {p} link below and log in with your owner account. Accept the two permissions and click Authorize. If the connection isn't confirmed, contact Axiom Novus support.":"Du har registreret en {m}-inverter. Klik på {p}-linket nedenfor og log ind med din ejerkonto. Acceptér de to tilladelser og klik Godkend. Hvis forbindelsen ikke bekræftes, så kontakt Axiom Novus support.",
+"Your installer or the current owner moves the system to your account. Do not register a new system.":"Din installatør eller den nuværende ejer flytter systemet til din konto. Opret ikke et nyt system.",
+"Your plant is saved when you continue from this step.":"Dit anlæg gemmes, når du fortsætter fra dette trin.","Your plant is saved. Changing the manufacturer updates it.":"Dit anlæg er gemt. Hvis du skifter producent, opdateres det.",
+"battery will cover it":"batteriet dækker det","no plan":"ingen plan","open":"åbne","price area":"prisområde","today":"i dag","urgent":"haster","{a} of {b} cleared today":"{a} af {b} klaret i dag",
+"{a} of {b} plants have AI management":"{a} af {b} anlæg har AI-styring","{m} inverters are added manually with model and serial number. No cloud link is needed.":"{m}-invertere tilføjes manuelt med model og serienummer. Der kræves ingen cloud-forbindelse.",
+"{n} deleted":"{n} slettet","{n} is ready":"{n} er klar","{n} registered":"{n} registreret","{n} saved":"{n} gemt","{n} things need you today.":"{n} ting kræver dig i dag.","{n} are urgent.":"{n} haster.","{n} is urgent.":"{n} haster.",
+"{p} link not created":"{p}-forbindelse ikke oprettet","{p} link":"{p}-link","{p} linked":"{p} forbundet","{p}% of the {v} EUR daily target":"{p}% af dagsmålet på {v} EUR",
+"AI plans activated for {n}":"AI-planer aktiveret for {n}","AI plans paused for {n}":"AI-planer sat på pause for {n}","charge":"oplader","discharge":"aflader","hold":"holder",
+"Custom":"Tilpasset","Standard household":"Standard husstand","Commercial":"Erhverv","Every day":"Hver dag","Weekdays":"Hverdage","Weekends":"Weekender","Monday":"Mandag","Tuesday":"Tirsdag","Wednesday":"Onsdag",
+"Thursday":"Torsdag","Friday":"Fredag","Saturday":"Lørdag","Sunday":"Søndag","Smart":"Smart","Always":"Altid","Never":"Aldrig","Hold battery":"Hold batteriet","Discharge to home":"Aflad til hjemmet","Sell to grid":"Sælg til nettet",
+"Weekly":"Ugentligt","Monthly":"Månedligt","Quarterly":"Kvartalsvis","Other":"Andet","Battery modes":"Batteritilstande","Costs incl. VAT":"Omkostninger inkl. moms","Fixed purchase price":"Fast købspris","Fixed sell price":"Fast salgspris",
+"Use manual tariffs":"Brug manuelle tariffer","Enable custom charging rules":"Aktivér egne opladningsregler","Always enforce the rules":"Håndhæv altid reglerne","Automatic EV charge filtering":"Automatisk filtrering af elbil-opladning",
+"Automatic lock during EV charging":"Automatisk lås under elbil-opladning","Use the schedule":"Brug tidsplanen","Charge from grid ":"Oplad fra nettet","Light mode":"Lys tilstand","Dark mode":"Mørk tilstand",
+"Morning":"Morgen","Afternoon":"Eftermiddag","Evening":"Aften","AI plan for tomorrow is ready":"AI-plan for i morgen er klar","Price spike expected 17:00–19:00":"Prisstigning ventet 17:00–19:00","Welcome to SmartCharge":"Velkommen til SmartCharge",
+"AI management is inactive for {n}.":"AI-styring er inaktiv for {n}.","All":"Alle","Wind":"Vind","Humidity":"Fugtighed","hrs":"timer","mins":"min","secs":"sek","0-export correction":"0-eksport-korrektion","This would delete your account and all {n} plants. In this demo nothing is deleted.":"Dette ville slette din konto og alle {n} anlæg. I demoen slettes intet.",
+"Plant name":"Anlægsnavn","Authorization":"Godkendelse","Inverter & battery":"Inverter og batteri",
+"Enter demo as {n}":"Gå til demo som {n}","Escape":"Escape"
+};
+const t = (s, p) => { let r = (S.lang==='da' && DA[s]!=null) ? DA[s] : s; if (p) for (const k in p) r = r.split('{'+k+'}').join(p[k]); return r; };
+const loc = () => S.lang==='da' ? 'da-DK' : 'en-GB';
+
+/* ---------- theme ---------- */
+function applyTheme(){ document.documentElement.dataset.theme = S.theme; document.documentElement.lang = S.lang; }
+const themeSwitch = () => `<div class="switch" role="group" aria-label="Theme"><button class="${S.theme==='light'?'on':''}" data-theme-set="light" title="${t('Light mode')}">${ic('sun',18)}</button><button class="${S.theme==='dark'?'on':''}" data-theme-set="dark" title="${t('Dark mode')}"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div>`;
+const langSwitch = () => `<div class="switch" role="group" aria-label="Language"><button class="${S.lang==='da'?'on':''}" data-lang-set="da">DA</button><button class="${S.lang==='en'?'on':''}" data-lang-set="en">EN</button></div>`;
+function bindSwitches(after){
+  $$('[data-theme-set]').forEach(b=>b.onclick=()=>{ S.theme=b.dataset.themeSet; applyTheme(); after(); });
+  $$('[data-lang-set]').forEach(b=>b.onclick=()=>{ S.lang=b.dataset.langSet; S.user.lang = S.lang==='da'?'Dansk':'English'; applyTheme(); after(); });
+}
+
+/* ---------- hero by time of day (photos from axiomnovus.com) ---------- */
+const HERO = {
+  morning:'https://axiomnovus.com/wp-content/uploads/2023/08/istock-1310384629-scaled.jpg',
+  afternoon:'https://axiomnovus.com/wp-content/uploads/2023/08/istock-895028314-min-scaled.jpg',
+  evening:'https://axiomnovus.com/wp-content/uploads/2023/08/istock-1288630738-scaled.jpg',
+  login:'https://axiomnovus.com/wp-content/uploads/2023/10/istock-1192897531.jpg'
+};
+const dayPart = () => S.heroPart || (h => h>=5&&h<12 ? 'morning' : h>=12&&h<18 ? 'afternoon' : 'evening')(new Date().getHours());
 /* ---------- charts (hand-rolled SVG) ---------- */
+const CC = () => S.theme==='dark' ? {grid:'rgba(238,241,247,.08)', axis:'rgba(238,241,247,.2)', lab:'rgba(238,241,247,.5)', ink:'#EEF1F7', inkFg:'#161C3B', hold:'rgba(238,241,247,.14)'} : {grid:'rgba(22,28,59,.07)', axis:'rgba(22,28,59,.15)', lab:'rgba(22,28,59,.45)', ink:'#161C3B', inkFg:'#fff', hold:'rgba(22,28,59,.12)'};
 function priceChart(p){
   const d = prices(p, S.date); const W=720, H=260, L=44, R=12, T=14, B=30;
   const series = S.priceView==='basic'
-    ? [{k:'buy', c:'#4F6CF5', n:'Purchase price'},{k:'sell', c:'#FF6000', n:'Sell price'}]
-    : [{k:'spot', c:'#161C3B', n:'Spot'},{k:'tariff', c:'#96CCC2', n:'Grid tariff'},{k:'buy', c:'#4F6CF5', n:'Total purchase'},{k:'sell', c:'#FF6000', n:'Sell'}];
+    ? [{k:'buy', c:'#4F6CF5', n:t('Purchase price')},{k:'sell', c:'#FF6000', n:t('Sell price')}]
+    : [{k:'spot', c:CC().ink, n:t('Spot')},{k:'tariff', c:'#96CCC2', n:t('Grid tariff')},{k:'buy', c:'#4F6CF5', n:t('Total purchase')},{k:'sell', c:'#FF6000', n:t('Sell')}];
   const max = Math.ceil(Math.max(...d.map(x=>x.buy))*10)/10; const X = h => L + h*(W-L-R)/24, Y = v => T + (1 - v/max)*(H-T-B);
   const step = k => d.map((x,i)=>`${i?'H':'M'}${X(x.h)} ${Y(x[k])}${i?'':''}`).join('') ;
   const path = k => { let s=''; d.forEach((x,i)=>{ s += (i? `V${Y(x[k])}`:`M${X(0)} ${Y(x[k])}`) + `H${X(x.h+1)}`; }); return s; };
   const ticks = [0, max/4, max/2, 3*max/4, max];
   const now = new Date(); const isToday = S.date === now.toISOString().slice(0,10); const nh = now.getHours() + now.getMinutes()/60;
   return `<div class="chart" style="position:relative"><svg viewBox="0 0 ${W} ${H}" data-chart="price">
-    ${ticks.map(t=>`<line x1="${L}" x2="${W-R}" y1="${Y(t)}" y2="${Y(t)}" stroke="rgba(22,28,59,.07)"/><text x="${L-8}" y="${Y(t)+4}" font-size="11" text-anchor="end" fill="rgba(22,28,59,.45)">${t.toFixed(2)}</text>`).join('')}
-    ${[0,3,6,9,12,15,18,21,24].map(h=>`<text x="${X(h)}" y="${H-8}" font-size="11" text-anchor="middle" fill="rgba(22,28,59,.45)">${String(h%24).padStart(2,'0')}:00</text>`).join('')}
+    ${ticks.map(t=>`<line x1="${L}" x2="${W-R}" y1="${Y(t)}" y2="${Y(t)}" stroke="${CC().grid}"/><text x="${L-8}" y="${Y(t)+4}" font-size="11" text-anchor="end" fill="${CC().lab}">${t.toFixed(2)}</text>`).join('')}
+    ${[0,3,6,9,12,15,18,21,24].map(h=>`<text x="${X(h)}" y="${H-8}" font-size="11" text-anchor="middle" fill="${CC().lab}">${String(h%24).padStart(2,'0')}:00</text>`).join('')}
     ${series.map(s=>`<path d="${path(s.k)}" fill="none" stroke="${s.c}" stroke-width="2.2"/>`).join('')}
-    ${isToday?`<line x1="${X(nh)}" x2="${X(nh)}" y1="${T}" y2="${H-B}" stroke="#161C3B" stroke-dasharray="4 4"/><rect x="${X(nh)-18}" y="${T-2}" width="36" height="18" rx="9" fill="#161C3B"/><text x="${X(nh)}" y="${T+11}" font-size="10" font-weight="700" text-anchor="middle" fill="#fff">NOW</text>`:''}
+    ${isToday?`<line x1="${X(nh)}" x2="${X(nh)}" y1="${T}" y2="${H-B}" stroke="${CC().ink}" stroke-dasharray="4 4"/><rect x="${X(nh)-18}" y="${T-2}" width="36" height="18" rx="9" fill="${CC().ink}"/><text x="${X(nh)}" y="${T+11}" font-size="10" font-weight="700" text-anchor="middle" fill="${CC().inkFg}">${t("NOW")}</text>`:''}
     <rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent" class="hover"/>
   </svg><div class="tip hidden"></div></div>
   <div class="legend" style="margin-top:8px">${series.map(s=>`<span><i style="background:${s.c}"></i>${s.n}</span>`).join('')}<span style="margin-left:auto">EUR/kWh · ${esc(p.costs.area)}</span></div>`;
@@ -485,18 +665,18 @@ function planChart(p){
   const soc = d.map((x,i)=>`${i?'L':'M'}${X(x.h)+bw/2+3} ${Ys(x.soc)}`).join('');
   const pv = d.map((x,i)=>`${i?'L':'M'}${X(x.h)+bw/2+3} ${mid - Math.min(4,x.pv)*sc}`).join('');
   return `<div class="chart" style="position:relative"><svg viewBox="0 0 ${W} ${H}" data-chart="plan">
-    <line x1="${L}" x2="${W-R}" y1="${mid}" y2="${mid}" stroke="rgba(22,28,59,.15)"/>
-    ${[-4,-2,2,4].map(v=>`<line x1="${L}" x2="${W-R}" y1="${mid-v*sc}" y2="${mid-v*sc}" stroke="rgba(22,28,59,.06)"/><text x="${L-8}" y="${mid-v*sc+4}" font-size="11" text-anchor="end" fill="rgba(22,28,59,.45)">${v}</text>`).join('')}
-    <text x="${L-8}" y="${mid+4}" font-size="11" text-anchor="end" fill="rgba(22,28,59,.45)">0 kW</text>
+    <line x1="${L}" x2="${W-R}" y1="${mid}" y2="${mid}" stroke="${CC().axis}"/>
+    ${[-4,-2,2,4].map(v=>`<line x1="${L}" x2="${W-R}" y1="${mid-v*sc}" y2="${mid-v*sc}" stroke="${CC().grid}"/><text x="${L-8}" y="${mid-v*sc+4}" font-size="11" text-anchor="end" fill="${CC().lab}">${v}</text>`).join('')}
+    <text x="${L-8}" y="${mid+4}" font-size="11" text-anchor="end" fill="${CC().lab}">0 kW</text>
     ${[0,25,50,75,100].map(v=>`<text x="${W-R+8}" y="${Ys(v)+4}" font-size="11" fill="rgba(47,107,96,.8)">${v}%</text>`).join('')}
-    ${d.map(x=>{ const h=Math.abs(x.kw)*sc; const y = x.kw>=0 ? mid-h : mid; const c = x.act==='charge' ? '#4F6CF5' : x.act==='discharge' ? '#FF6000' : 'rgba(22,28,59,.12)';
+    ${d.map(x=>{ const h=Math.abs(x.kw)*sc; const y = x.kw>=0 ? mid-h : mid; const c = x.act==='charge' ? '#4F6CF5' : x.act==='discharge' ? '#FF6000' : CC().hold;
       return `<rect x="${X(x.h)+3}" y="${y}" width="${bw}" height="${Math.max(2,h)}" rx="4" fill="${c}"/>`; }).join('')}
     <path d="${pv}" fill="none" stroke="#F5B400" stroke-width="2" stroke-dasharray="5 4"/>
     <path d="${soc}" fill="none" stroke="#2F6B60" stroke-width="2.4"/>
-    ${[0,3,6,9,12,15,18,21].map(h=>`<text x="${X(h)+bw/2+3}" y="${H-8}" font-size="11" text-anchor="middle" fill="rgba(22,28,59,.45)">${String(h).padStart(2,'0')}:00</text>`).join('')}
+    ${[0,3,6,9,12,15,18,21].map(h=>`<text x="${X(h)+bw/2+3}" y="${H-8}" font-size="11" text-anchor="middle" fill="${CC().lab}">${String(h).padStart(2,'0')}:00</text>`).join('')}
     <rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent" class="hover"/>
   </svg><div class="tip hidden"></div></div>
-  <div class="legend" style="margin-top:8px"><span><i style="background:#4F6CF5"></i>Charge</span><span><i style="background:#FF6000"></i>Discharge</span><span><i style="background:#2F6B60"></i>Battery SoC</span><span><i style="background:#F5B400"></i>Solar forecast</span></div>`;
+  <div class="legend" style="margin-top:8px"><span><i style="background:#4F6CF5"></i>${t("Charge")}</span><span><i style="background:#FF6000"></i>${t("Discharge")}</span><span><i style="background:#2F6B60"></i>${t("Battery SoC")}</span><span><i style="background:#F5B400"></i>${t("Solar forecast")}</span></div>`;
 }
 function bindChartHover(){
   $$('svg[data-chart]').forEach(svg=>{
@@ -525,6 +705,7 @@ function modal(html, onMount){ const o = document.createElement('div'); o.classN
 const routes = {dashboard:renderDashboard, plants:renderPlants, add:renderWizard, support:renderSupport, account:renderAccount};
 function go(h){ location.hash = h; }
 function route(){
+  applyTheme();
   if (!S.authed) return renderLogin();
   const [r, a, b] = location.hash.replace(/^#\/?/,'').split('/');
   const name = routes[r] ? r : 'dashboard';
@@ -537,37 +718,40 @@ window.addEventListener('hashchange', route);
 /* ---------- login ---------- */
 function renderLogin(){
   document.body.innerHTML = `<div class="login">
-    <div class="login-hero"><div class="eyebrow" style="color:rgba(255,255,255,.75)">Axiom Novus · SmartCharge</div>
-      <h1>Let your solar plant<br>trade energy for you.</h1>
-      <p>Register your PV system, connect your inverter and let the AI planner buy, store, use and sell power at the right hour.</p></div>
-    <div class="login-card"><img src="${IMG.logo}" alt="Axiom Novus">
-      <h2>Welcome back</h2><p class="muted">This is a clickable prototype with demo data. No account details are needed.</p>
-      <button class="btn btn-dark" style="width:100%" id="enter">Enter demo as ${esc(S.user.first)} ${ic('right',18)}</button>
-      <p class="muted" style="font-size:13px;margin-top:18px">All changes stay in this browser tab and reset on reload.</p></div></div><div class="toasts" id="toasts"></div>`;
+    <div class="login-hero" style="background-image:linear-gradient(180deg,rgba(22,28,59,.15),rgba(22,28,59,.85)),url('${HERO.login}')"><div class="eyebrow" style="color:rgba(255,255,255,.75)">${t("Axiom Novus \u00b7 SmartCharge")}</div>
+      <h1>${t("Let your solar plant")}<br>${t("trade energy for you.")}</h1>
+      <p>${t("Register your PV system, connect your inverter and let the AI planner buy, store, use and sell power at the right hour.")}</p></div>
+    <div class="login-card"><div class="login-top">${langSwitch()}${themeSwitch()}</div><img class="lc-logo" src="${IMG.logo}" alt="Axiom Novus" style="height:52px">
+      <h2>${t("Welcome back")}</h2><p class="muted">${t("This is a clickable prototype with demo data. No account details are needed.")}</p>
+      <button class="btn btn-dark" style="width:100%" id="enter">${t('Enter demo as {n}',{n:esc(S.user.first)})} ${ic('right',18)}</button>
+      <p class="muted" style="font-size:13px;margin-top:18px">${t("All changes stay in this browser tab and reset on reload.")}</p></div></div><div class="toasts" id="toasts"></div>`;
+  bindSwitches(renderLogin);
   $('#enter').onclick = () => { S.authed = true; if (!location.hash) location.hash = '#/dashboard'; route(); };
 }
 
 /* ---------- shell ---------- */
 function renderShell(active){
-  const p = plant(); const rail = [['dashboard','grid','Dashboard'],['plants','sun','Plants'],['add','plus','Add system'],['support','help','Support'],['account','user','Account']];
+  const p = plant(); const rail = [['dashboard','grid',t('Dashboard')],['plants','sun',t('Plants')],['add','plus',t('Add system')],['support','help',t('Support')],['account','user',t('Account')]];
   document.body.innerHTML = `<div class="app">
     <header class="topbar">
-      <a class="logo" href="#/dashboard"><img src="${IMG.logo}" alt="Axiom Novus"><span>SmartCharge</span></a>
-      <label class="search">${ic('search')}<input id="q" placeholder="Search plants, inverters, settings…"><span class="kbd">Ctrl K</span><div id="qres" class="menu hidden" style="top:56px;left:0;right:0"></div></label>
+      <a class="logo" href="#/dashboard"><img class="logo-full" src="${IMG.logo}" alt="Axiom Novus"><span class="logo-dark"><img src="https://axiomnovus.com/wp-content/uploads/2023/08/favicon.png" alt=""><b>Axiom<br>Novus</b></span><span>${t("SmartCharge")}</span></a>
+      <label class="search">${ic('search')}<input id="q" placeholder="${t("Search plants, inverters, settings\u2026")}"><span class="kbd">${t("Ctrl K")}</span><div id="qres" class="menu hidden" style="top:56px;left:0;right:0"></div></label>
       <div class="top-right">
         ${active==='dashboard'?`<div class="pill">${ic('sun',18)}<select id="plantSel">${S.plants.map(x=>`<option value="${x.id}" ${x.id===p.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></div>
-        <div class="pill ai"><span>AI Plans</span><button class="toggle ${S.aiPlans?'on':''}" id="aiToggle" aria-label="AI plans"></button></div>`:''}
+        <div class="pill ai"><span>${t("AI Plans")}</span><button class="toggle ${S.aiPlans?'on':''}" id="aiToggle" aria-label="${t("AI plans")}"></button></div>`:''}
+        ${langSwitch()}${themeSwitch()}
         <div style="position:relative"><button class="iconbtn" id="bell">${ic('bell')}${S.notifs.length?'<span class="dot"></span>':''}</button>
-          <div class="menu notif hidden" id="notifMenu"><h4>Notifications</h4>${S.notifs.length?S.notifs.map(n=>`<div class="n">${ic(n.ic)}<div>${esc(n.t)}<small>${esc(n.s)}</small></div></div>`).join('')+`<button id="clearN" class="muted">${ic('check',16)} Mark all as read</button>`:'<div class="empty" style="padding:12px">No notifications yet</div>'}</div></div>
+          <div class="menu notif hidden" id="notifMenu"><h4>${t("Notifications")}</h4>${S.notifs.length?S.notifs.map(n=>`<div class="n">${ic(n.ic)}<div>${esc(t(n.t))}<small>${esc(n.s)}</small></div></div>`).join('')+`<button id="clearN" class="muted">${ic('check',16)} ${t("Mark all as read")}</button>`:'<div class="empty" style="padding:12px">'+t("No notifications yet")+'</div>'}</div></div>
         <div style="position:relative"><button class="avatar" id="me"><span class="av">${esc(S.user.first[0]+S.user.last[0])}</span><span class="nm">${esc(S.user.first)} ${esc(S.user.last)}</span></button>
-          <div class="menu hidden" id="meMenu"><a href="#/dashboard">${ic('grid',18)} Dashboard</a><a href="#/account">${ic('user',18)} Account</a><button class="danger" id="logout">${ic('logout',18)} Log out</button></div></div>
+          <div class="menu hidden" id="meMenu"><a href="#/dashboard">${ic('grid',18)} ${t("Dashboard")}</a><a href="#/account">${ic('user',18)} ${t("Account")}</a><button class="danger" id="logout">${ic('logout',18)} ${t("Log out")}</button></div></div>
       </div>
     </header>
     <nav class="rail"><div class="brandmark"><img src="https://axiomnovus.com/wp-content/uploads/2023/08/favicon.png" alt="AN" style="width:30px;height:30px;object-fit:contain"></div>
       ${rail.map(([k,i,t])=>`<button class="${k===active?'active':''}" data-go="#/${k}" data-tip="${t}">${ic(i)}</button>`).join('')}
-      <div class="spacer"></div><button data-tip="Log out" id="logout2">${ic('logout')}</button></nav>
+      <div class="spacer"></div><button data-tip="${t("Log out")}" id="logout2">${ic('logout')}</button></nav>
     <main class="main" id="main"></main></div><div class="toasts" id="toasts"></div>`;
   $$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+  bindSwitches(route);
   const tog = (btn, menu) => { $(btn).onclick = e => { e.stopPropagation(); $$('.menu').forEach(m=>m.id!==menu && m.classList.add('hidden')); $('#'+menu).classList.toggle('hidden'); }; };
   tog('#bell','notifMenu'); tog('#me','meMenu');
   document.onclick = e => { if (!e.target.closest('.menu')) $$('.menu').forEach(m=>m.classList.add('hidden')); };
@@ -575,15 +759,15 @@ function renderShell(active){
   $('#logout').onclick = out; $('#logout2').onclick = out;
   const cn = $('#clearN'); if (cn) cn.onclick = () => { S.notifs=[]; route(); toast('Notifications cleared'); };
   if ($('#plantSel')) $('#plantSel').onchange = e => { S.plantId = +e.target.value; route(); };
-  if ($('#aiToggle')) $('#aiToggle').onclick = () => { S.aiPlans=!S.aiPlans; plant().settings.ai = S.aiPlans; route(); toast(`AI plans ${S.aiPlans?'activated':'paused'} for ${plant().name}`); };
+  if ($('#aiToggle')) $('#aiToggle').onclick = () => { S.aiPlans=!S.aiPlans; plant().settings.ai = S.aiPlans; route(); toast(t(S.aiPlans?'AI plans activated for {n}':'AI plans paused for {n}',{n:plant().name})); };
   // search
   const q = $('#q'), res = $('#qres');
   q.oninput = () => { const v = q.value.trim().toLowerCase(); if (!v) return res.classList.add('hidden');
     const hits = [];
     S.plants.forEach(x=>{ if (x.name.toLowerCase().includes(v) || x.loc.city.toLowerCase().includes(v)) hits.push([`#/plants/${x.id}/plant`,'sun',x.name,x.loc.label]);
       x.inverters.forEach(iv=>{ if ((iv.serial+iv.model).toLowerCase().includes(v)) hits.push([`#/plants/${x.id}/plant`,'inverter',iv.model,`${x.name} · ${iv.serial}`]); }); });
-    [['costs','wallet','Costs & tariffs'],['settings','cog','Charging rules'],['settings','car','EV battery lock']].forEach(([t,i,n])=>{ if (n.toLowerCase().includes(v)) hits.push([`#/plants/${plant().id}/${t}`,i,n,plant().name]); });
-    res.innerHTML = hits.length ? hits.slice(0,8).map(h=>`<a href="${h[0]}">${ic(h[1],18)}<span>${esc(h[2])}<small class="muted" style="display:block;font-size:12px">${esc(h[3])}</small></span></a>`).join('') : '<div class="empty" style="padding:12px">No results</div>';
+    [['costs','wallet',t('Costs & tariffs')],['settings','cog',t('Charging rules')],['settings','car',t('EV battery lock')]].forEach(([t,i,n])=>{ if (n.toLowerCase().includes(v)) hits.push([`#/plants/${plant().id}/${t}`,i,n,plant().name]); });
+    res.innerHTML = hits.length ? hits.slice(0,8).map(h=>`<a href="${h[0]}">${ic(h[1],18)}<span>${esc(h[2])}<small class="muted" style="display:block;font-size:12px">${esc(h[3])}</small></span></a>`).join('') : '<div class="empty" style="padding:12px">'+t("No results")+'</div>';
     res.classList.remove('hidden'); };
   document.onkeydown = e => { if ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); q.focus(); } if (e.key==='Escape') $$('.overlay').forEach(o=>o.remove()); };
 }
@@ -591,84 +775,86 @@ function renderShell(active){
 function attnItems(){
   const items = [];
   S.plants.forEach(p=>{
-    if (!p.key) items.push({id:'key'+p.id, cat:'billing', urgent:true, ic:'key', t:'AI management is inactive', s:p.name, chip:'No product key', btn:'Add key', act:()=>openKeyModal(p)});
-    if (MFR[p.mfr]?.cloud && !p.linked) items.push({id:'link'+p.id, cat:'setup', urgent:true, ic:'link', t:`${MFR[p.mfr].portal} link not created`, s:p.name, chip:'Action needed', btn:'Connect', act:()=>go(`#/plants/${p.id}/plant`)});
-    if (!p.inverters.length) items.push({id:'inv'+p.id, cat:'setup', urgent:false, ic:'inverter', t:'No inverter registered', s:p.name, chip:'Today', btn:'Add', act:()=>openInverterModal(p)});
+    if (!p.key) items.push({id:'key'+p.id, cat:'billing', urgent:true, ic:'key', t:t('AI management is inactive'), s:p.name, chip:t('No product key'), btn:t('Add key'), act:()=>openKeyModal(p)});
+    if (MFR[p.mfr]?.cloud && !p.linked) items.push({id:'link'+p.id, cat:'setup', urgent:true, ic:'link', t:t('{p} link not created',{p:MFR[p.mfr].portal}), s:p.name, chip:t('Action needed'), btn:t('Connect'), act:()=>go(`#/plants/${p.id}/plant`)});
+    if (!p.inverters.length) items.push({id:'inv'+p.id, cat:'setup', urgent:false, ic:'inverter', t:t('No inverter registered'), s:p.name, chip:t('Today'), btn:'Add', act:()=>openInverterModal(p)});
   });
   const p = plant(), pr = prices(p, S.date); const peak = pr.reduce((a,b)=>b.buy>a.buy?b:a);
-  items.push({id:'peak', cat:'energy', urgent:false, ic:'bolt', t:`Price peak at ${String(peak.h).padStart(2,'0')}:00 · ${fmt(peak.buy,2)} EUR/kWh`, s:`${p.name} · battery will cover it`, chip:'Today', btn:'View plan', act:()=>$('#planCard').scrollIntoView({behavior:'smooth'})});
-  items.push({id:'report', cat:'billing', urgent:false, ic:'chart', t:'Monthly savings report ready', s:'October 2026', chip:'Today', btn:'Open', act:()=>toast('Demo: the report would open as a PDF')});
+  items.push({id:'peak', cat:'energy', urgent:false, ic:'bolt', t:t('Price peak at {h}:00 · {v} EUR/kWh',{h:String(peak.h).padStart(2,'0'),v:fmt(peak.buy,2)}), s:`${p.name} · ${t('battery will cover it')}`, chip:t('Today'), btn:t('View plan'), act:()=>$('#planCard').scrollIntoView({behavior:'smooth'})});
+  items.push({id:'report', cat:'billing', urgent:false, ic:'chart', t:t('Monthly savings report ready'), s:new Date(2026,9,1).toLocaleDateString(loc(),{month:'long',year:'numeric'}), chip:t('Today'), btn:t('Open'), act:()=>toast('Demo: the report would open as a PDF')});
   return items;
 }
 function renderDashboard(){
-  const p = plant(); const hr = new Date().getHours(); const greet = hr<12?'Good morning':hr<18?'Good afternoon':'Good evening';
+  const p = plant(); const hr = new Date().getHours(); const part = dayPart(); const greet = t({morning:'Good morning', afternoon:'Good afternoon', evening:'Good evening'}[part]);
   const items = attnItems(); const open = items.filter(i=>!S.done[i.id]); const urgent = open.filter(i=>i.urgent).length;
   const today = savings(p,1), sv = savings(p,S.savingsRange); const target = 3.5; const pct = Math.min(100, today.saved/target*100);
   const w = weather(p), nowH = new Date().getHours(), wn = w[nowH];
   const pl = p.key && S.aiPlans ? plan(p,S.date) : null; const cur = pl ? pl[nowH] : null;
-  const dateStr = new Date().toLocaleDateString('en-GB',{weekday:'long', day:'numeric', month:'long'});
+  const dateStr = new Date().toLocaleDateString(loc(),{weekday:'long', day:'numeric', month:'long'});
   const wk = Math.ceil(((new Date()-new Date(new Date().getFullYear(),0,1))/864e5+1)/7);
   const filt = S.attnFilter; const shown = items.filter(i=>filt==='all'||i.cat===filt);
-  const cats = [['all','All'],['setup','Setup'],['energy','Energy'],['billing','Billing']];
+  const cats = [['all',t('All')],['setup',t('Setup')],['energy',t('Energy')],['billing',t('Billing')]];
   const bbox = `${p.loc.lng-0.03},${p.loc.lat-0.015},${p.loc.lng+0.03},${p.loc.lat+0.015}`;
   $('#main').innerHTML = `<div class="page">
-  ${!p.key?`<div class="banner">${ic('key')}<div><b>AI management is inactive for ${esc(p.name)}.</b> Add a product key from your installer, or subscribe to activate AI plans.</div><button class="btn btn-orange btn-sm" id="bKey">Add product key</button></div>`:''}
-  <section class="hero">
-    <div><div class="eyebrow">${esc(dateStr)} · Week ${wk}</div>
+  ${!p.key?`<div class="banner">${ic('key')}<div><b>${t('AI management is inactive for {n}.',{n:esc(p.name)})}</b> ${t("Add a product key from your installer, or subscribe to activate AI plans.")}</div><button class="btn btn-orange btn-sm" id="bKey">${t("Add product key")}</button></div>`:''}
+  <section class="hero" style="background-image:linear-gradient(100deg,rgba(22,28,59,.88) 0%,rgba(22,28,59,.55) 45%,rgba(22,28,59,.1) 100%),url('${HERO[part]}')">
+    <div class="hero-times">${['morning','afternoon','evening'].map(k=>`<button class="${k===part?'on':''}" data-part="${k}">${t(k[0].toUpperCase()+k.slice(1))}</button>`).join('')}</div>
+    <div><div class="eyebrow">${esc(dateStr)} · ${t('Week')} ${wk}</div>
       <h1>${greet},<br>${esc(S.user.first)}</h1>
-      <p>${open.length} things need you today.${urgent?` <span style="color:var(--orange)">●</span> <b>${urgent} ${urgent>1?'are':'is'} urgent.</b>`:''}</p>
-      <div class="actions"><button class="btn btn-white" data-go="#/plants/${p.id}/plant">Open ${esc(p.name)} <span style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center">${ic('arrow',16)}</span></button>
-        <button class="btn btn-glass" data-go="#/add">${ic('plus',18)} Add a system</button></div></div>
-    <div class="hero-panel"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:18px">Today</b><small class="muted">${esc(p.name)}</small></div>
-      <div><div class="muted" style="font-size:13px">Saved so far</div><div class="big-num">${fmt(today.saved)}<small>EUR</small></div></div>
-      <div class="bar"><i style="width:${pct}%"></i></div><small class="muted" style="font-size:12px">${Math.round(pct)}% of the ${fmt(target)} EUR daily target</small>
-      <div class="mini"><div class="muted" style="font-size:13px">Battery right now</div><div style="display:flex;align-items:baseline;gap:8px"><span class="v">${cur?Math.round(cur.soc):'—'}${cur?'%':''}</span><span class="d">${cur?cur.act:'no plan'}</span></div></div>
-      <div><div class="eyebrow" style="margin-bottom:8px">Health</div><div class="health"><span class="${p.inverters.length?'on':''}">Inverter</span><span class="${p.linked||!MFR[p.mfr]?.cloud?'on':''}">Cloud</span><span class="${p.key?'on':''}">AI</span></div></div>
+      <p>${t('{n} things need you today.',{n:open.length})}${urgent?` <span style="color:var(--orange)">●</span> <b>${t(urgent>1?'{n} are urgent.':'{n} is urgent.',{n:urgent})}</b>`:''}</p>
+      <div class="actions"><button class="btn btn-white" data-go="#/plants/${p.id}/plant">${t('Open')} ${esc(p.name)} <span style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center">${ic('arrow',16)}</span></button>
+        <button class="btn btn-glass" data-go="#/add">${ic('plus',18)} ${t("Add a system")}</button></div></div>
+    <div class="hero-panel"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:18px">${t("Today")}</b><small class="muted">${esc(p.name)}</small></div>
+      <div><div class="muted" style="font-size:13px">${t("Saved so far")}</div><div class="big-num">${fmt(today.saved)}<small>EUR</small></div></div>
+      <div class="bar"><i style="width:${pct}%"></i></div><small class="muted" style="font-size:12px">${t('{p}% of the {v} EUR daily target',{p:Math.round(pct),v:fmt(target)})}</small>
+      <div class="mini"><div class="muted" style="font-size:13px">${t("Battery right now")}</div><div style="display:flex;align-items:baseline;gap:8px"><span class="v">${cur?Math.round(cur.soc):'—'}${cur?'%':''}</span><span class="d">${cur?t(cur.act):t('no plan')}</span></div></div>
+      <div><div class="eyebrow" style="margin-bottom:8px">${t("Health")}</div><div class="health"><span class="${p.inverters.length?'on':''}">${t("Inverter")}</span><span class="${p.linked||!MFR[p.mfr]?.cloud?'on':''}">${t("Cloud")}</span><span class="${p.key?'on':''}">${t("AI")}</span></div></div>
     </div>
   </section>
   <div class="grid g-dash">
     <div class="grid" style="align-content:start">
       <section class="attn">
-        <div class="card-h"><div class="ic">${ic('bolt')}</div><div><h3>Needs your attention</h3><small><span style="color:var(--orange)">●</span> ${urgent} urgent · ${open.length-urgent} today</small></div><div class="right count">${open.length}<small> open</small></div></div>
-        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div class="seg">${cats.map(([k,n])=>`<button class="${filt===k?'on':''}" data-af="${k}">${n} ${items.filter(i=>(k==='all'||i.cat===k)&&!S.done[i.id]).length}</button>`).join('')}</div><small style="margin-left:auto;color:rgba(255,255,255,.8)">Sorted by urgency</small></div>
+        <div class="card-h"><div class="ic">${ic('bolt')}</div><div><h3>${t("Needs your attention")}</h3><small><span style="color:var(--orange)">●</span> ${urgent} ${t('urgent')} · ${open.length-urgent} ${t('today')}</small></div><div class="right count">${open.length}<small> ${t('open')}</small></div></div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div class="seg">${cats.map(([k,n])=>`<button class="${filt===k?'on':''}" data-af="${k}">${n} ${items.filter(i=>(k==='all'||i.cat===k)&&!S.done[i.id]).length}</button>`).join('')}</div><small style="margin-left:auto;color:rgba(255,255,255,.8)">${t("Sorted by urgency")}</small></div>
         ${['urgent','today'].map(g=>{ const rows = shown.filter(i=>g==='urgent'?i.urgent:!i.urgent); if (!rows.length) return '';
-          return `<div class="section">${g==='urgent'?'URGENT':'TODAY'} <span class="chip" style="height:20px;background:rgba(255,255,255,.2);color:#fff">${rows.length}</span></div>`+rows.map(i=>`
+          return `<div class="section">${g==='urgent'?t('URGENT'):t('TODAY')} <span class="chip" style="height:20px;background:rgba(255,255,255,.2);color:#fff">${rows.length}</span></div>`+rows.map(i=>`
           <div class="attn-row ${i.urgent?'urgent':''} ${S.done[i.id]?'done':''}"><div class="ai">${ic(i.ic)}</div><div><b>${esc(i.t)}</b><small>${ic('sun',12)} ${esc(i.s)}</small></div>
             <div class="r"><span class="chip ${i.urgent?'orange':''}" style="${i.urgent?'':'background:rgba(255,255,255,.18);color:#fff'}">${esc(i.chip)}</span>
-            <button class="btn btn-white btn-sm" data-act="${i.id}">${esc(i.btn)}</button><button title="Mark done" data-done="${i.id}" style="color:#fff;opacity:.8">${ic(S.done[i.id]?'refresh':'check',18)}</button></div></div>`).join(''); }).join('')}
-        <div style="display:flex;align-items:center;gap:14px;margin-top:20px"><div class="bar" style="flex:1;background:rgba(255,255,255,.2)"><i style="width:${(items.length-open.length)/items.length*100}%;background:#fff"></i></div><small>${items.length-open.length} of ${items.length} cleared today</small><button style="color:rgba(255,255,255,.8);font-size:13px" id="resetDone">Reset</button></div>
+            <button class="btn btn-white btn-sm" data-act="${i.id}">${esc(i.btn)}</button><button title="${t("Mark done")}" data-done="${i.id}" style="color:#fff;opacity:.8">${ic(S.done[i.id]?'refresh':'check',18)}</button></div></div>`).join(''); }).join('')}
+        <div style="display:flex;align-items:center;gap:14px;margin-top:20px"><div class="bar" style="flex:1;background:rgba(255,255,255,.2)"><i style="width:${(items.length-open.length)/items.length*100}%;background:#fff"></i></div><small>${t('{a} of {b} cleared today',{a:items.length-open.length,b:items.length})}</small><button style="color:rgba(255,255,255,.8);font-size:13px" id="resetDone">${t("Reset")}</button></div>
       </section>
-      <section class="card" id="planCard"><div class="card-h"><div class="ic">${ic('chart')}</div><div><h3>AI plan and history</h3><small>Hourly battery actions planned by the optimiser</small></div>
-        <div class="right"><input type="date" class="input" style="height:40px;width:160px" value="${S.date}" data-date><button class="iconbtn" style="box-shadow:none;background:var(--soft)" title="Download CSV" id="dlPlan">${ic('down',18)}</button></div></div>
-        ${pl? planChart(p) : `<div class="empty" style="text-align:center;padding:60px 20px">${ic('chart',36)}<p style="margin-top:12px">${!p.key?'AI plans are unavailable – add a product key to activate AI management.':!S.aiPlans?'AI plans are paused. Turn on AI Plans in the top bar.':'We are waiting to connect to your system or analysing your data.'}</p></div>`}
+      <section class="card" id="planCard"><div class="card-h"><div class="ic">${ic('chart')}</div><div><h3>${t("AI plan and history")}</h3><small>${t("Hourly battery actions planned by the optimiser")}</small></div>
+        <div class="right"><input type="date" class="input" style="height:40px;width:160px" value="${S.date}" data-date><button class="iconbtn" style="box-shadow:none;background:var(--soft)" title="${t("Download CSV")}" id="dlPlan">${ic('down',18)}</button></div></div>
+        ${pl? planChart(p) : `<div class="empty" style="text-align:center;padding:60px 20px">${ic('chart',36)}<p style="margin-top:12px">${!p.key?t('AI plans are unavailable – add a product key to activate AI management.'):!S.aiPlans?t('AI plans are paused. Turn on AI Plans in the top bar.'):t('We are waiting to connect to your system or analysing your data.')}</p></div>`}
       </section>
-      <section class="card"><div class="card-h"><div class="ic">${ic('bolt')}</div><div><h3>Electricity price estimate</h3><small>Day-ahead spot price plus your costs</small></div>
-        <div class="right"><div class="seg"><button class="${S.priceView==='basic'?'on':''}" data-pv="basic">Basic</button><button class="${S.priceView==='adv'?'on':''}" data-pv="adv">Advanced</button></div></div></div>
+      <section class="card"><div class="card-h"><div class="ic">${ic('bolt')}</div><div><h3>${t("Electricity price estimate")}</h3><small>${t("Day-ahead spot price plus your costs")}</small></div>
+        <div class="right"><div class="seg"><button class="${S.priceView==='basic'?'on':''}" data-pv="basic">${t("Basic")}</button><button class="${S.priceView==='adv'?'on':''}" data-pv="adv">${t("Advanced")}</button></div></div></div>
         ${priceChart(p)}</section>
     </div>
     <div class="grid" style="align-content:start">
-      <section class="dark-card" style="border-radius:var(--r-xl);padding:22px"><div style="display:flex;align-items:center;gap:8px"><span style="color:var(--orange)">●</span><small style="letter-spacing:.1em;font-weight:600">COMMAND THIS HOUR · ${String(nowH).padStart(2,'0')}:00</small></div>
-        <div style="font-size:26px;font-weight:400;margin:10px 0 4px">${cur? (cur.act==='charge'?`Charging ${fmt(cur.kw,1)} kW`:cur.act==='discharge'?`Discharging ${fmt(-cur.kw,1)} kW`:'Holding battery') : 'No new command'}</div>
-        <small>${cur? `Buy price ${fmt(cur.buy,3)} EUR/kWh · SoC ${Math.round(cur.soc)}%` : 'No command was sent this hour; the system is in self-consumption mode or following the last command.'}</small>
+      <section class="dark-card" style="border-radius:var(--r-xl);padding:22px"><div style="display:flex;align-items:center;gap:8px"><span style="color:var(--orange)">●</span><small style="letter-spacing:.1em;font-weight:600">${t('COMMAND THIS HOUR')} · ${String(nowH).padStart(2,'0')}:00</small></div>
+        <div style="font-size:26px;font-weight:400;margin:10px 0 4px">${cur? (cur.act==='charge'?t('Charging {v} kW',{v:fmt(cur.kw,1)}):cur.act==='discharge'?t('Discharging {v} kW',{v:fmt(-cur.kw,1)}):t('Holding battery')) : t('No new command')}</div>
+        <small>${cur? `${t('Buy price')} ${fmt(cur.buy,3)} EUR/kWh · SoC ${Math.round(cur.soc)}%` : t('No command was sent this hour; the system is in self-consumption mode or following the last command.')}</small>
         <div style="display:flex;gap:6px;margin-top:16px">${(pl||Array(24).fill({act:'hold'})).map((x,h)=>`<i title="${String(h).padStart(2,'0')}:00 ${x.act}" style="flex:1;height:22px;border-radius:4px;background:${x.act==='charge'?'#6D84F7':x.act==='discharge'?'#FF6000':'rgba(255,255,255,.15)'};${h===nowH?'outline:2px solid #fff;outline-offset:1px':''}"></i>`).join('')}</div></section>
-      <section class="card"><div class="card-h"><div class="ic">${ic('wallet')}</div><div><h3>Savings</h3><small>Up to ${S.savingsRange} days</small></div></div>
-        <div class="kpis"><div class="kpi"><div class="v pos">${p.key?fmt(sv.purchase):'–'}</div><div class="l">Purchase savings (EUR)</div></div><div class="kpi"><div class="v pos">${p.key?fmt(sv.sale):'–'}</div><div class="l">Sale earnings (EUR)</div></div>
-          <div class="kpi"><div class="v">${p.key?fmt(sv.saved):'–'}</div><div class="l">Saved (EUR)</div></div><div class="kpi"><div class="v">${p.key?Math.round(sv.pct)+' %':'– %'}</div><div class="l">Saved %</div></div></div>
-        <div class="seg" style="width:100%;margin-top:14px;display:flex">${[7,30,365].map(d=>`<button style="flex:1" class="${S.savingsRange===d?'on':''}" data-sr="${d}">Up to ${d} days</button>`).join('')}</div></section>
+      <section class="card"><div class="card-h"><div class="ic">${ic('wallet')}</div><div><h3>${t("Savings")}</h3><small>${t('Up to {n} days',{n:S.savingsRange})}</small></div></div>
+        <div class="kpis"><div class="kpi"><div class="v pos">${p.key?fmt(sv.purchase):'–'}</div><div class="l">${t("Purchase savings (EUR)")}</div></div><div class="kpi"><div class="v pos">${p.key?fmt(sv.sale):'–'}</div><div class="l">${t("Sale earnings (EUR)")}</div></div>
+          <div class="kpi"><div class="v">${p.key?fmt(sv.saved):'–'}</div><div class="l">${t("Saved (EUR)")}</div></div><div class="kpi"><div class="v">${p.key?Math.round(sv.pct)+' %':'– %'}</div><div class="l">${t("Saved %")}</div></div></div>
+        <div class="seg" style="width:100%;margin-top:14px;display:flex">${[7,30,365].map(d=>`<button style="flex:1" class="${S.savingsRange===d?'on':''}" data-sr="${d}">${t('Up to {n} days',{n:d})}</button>`).join('')}</div></section>
       <section class="card" id="evCard"></section>
-      <section class="card"><div class="card-h"><div class="ic">${ic('pin')}</div><div><h3>${esc(p.loc.city)}, ${esc(p.loc.country)}</h3><small>${new Date().toLocaleDateString('en-GB',{weekday:'long'})}, ${String(nowH).padStart(2,'0')}:00</small></div><div class="right"><div class="seg"><button class="${!S.fahr?'on':''}" data-u="c">°C</button><button class="${S.fahr?'on':''}" data-u="f">°F</button></div></div></div>
-        <div class="weather-now">${ic('cloud',44)}<div><div class="t">${tC(wn.t)}°</div><small style="color:rgba(255,255,255,.75)">${wn.cloud>60?'Mostly cloudy':wn.cloud>35?'Partly cloudy':'Sunny'}</small></div>
-          <div style="margin-left:auto;display:grid;gap:6px;font-size:13px"><span>${ic('cloud',14)} Cloud ${wn.cloud}%</span><span>${ic('wind',14)} Wind ${wn.wind} km/h</span><span>${ic('drop',14)} Humidity ${wn.hum}%</span></div></div>
+      <section class="card"><div class="card-h"><div class="ic">${ic('pin')}</div><div><h3>${esc(p.loc.city)}, ${esc(p.loc.country)}</h3><small>${new Date().toLocaleDateString(loc(),{weekday:'long'})}, ${String(nowH).padStart(2,'0')}:00</small></div><div class="right"><div class="seg"><button class="${!S.fahr?'on':''}" data-u="c">°C</button><button class="${S.fahr?'on':''}" data-u="f">°F</button></div></div></div>
+        <div class="weather-now">${ic('cloud',44)}<div><div class="t">${tC(wn.t)}°</div><small style="color:rgba(255,255,255,.75)">${wn.cloud>60?t('Mostly cloudy'):wn.cloud>35?t('Partly cloudy'):t('Sunny')}</small></div>
+          <div style="margin-left:auto;display:grid;gap:6px;font-size:13px"><span>${ic('cloud',14)} ${t('Cloud')} ${wn.cloud}%</span><span>${ic('wind',14)} ${t('Wind')} ${wn.wind} km/h</span><span>${ic('drop',14)} ${t('Humidity')} ${wn.hum}%</span></div></div>
         <div class="hours">${w.slice(nowH, nowH+24).map((x,i)=>`<div class="${i===0?'now':''}">${String(x.h).padStart(2,'0')}:00<b>${tC(x.t)}°</b>${x.hum}%</div>`).join('')}</div></section>
-      <section class="card" style="padding:12px"><iframe class="map" title="Plant location" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${p.loc.lat},${p.loc.lng}"></iframe></section>
+      <section class="card" style="padding:12px"><iframe class="map" title="${t("Plant location")}" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${p.loc.lat},${p.loc.lng}"></iframe></section>
     </div>
   </div>
-  <section class="card"><div class="card-h"><div class="ic"><img src="${IMG.sdg}" alt="" style="width:28px;height:28px;object-fit:contain"></div><div><h3>Axiom Novus EPC services</h3><small>End-to-end support for your solar project</small></div></div>
-    <div class="svc-strip">${[[IMG.dd,'Due diligence'],[IMG.proc,'Procurement'],[IMG.batt,'Battery storage'],[IMG.panel,'Solar PV EPC']].map(([s,n])=>`<a class="svc" href="https://axiomnovus.com/" target="_blank" rel="noopener"><img src="${s}" alt="">${n}</a>`).join('')}</div></section>
+  <section class="card"><div class="card-h"><div class="ic"><img src="${IMG.sdg}" alt="" style="width:28px;height:28px;object-fit:contain"></div><div><h3>${t("Axiom Novus EPC services")}</h3><small>${t("End-to-end support for your solar project")}</small></div></div>
+    <div class="svc-strip">${[[IMG.dd,t('Due diligence')],[IMG.proc,t('Procurement')],[IMG.batt,t('Battery storage')],[IMG.panel,t('Solar PV EPC')]].map(([s,n])=>`<a class="svc" href="https://axiomnovus.com/" target="_blank" rel="noopener"><img src="${s}" alt="">${n}</a>`).join('')}</div></section>
   </div>`;
   renderEV();
   bindChartHover();
   $$('[data-go]', $('#main')).forEach(b=>b.onclick=()=>go(b.dataset.go));
+  $$('[data-part]').forEach(b=>b.onclick=()=>{ S.heroPart=b.dataset.part; renderDashboard(); });
   $$('[data-af]').forEach(b=>b.onclick=()=>{ S.attnFilter=b.dataset.af; renderDashboard(); });
   $$('[data-act]').forEach(b=>b.onclick=()=>items.find(i=>i.id===b.dataset.act).act());
   $$('[data-done]').forEach(b=>b.onclick=()=>{ const id=b.dataset.done; S.done[id]=!S.done[id]; renderDashboard(); });
@@ -690,17 +876,17 @@ function renderEV(){
   const el = $('#evCard'); if (!el) return; clearInterval(evTimer);
   const left = Math.max(0, S.ev.until - Date.now()); const hh = Math.floor(left/36e5), mm = Math.floor(left%36e5/6e4), ss = Math.floor(left%6e4/1e3);
   const dg = n => String(n).padStart(2,'0').split('').map(d=>`<span class="d">${d}</span>`).join('');
-  el.innerHTML = `<div class="card-h"><div class="ic">${ic('car')}</div><div><h3>EV lock status</h3><small>${left?'House battery locked for EV charging':'House battery available'}</small></div><div class="right">${left?'<span class="chip warn">Locked</span>':'<span class="chip mint">Free</span>'}</div></div>
-    <div style="display:flex;gap:14px;align-items:flex-end;justify-content:center"><div><div class="lock-timer">${dg(hh)}</div><div class="lab">hrs</div></div><div><div class="lock-timer">${dg(mm)}</div><div class="lab">mins</div></div><div><div class="lock-timer">${dg(ss)}</div><div class="lab">secs</div></div></div>
-    <div class="seg" style="display:flex;margin:16px 0 10px"><button style="flex:1" class="${S.ev.mode==='now'?'on':''}" data-ev="now">Lock now</button><button style="flex:1" class="${S.ev.mode==='later'?'on':''}" data-ev="later">Lock later</button></div>
-    <p class="muted" style="font-size:14px">Lock the house battery for <b>${S.ev.hours} h</b> so it isn't drained while the car charges.</p>
+  el.innerHTML = `<div class="card-h"><div class="ic">${ic('car')}</div><div><h3>${t("EV lock status")}</h3><small>${left?t('House battery locked for EV charging'):t('House battery available')}</small></div><div class="right">${left?'<span class="chip warn">'+t("Locked")+'</span>':'<span class="chip mint">'+t("Free")+'</span>'}</div></div>
+    <div style="display:flex;gap:14px;align-items:flex-end;justify-content:center"><div><div class="lock-timer">${dg(hh)}</div><div class="lab">${t('hrs')}</div></div><div><div class="lock-timer">${dg(mm)}</div><div class="lab">${t('mins')}</div></div><div><div class="lock-timer">${dg(ss)}</div><div class="lab">${t('secs')}</div></div></div>
+    <div class="seg" style="display:flex;margin:16px 0 10px"><button style="flex:1" class="${S.ev.mode==='now'?'on':''}" data-ev="now">${t("Lock now")}</button><button style="flex:1" class="${S.ev.mode==='later'?'on':''}" data-ev="later">${t("Lock later")}</button></div>
+    <p class="muted" style="font-size:14px">${t("Lock the house battery for")} <b>${S.ev.hours} h</b> ${t("so it isn't drained while the car charges.")}</p>
     <input type="range" class="range" min="1" max="10" value="${S.ev.hours}" id="evH">
-    ${S.ev.mode==='later'?`<div class="field" style="margin-top:8px"><label>Start at</label><input type="time" class="input" id="evAt" value="22:00"></div>`:''}
-    <div style="display:flex;gap:10px;margin-top:14px">${left?`<button class="btn btn-ghost" style="flex:1" id="evUnlock">Unlock</button>`:`<button class="btn btn-dark" style="flex:1" id="evLock">${S.ev.mode==='now'?'Lock':'Schedule'}</button>`}</div>`;
+    ${S.ev.mode==='later'?`<div class="field" style="margin-top:8px"><label>${t("Start at")}</label><input type="time" class="input" id="evAt" value="22:00"></div>`:''}
+    <div style="display:flex;gap:10px;margin-top:14px">${left?`<button class="btn btn-ghost" style="flex:1" id="evUnlock">${t("Unlock")}</button>`:`<button class="btn btn-dark" style="flex:1" id="evLock">${S.ev.mode==='now'?t('Lock'):t('Schedule')}</button>`}</div>`;
   $$('[data-ev]').forEach(b=>b.onclick=()=>{ S.ev.mode=b.dataset.ev; renderEV(); });
   $('#evH').oninput = e => { S.ev.hours=+e.target.value; $('#evCard p b').textContent = S.ev.hours+' h'; };
   $('#evH').onchange = () => renderEV();
-  if ($('#evLock')) $('#evLock').onclick = () => { if (S.ev.mode==='now'){ S.ev.until = Date.now()+S.ev.hours*36e5; toast(`Battery locked for ${S.ev.hours} h`); } else { toast(`EV lock scheduled at ${$('#evAt').value} for ${S.ev.hours} h`); } renderEV(); };
+  if ($('#evLock')) $('#evLock').onclick = () => { if (S.ev.mode==='now'){ S.ev.until = Date.now()+S.ev.hours*36e5; toast(t('Battery locked for {n} h',{n:S.ev.hours})); } else { toast(t('EV lock scheduled at {a} for {n} h',{a:$('#evAt').value,n:S.ev.hours})); } renderEV(); };
   if ($('#evUnlock')) $('#evUnlock').onclick = () => { S.ev.until = 0; toast('Battery unlocked'); renderEV(); };
   if (left) evTimer = setInterval(()=>{ if (!$('#evCard')) return clearInterval(evTimer); renderEV(); }, 1000);
 }
@@ -708,23 +894,23 @@ function renderEV(){
 const setPath = (o, path, v) => { const ks = path.split('.'); const last = ks.pop(); ks.reduce((a,k)=>a[k], o)[last] = v; };
 const getPath = (o, path) => path.split('.').reduce((a,k)=>a==null?a:a[k], o);
 const tg = (k, on) => `<button class="toggle ${on?'on':''}" data-k="${k}" data-t="bool" type="button"></button>`;
-const sel = (k, opts, v) => `<select class="select" data-k="${k}" data-t="str">${opts.map(o=>`<option ${o==v?'selected':''}>${esc(o)}</option>`).join('')}</select>`;
+const sel = (k, opts, v) => `<select class="select" data-k="${k}" data-t="str">${opts.map(o=>`<option value="${esc(o)}" ${o==v?'selected':''}>${esc(t(o))}</option>`).join('')}</select>`;
 const num = (k, v, unit, dis) => `<div class="unit-in"><span>${unit||''}</span><input class="input" type="number" step="any" data-k="${k}" data-t="num" value="${esc(v)}" ${dis?'disabled':''}></div>`;
-const foot = () => `<div class="card-foot"><button class="btn btn-ghost btn-sm" data-reset>Reset</button><button class="btn btn-dark btn-sm" data-save disabled>${ic('check',16)} Save</button></div>`;
+const foot = () => `<div class="card-foot"><button class="btn btn-ghost btn-sm" data-reset>${t("Reset")}</button><button class="btn btn-dark btn-sm" data-save disabled>${ic('check',16)} ${t("Save")}</button></div>`;
 
 function renderPlants(id, tab){
-  if (!S.plants.length){ $('#main').innerHTML = `<div class="card" style="text-align:center;padding:60px">${ic('sun',40)}<h3 style="margin:14px 0 6px">No plants yet</h3><p class="muted">Register your first solar plant to get started.</p><button class="btn btn-dark" style="margin-top:20px" data-go="#/add">${ic('plus',18)} Add plant</button></div>`; $$('[data-go]',$('#main')).forEach(b=>b.onclick=()=>go(b.dataset.go)); return; }
+  if (!S.plants.length){ $('#main').innerHTML = `<div class="card" style="text-align:center;padding:60px">${ic('sun',40)}<h3 style="margin:14px 0 6px">${t("No plants yet")}</h3><p class="muted">${t("Register your first solar plant to get started.")}</p><button class="btn btn-dark" style="margin-top:20px" data-go="#/add">${ic('plus',18)} ${t("Add plant")}</button></div>`; $$('[data-go]',$('#main')).forEach(b=>b.onclick=()=>go(b.dataset.go)); return; }
   const p = getPlant(id) || plant(); S.plantId = p.id; tab = ['plant','costs','settings'].includes(tab) ? tab : 'plant';
   $('#main').innerHTML = `<div class="plants">
-    <aside class="card plist" style="padding:16px"><button class="btn btn-dark" style="width:100%;margin-bottom:12px" data-go="#/add">${ic('plus',18)} Add plant</button>
+    <aside class="card plist" style="padding:16px"><button class="btn btn-dark" style="width:100%;margin-bottom:12px" data-go="#/add">${ic('plus',18)} ${t("Add plant")}</button>
       ${S.plants.map(x=>`<div class="item ${x.id===p.id?'active':''}" data-go="#/plants/${x.id}/${tab}"><span class="ic">${ic(x.type==='ci'?'factory':'home',18)}</span><span style="flex:1">${esc(x.name)}</span>${x.fav?`<span style="color:var(--orange)">${ic('star',14)}</span>`:''}</div>
         ${x.id===p.id && x.inverters.length?`<div class="sub">${x.inverters.map(iv=>`<div>${ic('inverter',14)} ${esc(iv.model)}</div>`).join('')}</div>`:''}`).join('')}</aside>
     <div class="page">
-      <div class="phead"><button class="star ${p.fav?'on':''}" id="fav" title="Favourite">${ic('star',24)}</button><h2>${esc(p.name)}</h2><span class="chip">#${p.id}</span>
-        ${p.key?'<span class="chip mint">AI active</span>':'<span class="chip warn">AI inactive</span>'}
-        <div class="acts"><button class="btn btn-ghost btn-sm" id="aKey">${ic('key',16)} ${p.key?'Product key':'Add product key'}</button><button class="btn btn-ghost btn-sm" id="aInv">${ic('plus',16)} Add inverter</button>
-          <button class="btn btn-ghost btn-sm" id="aTr" style="color:var(--orange-ink)">${ic('swap',16)} Transfer plant</button><button class="btn btn-outline-danger btn-sm" id="aDel">${ic('trash',16)} Delete</button></div></div>
-      <div class="tabs">${['plant','costs','settings'].map(t=>`<button class="${t===tab?'on':''}" data-go="#/plants/${p.id}/${t}">${t[0].toUpperCase()+t.slice(1)}</button>`).join('')}</div>
+      <div class="phead"><button class="star ${p.fav?'on':''}" id="fav" title="${t("Favourite")}">${ic('star',24)}</button><h2>${esc(p.name)}</h2><span class="chip">#${p.id}</span>
+        ${p.key?'<span class="chip mint">'+t("AI active")+'</span>':'<span class="chip warn">'+t("AI inactive")+'</span>'}
+        <div class="acts"><button class="btn btn-ghost btn-sm" id="aKey">${ic('key',16)} ${p.key?t('Product key'):t('Add product key')}</button><button class="btn btn-ghost btn-sm" id="aInv">${ic('plus',16)} ${t("Add inverter")}</button>
+          <button class="btn btn-ghost btn-sm" id="aTr" style="color:var(--orange-ink)">${ic('swap',16)} ${t("Transfer plant")}</button><button class="btn btn-outline-danger btn-sm" id="aDel">${ic('trash',16)} ${t("Delete")}</button></div></div>
+      <div class="tabs">${['plant','costs','settings'].map(k=>`<button class="${k===tab?'on':''}" data-go="#/plants/${p.id}/${k}">${t({plant:'Plant',costs:'Costs',settings:'Settings'}[k])}</button>`).join('')}</div>
       <div id="tabBody" class="page"></div></div></div>`;
   ({plant:tabPlant, costs:tabCosts, settings:tabSettings})[tab](p);
   $$('[data-go]',$('#main')).forEach(b=>b.onclick=()=>go(b.dataset.go));
@@ -742,8 +928,9 @@ function bindCards(p, rerender){
       $$('[data-k]', card).forEach(el=>{ const t = el.dataset.t; let v = t==='bool' ? el.classList.contains('on') : el.value; if (t==='num') v = el.value===''?'':+el.value;
         if (el.dataset.req && !String(v).trim()){ el.classList.add('err'); bad = true; return; } setPath(p, el.dataset.k, v); });
       if (bad) return toast('Please fill in the required fields');
-      if (p.id===S.plantId) S.aiPlans = p.settings.ai;
-      toast(`${card.dataset.card} saved`); rerender();
+      if (p===S.user){ S.lang = S.user.lang==='Dansk' ? 'da' : 'en'; applyTheme(); }
+      else if (p.id===S.plantId) S.aiPlans = p.settings.ai;
+      toast(t('{n} saved',{n:t(card.dataset.card)})); rerender();
     };
     const reset = $('[data-reset]', card); if (reset) reset.onclick = () => { rerender(); toast('Changes discarded'); };
   });
@@ -755,28 +942,28 @@ function tabPlant(p){
   const m = MFR[p.mfr] || {};
   $('#tabBody').innerHTML = `
   <div class="two">
-    <section class="card" data-card="Plant information"><div class="card-h"><div class="ic">${ic('sun')}</div><div><h3>Plant information</h3><small>Created ${esc(p.created)}</small></div></div>
+    <section class="card" data-card="Plant information"><div class="card-h"><div class="ic">${ic('sun')}</div><div><h3>${t("Plant information")}</h3><small>${t('Created')} ${esc(p.created)}</small></div></div>
       <div class="form-grid"><div class="field" style="grid-column:1/-1"><label>Name *</label><input class="input" data-k="name" data-t="str" data-req="1" value="${esc(p.name)}"></div>
-        <div class="field"><label>Product</label><select class="select" data-k="product" data-t="str"><option value="charge" ${p.product==='charge'?'selected':''}>SmartCharge</option><option value="balance" ${p.product==='balance'?'selected':''}>SmartBalance</option></select></div>
-        <div class="field"><label>System type</label><select class="select" data-k="type" data-t="str"><option value="home" ${p.type==='home'?'selected':''}>Private home</option><option value="ci" ${p.type==='ci'?'selected':''}>C&amp;I</option></select></div></div>${foot()}</section>
-    <section class="card"><div class="card-h"><div class="ic">${ic('link')}</div><div><h3>${esc(p.mfr)} ${esc(m.portal||'')}</h3><small>${m.cloud?'Cloud connection for live data and control':'Local / manual integration'}</small></div></div>
-      ${m.cloud?`<p class="muted" style="margin-bottom:16px">Open the ${esc(m.portal)} link, log in with the owner account, accept the two permissions and click Authorize.</p>
-      <div style="display:flex;align-items:center;gap:12px"><button class="btn ${p.linked?'btn-ghost':'btn-dark'}" id="linkBtn">${ic('ext',16)} ${p.linked?'Re-connect':m.portal+' link'}</button>
-      <span class="status ${p.linked?'ok':'bad'}">${ic(p.linked?'check':'x',14)} ${p.linked?'Linked':'Link not created'}</span></div>`
-      :`<p class="muted">${esc(p.mfr)} inverters are added manually with model and serial number. No cloud link is needed.</p>`}</section>
+        <div class="field"><label>${t("Product")}</label><select class="select" data-k="product" data-t="str"><option value="charge" ${p.product==='charge'?'selected':''}>${t("SmartCharge")}</option><option value="balance" ${p.product==='balance'?'selected':''}>${t("SmartBalance")}</option></select></div>
+        <div class="field"><label>${t("System type")}</label><select class="select" data-k="type" data-t="str"><option value="home" ${p.type==='home'?'selected':''}>${t("Private home")}</option><option value="ci" ${p.type==='ci'?'selected':''}>${t("C&I")}</option></select></div></div>${foot()}</section>
+    <section class="card"><div class="card-h"><div class="ic">${ic('link')}</div><div><h3>${esc(p.mfr)} ${esc(m.portal||'')}</h3><small>${m.cloud?t('Cloud connection for live data and control'):t('Local / manual integration')}</small></div></div>
+      ${m.cloud?`<p class="muted" style="margin-bottom:16px">${t('Open the {p} link, log in with the owner account, accept the two permissions and click Authorize.',{p:esc(m.portal)})}</p>
+      <div style="display:flex;align-items:center;gap:12px"><button class="btn ${p.linked?'btn-ghost':'btn-dark'}" id="linkBtn">${ic('ext',16)} ${p.linked?t('Re-connect'):t('{p} link',{p:m.portal})}</button>
+      <span class="status ${p.linked?'ok':'bad'}">${ic(p.linked?'check':'x',14)} ${p.linked?t('Linked'):t('Link not created')}</span></div>`
+      :`<p class="muted">${t('{m} inverters are added manually with model and serial number. No cloud link is needed.',{m:esc(p.mfr)})}</p>`}</section>
   </div>
-  <section class="card" data-card="Location"><div class="card-h"><div class="ic">${ic('pin')}</div><div><h3>Location</h3><small>ID ${p.id+871} · price area ${esc(p.costs.area)}</small></div></div>
-    <div class="form-grid"><div class="field"><label>Country</label><input class="input" data-k="loc.country" data-t="str" value="${esc(p.loc.country)}"></div><div class="field"><label>City</label><input class="input" data-k="loc.city" data-t="str" value="${esc(p.loc.city)}"></div>
-      <div class="field"><label>Postal code</label><input class="input" data-k="loc.postal" data-t="str" value="${esc(p.loc.postal)}"></div><div class="field"><label>Street name incl. number</label><input class="input" data-k="loc.street" data-t="str" value="${esc(p.loc.street)}"></div>
-      <div class="field"><label>Latitude</label><input class="input" data-k="loc.lat" data-t="num" id="lat" value="${p.loc.lat}"></div><div class="field"><label>Longitude</label><input class="input" data-k="loc.lng" data-t="num" id="lng" value="${p.loc.lng}"></div></div>
-    <div class="card-foot" style="justify-content:space-between"><button class="btn btn-ghost btn-sm" id="recompute">${ic('refresh',16)} Recompute coordinates</button><span style="display:flex;gap:10px"><button class="btn btn-ghost btn-sm" data-reset>Reset</button><button class="btn btn-dark btn-sm" data-save disabled>${ic('check',16)} Save</button></span></div></section>
+  <section class="card" data-card="Location"><div class="card-h"><div class="ic">${ic('pin')}</div><div><h3>${t("Location")}</h3><small>ID ${p.id+871} · ${t('price area')} ${esc(p.costs.area)}</small></div></div>
+    <div class="form-grid"><div class="field"><label>${t("Country")}</label><input class="input" data-k="loc.country" data-t="str" value="${esc(p.loc.country)}"></div><div class="field"><label>${t("City")}</label><input class="input" data-k="loc.city" data-t="str" value="${esc(p.loc.city)}"></div>
+      <div class="field"><label>${t("Postal code")}</label><input class="input" data-k="loc.postal" data-t="str" value="${esc(p.loc.postal)}"></div><div class="field"><label>${t("Street name incl. number")}</label><input class="input" data-k="loc.street" data-t="str" value="${esc(p.loc.street)}"></div>
+      <div class="field"><label>${t("Latitude")}</label><input class="input" data-k="loc.lat" data-t="num" id="lat" value="${p.loc.lat}"></div><div class="field"><label>${t("Longitude")}</label><input class="input" data-k="loc.lng" data-t="num" id="lng" value="${p.loc.lng}"></div></div>
+    <div class="card-foot" style="justify-content:space-between"><button class="btn btn-ghost btn-sm" id="recompute">${ic('refresh',16)} ${t("Recompute coordinates")}</button><span style="display:flex;gap:10px"><button class="btn btn-ghost btn-sm" data-reset>${t("Reset")}</button><button class="btn btn-dark btn-sm" data-save disabled>${ic('check',16)} ${t("Save")}</button></span></div></section>
   <div class="two">
-    <section class="card"><div class="card-h"><div class="ic">${ic('inverter')}</div><div><h3>Inverters and batteries</h3><small>${p.inverters.length} registered</small></div><div class="right"><button class="btn btn-ghost btn-sm" id="inv2">${ic('plus',16)} Add</button></div></div>
+    <section class="card"><div class="card-h"><div class="ic">${ic('inverter')}</div><div><h3>${t("Inverters and batteries")}</h3><small>${t('{n} registered',{n:p.inverters.length})}</small></div><div class="right"><button class="btn btn-ghost btn-sm" id="inv2">${ic('plus',16)} ${t("Add")}</button></div></div>
       ${p.inverters.length?p.inverters.map((iv,i)=>`<div class="list-row" style="align-items:flex-start">${ic('inverter')}<div><b>${esc(iv.model)}</b><div class="muted" style="font-size:13px">${esc(iv.mfr)} · SN ${esc(iv.serial)}</div>
-        ${iv.batteries.map(b=>`<div style="font-size:13px;margin-top:6px">${ic('battery',14)} ${esc(b.mfr)} ${esc(b.model)}</div>`).join('')}</div><button class="x" data-del="inverters|${i}" title="Remove">${ic('trash',18)}</button></div>`).join(''):'<div class="empty">No inverter yet. Add one to start receiving data.</div>'}</section>
-    <section class="card"><div class="card-h"><div class="ic">${ic('user')}</div><div><h3>Installer links</h3><small>Installers who can view and support this plant</small></div></div>
-      ${p.installers.length?p.installers.map((e,i)=>`<div class="list-row">${ic('mail',18)} ${esc(e)}<button class="x" data-del="installers|${i}">${ic('x',18)}</button></div>`).join(''):'<div class="empty">No installer links</div>'}
-      <div style="display:flex;gap:10px;margin-top:14px"><input class="input" id="instEmail" placeholder="installer@company.com"><button class="btn btn-dark" id="instAdd">${ic('plus',16)} Add</button></div></section>
+        ${iv.batteries.map(b=>`<div style="font-size:13px;margin-top:6px">${ic('battery',14)} ${esc(b.mfr)} ${esc(b.model)}</div>`).join('')}</div><button class="x" data-del="inverters|${i}" title="${t("Remove")}">${ic('trash',18)}</button></div>`).join(''):'<div class="empty">'+t("No inverter yet. Add one to start receiving data.")+'</div>'}</section>
+    <section class="card"><div class="card-h"><div class="ic">${ic('user')}</div><div><h3>${t("Installer links")}</h3><small>${t("Installers who can view and support this plant")}</small></div></div>
+      ${p.installers.length?p.installers.map((e,i)=>`<div class="list-row">${ic('mail',18)} ${esc(e)}<button class="x" data-del="installers|${i}">${ic('x',18)}</button></div>`).join(''):'<div class="empty">'+t("No installer links")+'</div>'}
+      <div style="display:flex;gap:10px;margin-top:14px"><input class="input" id="instEmail" placeholder="installer@company.com"><button class="btn btn-dark" id="instAdd">${ic('plus',16)} ${t("Add")}</button></div></section>
   </div>`;
   if ($('#linkBtn')) $('#linkBtn').onclick = () => connectCloud(p, () => renderPlants(p.id,'plant'));
   $('#inv2').onclick = () => openInverterModal(p);
@@ -785,33 +972,33 @@ function tabPlant(p){
 }
 function connectCloud(p, done){
   const m = MFR[p.mfr];
-  const o = modal(`<h3>Connect ${esc(m.portal)}<button data-close>${ic('x')}</button></h3>
-    <div id="cc"><p class="muted">In the live product this opens the ${esc(m.portal)} login in a new window. For the demo, simulate the owner approving access.</p>
-    <div class="list-row" style="margin-top:16px">${ic('shield')}<div><b>Read plant data</b><div class="muted" style="font-size:13px">Power, energy and battery state</div></div></div>
-    <div class="list-row">${ic('bolt')}<div><b>Control battery</b><div class="muted" style="font-size:13px">Send charge and discharge commands</div></div></div></div>
-    <div class="foot"><button class="btn btn-ghost" data-close>Cancel</button><button class="btn btn-dark" id="auth">Authorize</button></div>`);
-  $('#auth',o).onclick = () => { $('#auth',o).textContent='Connecting…'; $('#auth',o).disabled=true; setTimeout(()=>{ p.linked=true; o.remove(); toast(`${m.portal} linked`); done&&done(); }, 900); };
+  const o = modal(`<h3>${t('Connect')} ${esc(m.portal)}<button data-close>${ic('x')}</button></h3>
+    <div id="cc"><p class="muted">${t('In the live product this opens the {p} login in a new window. For the demo, simulate the owner approving access.',{p:esc(m.portal)})}</p>
+    <div class="list-row" style="margin-top:16px">${ic('shield')}<div><b>${t("Read plant data")}</b><div class="muted" style="font-size:13px">${t("Power, energy and battery state")}</div></div></div>
+    <div class="list-row">${ic('bolt')}<div><b>${t("Control battery")}</b><div class="muted" style="font-size:13px">${t("Send charge and discharge commands")}</div></div></div></div>
+    <div class="foot"><button class="btn btn-ghost" data-close>${t("Cancel")}</button><button class="btn btn-dark" id="auth">${t("Authorize")}</button></div>`);
+  $('#auth',o).onclick = () => { $('#auth',o).textContent=t('Connecting…'); $('#auth',o).disabled=true; setTimeout(()=>{ p.linked=true; o.remove(); toast(t('{p} linked',{p:m.portal})); done&&done(); }, 900); };
 }
 function tabCosts(p){
   const c = p.costs; const adv = S.costView==='adv';
-  $('#tabBody').innerHTML = `<section class="card" data-card="${adv?'Area based costs':'Cost settings'}"><div class="card-h"><div class="ic">${ic('wallet')}</div><div><h3>${adv?'Area based costs':'Settings'}</h3><small>${adv?'Market, price area and grid tariffs':'Costs used by the AI planner'}</small></div>
-    <div class="right"><div class="seg"><button class="${!adv?'on':''}" data-cv="basic">Basic</button><button class="${adv?'on':''}" data-cv="adv">Advanced</button></div></div></div>
+  $('#tabBody').innerHTML = `<section class="card" data-card="${adv?t('Area based costs'):t('Cost settings')}"><div class="card-h"><div class="ic">${ic('wallet')}</div><div><h3>${adv?t('Area based costs'):t('Settings')}</h3><small>${adv?t('Market, price area and grid tariffs'):t('Costs used by the AI planner')}</small></div>
+    <div class="right"><div class="seg"><button class="${!adv?'on':''}" data-cv="basic">${t("Basic")}</button><button class="${adv?'on':''}" data-cv="adv">${t("Advanced")}</button></div></div></div>
     ${!adv?`
-    <div class="row"><div class="lbl">Pricing preset</div><div style="width:240px">${sel('costs.preset',['Custom','Standard household','Commercial'],c.preset)}</div></div>
-    <div class="row"><div class="lbl">Currency</div><div style="width:240px">${sel('costs.currency',['EUR','DKK','SEK','NOK'],c.currency)}</div></div>
-    <div class="row"><div class="lbl">Battery depreciation cost<small>Wear cost per kWh cycled</small></div>${num('costs.depreciation',c.depreciation,c.currency+'/kWh')}</div>
-    <div class="row"><div class="lbl">Total cost of sale<small>Fees deducted when selling</small></div>${num('costs.saleCost',c.saleCost,c.currency+'/kWh')}</div>
-    <div class="row"><div class="lbl">All additional purchase costs<small>Excl. spot price and distribution tariff</small></div>${num('costs.extraPurchase',c.extraPurchase,c.currency+'/kWh')}</div>
-    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">Fixed purchase price ${tg('costs.fixedBuyOn',c.fixedBuyOn)}</div><div class="unit-in"><span>${c.currency}/kWh</span><input class="input" type="number" step="any" data-k="costs.fixedBuy" data-t="num" data-dep="costs.fixedBuyOn" value="${esc(c.fixedBuy)}" ${c.fixedBuyOn?'':'disabled'}></div></div>
-    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">Fixed sell price ${tg('costs.fixedSellOn',c.fixedSellOn)}</div><div class="unit-in"><span>${c.currency}/kWh</span><input class="input" type="number" step="any" data-k="costs.fixedSell" data-t="num" data-dep="costs.fixedSellOn" value="${esc(c.fixedSell)}" ${c.fixedSellOn?'':'disabled'}></div></div>
-    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">Costs incl. VAT ${tg('costs.vat',c.vat)}</div><div class="lbl" style="display:flex;gap:12px;align-items:center">Commercial ${tg('costs.commercial',c.commercial)}</div></div>`
+    <div class="row"><div class="lbl">${t("Pricing preset")}</div><div style="width:240px">${sel('costs.preset',['Custom','Standard household','Commercial'],c.preset)}</div></div>
+    <div class="row"><div class="lbl">${t("Currency")}</div><div style="width:240px">${sel('costs.currency',['EUR','DKK','SEK','NOK'],c.currency)}</div></div>
+    <div class="row"><div class="lbl">${t("Battery depreciation cost")}<small>${t("Wear cost per kWh cycled")}</small></div>${num('costs.depreciation',c.depreciation,c.currency+'/kWh')}</div>
+    <div class="row"><div class="lbl">${t("Total cost of sale")}<small>${t("Fees deducted when selling")}</small></div>${num('costs.saleCost',c.saleCost,c.currency+'/kWh')}</div>
+    <div class="row"><div class="lbl">${t("All additional purchase costs")}<small>${t("Excl. spot price and distribution tariff")}</small></div>${num('costs.extraPurchase',c.extraPurchase,c.currency+'/kWh')}</div>
+    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Fixed purchase price")} ${tg('costs.fixedBuyOn',c.fixedBuyOn)}</div><div class="unit-in"><span>${c.currency}/kWh</span><input class="input" type="number" step="any" data-k="costs.fixedBuy" data-t="num" data-dep="costs.fixedBuyOn" value="${esc(c.fixedBuy)}" ${c.fixedBuyOn?'':'disabled'}></div></div>
+    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Fixed sell price")} ${tg('costs.fixedSellOn',c.fixedSellOn)}</div><div class="unit-in"><span>${c.currency}/kWh</span><input class="input" type="number" step="any" data-k="costs.fixedSell" data-t="num" data-dep="costs.fixedSellOn" value="${esc(c.fixedSell)}" ${c.fixedSellOn?'':'disabled'}></div></div>
+    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Costs incl. VAT")} ${tg('costs.vat',c.vat)}</div><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Commercial")} ${tg('costs.commercial',c.commercial)}</div></div>`
     :`
-    <div class="form-grid"><div class="field"><label>Electricity market</label>${sel('costs.market',['Nord Pool','EPEX Spot','OMIE'],c.market)}</div>
-      <div class="field"><label>Price area</label>${sel('costs.area',['DK1','DK2','DE-LU','SE3','SE4','NO1'],c.area)}</div>
-      <div class="field"><label>Distributor code</label>${sel('costs.distributor',['Radius Elnet','N1','Cerius','Konstant','TREFOR El-net'],c.distributor)}</div></div>
-    <div class="row" style="margin-top:18px"><div class="lbl" style="display:flex;gap:12px;align-items:center">Use manual tariffs ${tg('costs.manualOn',c.manualOn)}</div><button class="btn btn-ghost btn-sm" data-add="costs.tariffs|tariff">${ic('plus',16)} Add</button></div>
-    ${c.tariffs.length?c.tariffs.map((t,i)=>`<div class="batt-row" style="grid-template-columns:1.2fr 1fr 1fr 1fr auto"><div class="field"><label>Name</label><input class="input" data-k="costs.tariffs.${i}.name" data-t="str" value="${esc(t.name)}"></div>
-      <div class="field"><label>From</label><input class="input" type="time" data-k="costs.tariffs.${i}.from" data-t="str" value="${t.from}"></div><div class="field"><label>To</label><input class="input" type="time" data-k="costs.tariffs.${i}.to" data-t="str" value="${t.to}"></div>
+    <div class="form-grid"><div class="field"><label>${t("Electricity market")}</label>${sel('costs.market',['Nord Pool','EPEX Spot','OMIE'],c.market)}</div>
+      <div class="field"><label>${t("Price area")}</label>${sel('costs.area',['DK1','DK2','DE-LU','SE3','SE4','NO1'],c.area)}</div>
+      <div class="field"><label>${t("Distributor code")}</label>${sel('costs.distributor',['Radius Elnet','N1','Cerius','Konstant','TREFOR El-net'],c.distributor)}</div></div>
+    <div class="row" style="margin-top:18px"><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Use manual tariffs")} ${tg('costs.manualOn',c.manualOn)}</div><button class="btn btn-ghost btn-sm" data-add="costs.tariffs|tariff">${ic('plus',16)} ${t("Add")}</button></div>
+    ${c.tariffs.length?c.tariffs.map((tr,i)=>`<div class="batt-row" style="grid-template-columns:1.2fr 1fr 1fr 1fr auto"><div class="field"><label>${t("Name")}</label><input class="input" data-k="costs.tariffs.${i}.name" data-t="str" value="${esc(tr.name)}"></div>
+      <div class="field"><label>${t("From")}</label><input class="input" type="time" data-k="costs.tariffs.${i}.from" data-t="str" value="${t.from}"></div><div class="field"><label>${t("To")}</label><input class="input" type="time" data-k="costs.tariffs.${i}.to" data-t="str" value="${t.to}"></div>
       <div class="field"><label>${c.currency}/kWh</label><input class="input" type="number" step="any" data-k="costs.tariffs.${i}.price" data-t="num" value="${t.price}"></div><button class="btn btn-ghost" data-del="costs.tariffs|${i}">${ic('trash',16)}</button></div>`).join(''):'<div class="empty">No manual tariffs. The distributor\'s published tariff is used.</div>'}`}
     ${foot()}</section>`;
   $$('[data-cv]').forEach(b=>b.onclick=()=>{ S.costView=b.dataset.cv; renderPlants(p.id,'costs'); });
@@ -820,26 +1007,26 @@ function tabSettings(p){
   const s = p.settings; const adv = S.ruleView==='adv';
   $('#tabBody').innerHTML = `
   <div class="two">
-    <section class="card" data-card="AI plans"><div class="card-h"><div class="ic">${ic('chart')}</div><div><h3>AI plans</h3><small>${p.key?'Optimiser controls the battery':'Needs a product key'}</small></div></div>
-      <div class="row"><div class="lbl">AI plans activated</div>${tg('settings.ai',s.ai)}</div>
-      <div class="row"><div class="lbl">0-export correction<small>Reduce export when the grid limit is zero</small></div>${num('settings.zeroExport',s.zeroExport,'%')}</div>${foot()}</section>
-    <section class="card" data-card="Battery modes"><div class="card-h"><div class="ic">${ic('battery')}</div><div><h3>Allowed battery modes</h3><small>Modes the optimiser may use</small></div></div>
-      <div class="row"><div class="lbl">Self-consumption</div>${tg('settings.modes.self',s.modes.self)}</div>
-      <div class="row"><div class="lbl">Charge from grid</div>${tg('settings.modes.gridCharge',s.modes.gridCharge)}</div>
-      <div class="row"><div class="lbl">Export battery to grid</div>${tg('settings.modes.export',s.modes.export)}</div>${foot()}</section>
+    <section class="card" data-card="AI plans"><div class="card-h"><div class="ic">${ic('chart')}</div><div><h3>${t("AI plans")}</h3><small>${p.key?t('Optimiser controls the battery'):t('Needs a product key')}</small></div></div>
+      <div class="row"><div class="lbl">${t("AI plans activated")}</div>${tg('settings.ai',s.ai)}</div>
+      <div class="row"><div class="lbl">${t("0-export correction")}<small>${t("Reduce export when the grid limit is zero")}</small></div>${num('settings.zeroExport',s.zeroExport,'%')}</div>${foot()}</section>
+    <section class="card" data-card="Battery modes"><div class="card-h"><div class="ic">${ic('battery')}</div><div><h3>${t("Allowed battery modes")}</h3><small>${t("Modes the optimiser may use")}</small></div></div>
+      <div class="row"><div class="lbl">${t("Self-consumption")}</div>${tg('settings.modes.self',s.modes.self)}</div>
+      <div class="row"><div class="lbl">${t("Charge from grid")}</div>${tg('settings.modes.gridCharge',s.modes.gridCharge)}</div>
+      <div class="row"><div class="lbl">${t("Export battery to grid")}</div>${tg('settings.modes.export',s.modes.export)}</div>${foot()}</section>
   </div>
-  <section class="card" data-card="Charging rules"><div class="card-h"><div class="ic">${ic('bolt')}</div><div><h3>Charging rules</h3><small>Your own rules on top of the AI plan</small></div><div class="right"><div class="seg"><button class="${!adv?'on':''}" data-rv="basic">Basic</button><button class="${adv?'on':''}" data-rv="adv">Advanced</button></div></div></div>
-    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">Enable custom charging rules ${tg('settings.rulesOn',s.rulesOn)}</div><div class="lbl" style="display:flex;gap:12px;align-items:center">Always enforce the rules ${tg('settings.rulesEnforce',s.rulesEnforce)}</div></div>
-    ${adv?`<div style="display:flex;justify-content:flex-end;margin-top:8px"><button class="btn btn-ghost btn-sm" data-add="settings.rules|rule">${ic('plus',16)} Add rule</button></div>
-    ${s.rules.length?s.rules.map((r,i)=>`<div class="batt-row" style="grid-template-columns:1fr 1fr 1.6fr 1fr auto"><div class="field"><label>From</label><input class="input" type="time" data-k="settings.rules.${i}.from" data-t="str" value="${r.from}"></div><div class="field"><label>To</label><input class="input" type="time" data-k="settings.rules.${i}.to" data-t="str" value="${r.to}"></div>
-      <div class="field"><label>Action</label>${sel(`settings.rules.${i}.action`,['Charge from grid','Hold battery','Discharge to home','Sell to grid'],r.action)}</div><div class="field"><label>Target SoC %</label><input class="input" type="number" data-k="settings.rules.${i}.soc" data-t="num" value="${r.soc}"></div><button class="btn btn-ghost" data-del="settings.rules|${i}">${ic('trash',16)}</button></div>`).join(''):'<div class="empty">No rules yet.</div>'}`:'<p class="muted" style="margin-top:10px;font-size:14px">Switch to Advanced to add time-based rules.</p>'}
+  <section class="card" data-card="Charging rules"><div class="card-h"><div class="ic">${ic('bolt')}</div><div><h3>${t("Charging rules")}</h3><small>${t("Your own rules on top of the AI plan")}</small></div><div class="right"><div class="seg"><button class="${!adv?'on':''}" data-rv="basic">${t("Basic")}</button><button class="${adv?'on':''}" data-rv="adv">${t("Advanced")}</button></div></div></div>
+    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Enable custom charging rules")} ${tg('settings.rulesOn',s.rulesOn)}</div><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Always enforce the rules")} ${tg('settings.rulesEnforce',s.rulesEnforce)}</div></div>
+    ${adv?`<div style="display:flex;justify-content:flex-end;margin-top:8px"><button class="btn btn-ghost btn-sm" data-add="settings.rules|rule">${ic('plus',16)} ${t("Add rule")}</button></div>
+    ${s.rules.length?s.rules.map((r,i)=>`<div class="batt-row" style="grid-template-columns:1fr 1fr 1.6fr 1fr auto"><div class="field"><label>${t("From")}</label><input class="input" type="time" data-k="settings.rules.${i}.from" data-t="str" value="${r.from}"></div><div class="field"><label>${t("To")}</label><input class="input" type="time" data-k="settings.rules.${i}.to" data-t="str" value="${r.to}"></div>
+      <div class="field"><label>${t("Action")}</label>${sel(`settings.rules.${i}.action`,['Charge from grid','Hold battery','Discharge to home','Sell to grid'],r.action)}</div><div class="field"><label>${t("Target SoC %")}</label><input class="input" type="number" data-k="settings.rules.${i}.soc" data-t="num" value="${r.soc}"></div><button class="btn btn-ghost" data-del="settings.rules|${i}">${ic('trash',16)}</button></div>`).join(''):'<div class="empty">'+t("No rules yet.")+'</div>'}`:'<p class="muted" style="margin-top:10px;font-size:14px">'+t("Switch to Advanced to add time-based rules.")+'</p>'}
     ${foot()}</section>
-  <section class="card" data-card="Battery lock (EV)"><div class="card-h"><div class="ic">${ic('car')}</div><div><h3>Battery lock (EV)</h3><small>${p.ev?.has?`${esc(p.ev.brand)} · ${p.ev.power} kW`:'No EV charger registered'}</small></div></div>
-    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">Automatic EV charge filtering ${tg('settings.evFilter',s.evFilter)}</div><div class="lbl" style="display:flex;gap:12px;align-items:center">Automatic lock during EV charging ${tg('settings.evAutoLock',s.evAutoLock)}</div></div>
-    <div class="row"><div class="lbl">Export of surplus solar energy during EV lock</div><div style="width:200px">${sel('settings.evExport',['Smart','Always','Never'],s.evExport)}</div></div>
-    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">Use the schedule ${tg('settings.evSchedOn',s.evSchedOn)}</div><button class="btn btn-ghost btn-sm" data-add="settings.evSched|sched">${ic('plus',16)} Add</button></div>
-    ${s.evSched.map((r,i)=>`<div class="batt-row" style="grid-template-columns:1.4fr 1fr 1fr auto"><div class="field"><label>Days</label>${sel(`settings.evSched.${i}.day`,['Every day','Weekdays','Weekends','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],r.day)}</div>
-      <div class="field"><label>From</label><input class="input" type="time" data-k="settings.evSched.${i}.from" data-t="str" value="${r.from}"></div><div class="field"><label>To</label><input class="input" type="time" data-k="settings.evSched.${i}.to" data-t="str" value="${r.to}"></div><button class="btn btn-ghost" data-del="settings.evSched|${i}">${ic('trash',16)}</button></div>`).join('')}
+  <section class="card" data-card="Battery lock (EV)"><div class="card-h"><div class="ic">${ic('car')}</div><div><h3>${t("Battery lock (EV)")}</h3><small>${p.ev?.has?`${esc(p.ev.brand)} · ${p.ev.power} kW`:t('No EV charger registered')}</small></div></div>
+    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Automatic EV charge filtering")} ${tg('settings.evFilter',s.evFilter)}</div><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Automatic lock during EV charging")} ${tg('settings.evAutoLock',s.evAutoLock)}</div></div>
+    <div class="row"><div class="lbl">${t("Export of surplus solar energy during EV lock")}</div><div style="width:200px">${sel('settings.evExport',['Smart','Always','Never'],s.evExport)}</div></div>
+    <div class="row"><div class="lbl" style="display:flex;gap:12px;align-items:center">${t("Use the schedule")} ${tg('settings.evSchedOn',s.evSchedOn)}</div><button class="btn btn-ghost btn-sm" data-add="settings.evSched|sched">${ic('plus',16)} ${t("Add")}</button></div>
+    ${s.evSched.map((r,i)=>`<div class="batt-row" style="grid-template-columns:1.4fr 1fr 1fr auto"><div class="field"><label>${t("Days")}</label>${sel(`settings.evSched.${i}.day`,['Every day','Weekdays','Weekends','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],r.day)}</div>
+      <div class="field"><label>${t("From")}</label><input class="input" type="time" data-k="settings.evSched.${i}.from" data-t="str" value="${r.from}"></div><div class="field"><label>${t("To")}</label><input class="input" type="time" data-k="settings.evSched.${i}.to" data-t="str" value="${r.to}"></div><button class="btn btn-ghost" data-del="settings.evSched|${i}">${ic('trash',16)}</button></div>`).join('')}
     ${foot()}</section>`;
   $$('[data-rv]').forEach(b=>b.onclick=()=>{ S.ruleView=b.dataset.rv; renderPlants(p.id,'settings'); });
 }
@@ -848,47 +1035,47 @@ function tabSettings(p){
 const KEY_RE = /^[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}$/;
 const makeKey = () => { const h = n => Array.from({length:n},()=>'0123456789ABCDEF'[Math.floor(Math.random()*16)]).join(''); return `AN${h(6)}-${h(4)}-${h(4)}-${h(4)}-${h(12)}`; };
 function openKeyModal(p, after){
-  const o = modal(`<h3>${p.key?'Product key':'Add product key'}<button data-close>${ic('x')}</button></h3>
-    ${p.key?`<div class="list-row">${ic('key')}<div><b>${esc(p.plan||'Product key')}</b><div class="muted" style="font-size:13px;font-family:monospace">${esc(p.key)}</div></div><span class="status ok" style="margin-left:auto">Active</span></div><p class="muted" style="margin-top:14px;font-size:14px">Replace it below if your installer gave you a new key.</p>`:''}
-    <div class="field" style="margin-top:8px"><label>Product key</label><small class="muted">Enter your key, or subscribe to get one</small>
-      <div style="display:flex;gap:10px"><input class="input" id="k" placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" style="font-family:monospace;text-transform:uppercase"><button class="btn btn-dark" id="kAdd">Add</button></div>
-      <span class="err-text hidden" id="kErr">Key must look like XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</span><button class="muted" style="font-size:13px;text-align:left;margin-top:4px;text-decoration:underline" id="kDemo">Fill a demo key</button></div>
-    <div class="or">OR</div>
-    <div class="plan"><b style="font-size:18px">SmartCharge DK Annual</b><div class="eyebrow" style="margin-top:4px">Per year</div><div class="price"><small>EUR</small> 132<small>.00</small></div>
-      <ul><li>${ic('inverter',16)} 1 inverter</li><li>${ic('sun',16)} Huawei, SolaX, Solplanet, Fronius, AEG</li><li>${ic('pin',16)} Denmark and Germany</li></ul>
-      <button class="btn btn-dark" style="width:100%;margin-top:14px" id="sub">Subscribe (demo)</button></div>`);
+  const o = modal(`<h3>${p.key?t('Product key'):t('Add product key')}<button data-close>${ic('x')}</button></h3>
+    ${p.key?`<div class="list-row">${ic('key')}<div><b>${esc(t(p.plan)||t('Product key'))}</b><div class="muted" style="font-size:13px;font-family:monospace">${esc(p.key)}</div></div><span class="status ok" style="margin-left:auto">${t("Active")}</span></div><p class="muted" style="margin-top:14px;font-size:14px">${t("Replace it below if your installer gave you a new key.")}</p>`:''}
+    <div class="field" style="margin-top:8px"><label>${t("Product key")}</label><small class="muted">${t("Enter your key, or subscribe to get one")}</small>
+      <div style="display:flex;gap:10px"><input class="input" id="k" placeholder="${t("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")}" style="font-family:monospace;text-transform:uppercase"><button class="btn btn-dark" id="kAdd">${t("Add")}</button></div>
+      <span class="err-text hidden" id="kErr">${t("Key must look like XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")}</span><button class="muted" style="font-size:13px;text-align:left;margin-top:4px;text-decoration:underline" id="kDemo">${t("Fill a demo key")}</button></div>
+    <div class="or">${t("OR")}</div>
+    <div class="plan"><b style="font-size:18px">${t("SmartCharge DK Annual")}</b><div class="eyebrow" style="margin-top:4px">${t("Per year")}</div><div class="price"><small>EUR</small> 132<small>.00</small></div>
+      <ul><li>${ic('inverter',16)} ${t('1 inverter')}</li><li>${ic('sun',16)} ${t("Huawei, SolaX, Solplanet, Fronius, AEG")}</li><li>${ic('pin',16)} ${t("Denmark and Germany")}</li></ul>
+      <button class="btn btn-dark" style="width:100%;margin-top:14px" id="sub">${t("Subscribe (demo)")}</button></div>`);
   const apply = (k, planName) => { p.key=k; p.plan=planName; p.settings.ai=true; o.remove(); toast('Product key activated – AI management is on'); after ? after() : route(); };
   $('#kDemo',o).onclick = () => $('#k',o).value = makeKey();
-  $('#kAdd',o).onclick = () => { const v = $('#k',o).value.trim().toUpperCase(); if (!KEY_RE.test(v)){ $('#k',o).classList.add('err'); $('#kErr',o).classList.remove('hidden'); return; } apply(v,'Installer key'); };
-  $('#sub',o).onclick = () => { $('#sub',o).textContent='Processing…'; setTimeout(()=>apply(makeKey(),'SmartCharge DK Annual'),700); };
+  $('#kAdd',o).onclick = () => { const v = $('#k',o).value.trim().toUpperCase(); if (!KEY_RE.test(v)){ $('#k',o).classList.add('err'); $('#kErr',o).classList.remove('hidden'); return; } apply(v,t('Installer key')); };
+  $('#sub',o).onclick = () => { $('#sub',o).textContent='Processing…'; setTimeout(()=>apply(makeKey(),t('SmartCharge DK Annual')),700); };
 }
 function openInverterModal(p){
   const mf = p.mfr || 'AEG';
-  const o = modal(`<h3>Add inverter<button data-close>${ic('x')}</button></h3>
-    <div class="field"><label>Serial number</label><input class="input" id="sn" maxlength="14" placeholder="14 characters"><span class="err-text hidden" id="snErr">The inverter's serial number must be 14 characters long</span></div>
-    <div class="form-grid" style="margin-top:14px"><div class="field"><label>Manufacturer</label><select class="select" id="mf">${Object.keys(MFR).map(k=>`<option ${k===mf?'selected':''}>${k}</option>`).join('')}</select></div>
-      <div class="field"><label>Inverter</label><select class="select" id="md"></select></div></div>
-    <div class="foot"><button class="btn btn-ghost" data-close>Cancel</button><button class="btn btn-dark" id="ok">Add inverter</button></div>`);
+  const o = modal(`<h3>${t("Add inverter")}<button data-close>${ic('x')}</button></h3>
+    <div class="field"><label>${t("Serial number")}</label><input class="input" id="sn" maxlength="14" placeholder="14 characters"><span class="err-text hidden" id="snErr">${t("The inverter's serial number must be 14 characters long")}</span></div>
+    <div class="form-grid" style="margin-top:14px"><div class="field"><label>${t("Manufacturer")}</label><select class="select" id="mf">${Object.keys(MFR).map(k=>`<option ${k===mf?'selected':''}>${k}</option>`).join('')}</select></div>
+      <div class="field"><label>${t("Inverter")}</label><select class="select" id="md"></select></div></div>
+    <div class="foot"><button class="btn btn-ghost" data-close>${t("Cancel")}</button><button class="btn btn-dark" id="ok">${t("Add inverter")}</button></div>`);
   const fill = () => $('#md',o).innerHTML = MFR[$('#mf',o).value].models.map(m=>`<option>${m}</option>`).join(''); fill(); $('#mf',o).onchange = fill;
   $('#ok',o).onclick = () => { const sn = $('#sn',o).value.trim(); if (sn.length!==14){ $('#sn',o).classList.add('err'); $('#snErr',o).classList.remove('hidden'); return; }
     p.inverters.push({serial:sn.toUpperCase(), model:$('#md',o).value, mfr:$('#mf',o).value, batteries:[]}); o.remove(); toast('Inverter added'); route(); };
 }
 function openTransferModal(p){
-  const o = modal(`<h3>Transfer plant<button data-close>${ic('x')}</button></h3><p class="muted" style="margin-bottom:16px">The new owner gets an email to accept ${esc(p.name)}. You lose access once they accept.</p>
-    <div class="field"><label>Email</label><input class="input" id="e1" placeholder="email@example.com"></div>
-    <div class="field" style="margin-top:12px"><label>Confirm email</label><input class="input" id="e2" placeholder="email@example.com"></div>
-    <label style="display:flex;gap:10px;align-items:center;margin-top:14px;font-size:14px"><input type="checkbox" id="tc"> I accept the <a href="#" onclick="return false" style="color:var(--indigo);text-decoration:underline">Terms &amp; Conditions</a></label>
+  const o = modal(`<h3>${t("Transfer plant")}<button data-close>${ic('x')}</button></h3><p class="muted" style="margin-bottom:16px">${t('The new owner gets an email to accept {n}. You lose access once they accept.',{n:esc(p.name)})}</p>
+    <div class="field"><label>${t("Email")}</label><input class="input" id="e1" placeholder="email@example.com"></div>
+    <div class="field" style="margin-top:12px"><label>${t("Confirm email")}</label><input class="input" id="e2" placeholder="email@example.com"></div>
+    <label style="display:flex;gap:10px;align-items:center;margin-top:14px;font-size:14px"><input type="checkbox" id="tc"> ${t("I accept the")} <a href="#" onclick="return false" style="color:var(--indigo);text-decoration:underline">${t("Terms & Conditions")}</a></label>
     <span class="err-text hidden" id="tErr"></span>
-    <div class="foot"><button class="btn btn-ghost" data-close>Cancel</button><button class="btn btn-orange" id="ok">Transfer plant</button></div>`);
+    <div class="foot"><button class="btn btn-ghost" data-close>${t("Cancel")}</button><button class="btn btn-orange" id="ok">${t("Transfer plant")}</button></div>`);
   $('#ok',o).onclick = () => { const a=$('#e1',o).value.trim(), b=$('#e2',o).value.trim(), er=$('#tErr',o); er.classList.remove('hidden');
-    if (!/^\S+@\S+\.\S+$/.test(a)) return er.textContent='Enter a valid email'; if (a!==b) return er.textContent='Emails do not match'; if (!$('#tc',o).checked) return er.textContent='Please accept the terms';
-    o.remove(); toast(`Transfer invite sent to ${a} (demo)`); };
+    if (!/^\S+@\S+\.\S+$/.test(a)) return er.textContent=t('Enter a valid email'); if (a!==b) return er.textContent=t('Emails do not match'); if (!$('#tc',o).checked) return er.textContent=t('Please accept the terms');
+    o.remove(); toast(t('Transfer invite sent to {a} (demo)',{a})); };
 }
 function openDeleteModal(p){
-  const o = modal(`<h3>Delete plant<button data-close>${ic('x')}</button></h3><p class="muted">This removes <b>${esc(p.name)}</b>, its inverters, settings and history. Type the plant name to confirm.</p>
-    <input class="input" id="dn" style="margin-top:14px" placeholder="${esc(p.name)}"><div class="foot"><button class="btn btn-ghost" data-close>Cancel</button><button class="btn btn-orange" id="ok" disabled>Delete plant</button></div>`);
+  const o = modal(`<h3>${t("Delete plant")}<button data-close>${ic('x')}</button></h3><p class="muted">${t("This removes")} <b>${esc(p.name)}</b>${t(', its inverters, settings and history. Type the plant name to confirm.')}</p>
+    <input class="input" id="dn" style="margin-top:14px" placeholder="${esc(p.name)}"><div class="foot"><button class="btn btn-ghost" data-close>${t("Cancel")}</button><button class="btn btn-orange" id="ok" disabled>${t("Delete plant")}</button></div>`);
   $('#dn',o).oninput = e => $('#ok',o).disabled = e.target.value !== p.name;
-  $('#ok',o).onclick = () => { S.plants = S.plants.filter(x=>x!==p); S.plantId = S.plants[0]?.id; o.remove(); toast(`${p.name} deleted`); go('#/plants'); route(); };
+  $('#ok',o).onclick = () => { S.plants = S.plants.filter(x=>x!==p); S.plantId = S.plants[0]?.id; o.remove(); toast(t('{n} deleted',{n:p.name})); go('#/plants'); route(); };
 }
 /* ---------- Add System wizard ---------- */
 const STEP = {setup:['Setup choice','grid'], product:['Product','bolt'], type:['System type','home'], name:['Plant name','name'], location:['Location','pin'], manufacturer:['Manufacturer','factory'],
@@ -904,55 +1091,55 @@ function renderWizard(){
   const d = W.d, steps = wSteps(d), k = W.transfer ? 'transfer' : steps[W.i], last = W.i === steps.length-1;
   const wp = W.plantId && getPlant(W.plantId);
   const body = {
-    transfer:()=>`<h2>Waiting for your installer</h2><p class="sub">You chose to receive an existing system. Do not register a new one.</p>
-      <div class="list-row">${ic('mail')}<div><b>Ask your installer to transfer the plant to</b><div class="muted">${esc(S.user.email)}</div></div></div>
-      <p class="muted" style="margin-top:16px">It will appear under Plants as soon as you accept the transfer email.</p>`,
-    setup:()=>`<h2>Setup choice</h2><p class="sub">How would you like to set up your system?</p><div class="choices">
-      ${choice('setup','new','sun','Register a new solar plant','Choose this if you are the system owner setting up your solar system for the first time.','#16957C')}
-      ${choice('setup','transfer','down','My installer will transfer a system to me','Your installer or the current owner moves the system to your account. Do not register a new system.','#4F6CF5')}</div>`,
-    product:()=>`<h2>Choose your product</h2><p class="sub">You can change this later in plant settings.</p><div class="choices">
-      ${choice('product','charge','bolt','SmartCharge','Save money by optimising your solar system: buy, use and sell energy at the right times.','#4F6CF5')}
-      ${choice('product','balance','scale','SmartBalance','Earn money by using your system to support grid stability and flexibility services.','#2F6B60')}</div>`,
-    type:()=>`<h2>Choose your system type</h2><p class="sub">This sets default tariffs and cost presets.</p><div class="choices">
-      ${choice('type','home','home','Private home','For installations at private homes.','#161C3B')}
-      ${choice('type','ci','factory','C&I (Commercial & Industrial)','For systems at a commercial or industrial facility.','#161C3B')}</div>`,
-    name:()=>`<h2>Give your plant a name</h2><p class="sub">Anything you like – it is only shown to you.</p>
+    transfer:()=>`<h2>${t("Waiting for your installer")}</h2><p class="sub">${t("You chose to receive an existing system. Do not register a new one.")}</p>
+      <div class="list-row">${ic('mail')}<div><b>${t("Ask your installer to transfer the plant to")}</b><div class="muted">${esc(S.user.email)}</div></div></div>
+      <p class="muted" style="margin-top:16px">${t("It will appear under Plants as soon as you accept the transfer email.")}</p>`,
+    setup:()=>`<h2>${t("Setup choice")}</h2><p class="sub">${t("How would you like to set up your system?")}</p><div class="choices">
+      ${choice('setup','new','sun',t('Register a new solar plant'),t('Choose this if you are the system owner setting up your solar system for the first time.'),'#16957C')}
+      ${choice('setup','transfer','down',t('My installer will transfer a system to me'),t('Your installer or the current owner moves the system to your account. Do not register a new system.'),'#4F6CF5')}</div>`,
+    product:()=>`<h2>${t("Choose your product")}</h2><p class="sub">${t("You can change this later in plant settings.")}</p><div class="choices">
+      ${choice('product','charge','bolt',t('SmartCharge'),t('Save money by optimising your solar system: buy, use and sell energy at the right times.'),'#4F6CF5')}
+      ${choice('product','balance','scale',t('SmartBalance'),t('Earn money by using your system to support grid stability and flexibility services.'),'#2F6B60')}</div>`,
+    type:()=>`<h2>${t("Choose your system type")}</h2><p class="sub">${t("This sets default tariffs and cost presets.")}</p><div class="choices">
+      ${choice('type','home','home',t('Private home'),t('For installations at private homes.'),'#161C3B')}
+      ${choice('type','ci','factory',t('C&I (Commercial & Industrial)'),t('For systems at a commercial or industrial facility.'),'#161C3B')}</div>`,
+    name:()=>`<h2>${t("Give your plant a name")}</h2><p class="sub">${t("Anything you like \u2013 it is only shown to you.")}</p>
       <div class="field"><label>Plant name *</label><input class="input" id="wName" value="${esc(d.name)}" placeholder="e.g. Villa Hellerup" autofocus></div>`,
-    location:()=>`<h2>Choose the location of your plant</h2><p class="sub">Search for your address. Location sets the price area and weather forecast.</p>
-      <div class="loc"><div><div style="position:relative"><label class="search" style="max-width:none;box-shadow:none;border:1.5px solid var(--line)">${ic('pin')}<input id="wQ" value="${esc(d.q)}" placeholder="Search location"></label><div class="sugg hidden" id="wSug"></div></div>
+    location:()=>`<h2>${t("Choose the location of your plant")}</h2><p class="sub">${t("Search for your address. Location sets the price area and weather forecast.")}</p>
+      <div class="loc"><div><div style="position:relative"><label class="search" style="max-width:none;box-shadow:none;border:1.5px solid var(--line)">${ic('pin')}<input id="wQ" value="${esc(d.q)}" placeholder="${t("Search location")}"></label><div class="sugg hidden" id="wSug"></div></div>
         ${d.loc?`<iframe class="map" style="height:280px;margin-top:14px" src="https://www.openstreetmap.org/export/embed.html?bbox=${d.loc.lng-0.08},${d.loc.lat-0.04},${d.loc.lng+0.08},${d.loc.lat+0.04}&layer=mapnik&marker=${d.loc.lat},${d.loc.lng}"></iframe>`:`<div style="height:280px;margin-top:14px;border-radius:20px;background:var(--soft);display:grid;place-items:center;color:var(--ink-3)">${ic('pin',32)}</div>`}</div>
-        <div class="results"><div class="eyebrow" style="margin-bottom:10px">Search result</div>${d.loc?`<div style="display:flex;gap:8px;align-items:center;font-weight:600;margin-bottom:8px;color:var(--indigo)">${ic('check',18)} ${esc(d.loc.label)}</div>
-          <div class="field" style="margin-bottom:8px"><label>Street</label><input class="input" id="wStreet" value="${esc(d.loc.street)}" placeholder="Street and number"></div>
-          <div class="kv"><span>City</span>${esc(d.loc.city)}</div><div class="kv"><span>Postal code</span>${esc(d.loc.postal||'N/A')}</div><div class="kv"><span>Country</span>${esc(d.loc.country)}</div><div class="kv"><span>Price area</span>${esc(d.loc.area)}</div>`
-          :`<div class="empty" style="text-align:center;padding-top:50px">${ic('search',28)}<p>Search a location<br><small>Try Copenhagen, Aarhus or Berlin</small></p></div>`}</div></div>`,
-    manufacturer:()=>`<h2>Select your inverter manufacturer</h2><p class="sub">${wp?'Your plant is saved. Changing the manufacturer updates it.':'Your plant is saved when you continue from this step.'}</p>
-      <div class="choices" style="grid-template-columns:repeat(auto-fill,minmax(170px,1fr))">${Object.entries(MFR).map(([n,m])=>`<button class="choice mfr ${d.mfr===n?'sel':''}" data-pick="mfr" data-v="${n}"><div class="logo-box" style="color:${m.color}">${n.toUpperCase()}</div><b style="font-size:15px">${n}</b><span style="font-size:12px">${m.cloud?'Cloud connect via '+m.portal:'Manual setup'}</span></button>`).join('')}</div>`,
-    auth:()=>{ const m = MFR[d.mfr]; return `<h2>Connect your system</h2><p class="sub">${esc(m.portal)} link</p>
-      <div class="card" style="box-shadow:none;border:1.5px solid var(--line)"><p class="muted">You registered a ${esc(d.mfr)} inverter. Click the ${esc(m.portal)} link below and log in with your owner account. Accept the two permissions and click Authorize. If the connection isn't confirmed, contact Axiom Novus support.</p>
-        <div style="display:flex;align-items:center;gap:12px;margin-top:18px"><button class="btn btn-dark" id="wLink">${ic('ext',16)} ${esc(m.portal)} link</button><span class="status ${wp?.linked?'ok':'bad'}">${ic(wp?.linked?'check':'x',14)} ${wp?.linked?'Linked':'Link not created'}</span></div></div>
-      ${!wp?.linked?'<p class="muted" style="margin-top:12px;font-size:14px">You can also continue and connect later from the plant page.</p>':''}`; },
+        <div class="results"><div class="eyebrow" style="margin-bottom:10px">${t("Search result")}</div>${d.loc?`<div style="display:flex;gap:8px;align-items:center;font-weight:600;margin-bottom:8px;color:var(--indigo)">${ic('check',18)} ${esc(d.loc.label)}</div>
+          <div class="field" style="margin-bottom:8px"><label>${t("Street")}</label><input class="input" id="wStreet" value="${esc(d.loc.street)}" placeholder="${t("Street and number")}"></div>
+          <div class="kv"><span>${t("City")}</span>${esc(d.loc.city)}</div><div class="kv"><span>${t("Postal code")}</span>${esc(d.loc.postal||'N/A')}</div><div class="kv"><span>${t("Country")}</span>${esc(d.loc.country)}</div><div class="kv"><span>${t("Price area")}</span>${esc(d.loc.area)}</div>`
+          :`<div class="empty" style="text-align:center;padding-top:50px">${ic('search',28)}<p>${t("Search a location")}<br><small>${t("Try Copenhagen, Aarhus or Berlin")}</small></p></div>`}</div></div>`,
+    manufacturer:()=>`<h2>${t("Select your inverter manufacturer")}</h2><p class="sub">${wp?t('Your plant is saved. Changing the manufacturer updates it.'):t('Your plant is saved when you continue from this step.')}</p>
+      <div class="choices" style="grid-template-columns:repeat(auto-fill,minmax(170px,1fr))">${Object.entries(MFR).map(([n,m])=>`<button class="choice mfr ${d.mfr===n?'sel':''}" data-pick="mfr" data-v="${n}"><div class="logo-box" style="color:${m.color}">${n.toUpperCase()}</div><b style="font-size:15px">${n}</b><span style="font-size:12px">${m.cloud?t('Cloud connect via')+' '+m.portal:t('Manual setup')}</span></button>`).join('')}</div>`,
+    auth:()=>{ const m = MFR[d.mfr]; return `<h2>${t("Connect your system")}</h2><p class="sub">${t('{p} link',{p:esc(m.portal)})}</p>
+      <div class="card" style="box-shadow:none;border:1.5px solid var(--line)"><p class="muted">${t('You registered a {m} inverter. Click the {p} link below and log in with your owner account. Accept the two permissions and click Authorize. If the connection isn\'t confirmed, contact Axiom Novus support.',{m:esc(d.mfr),p:esc(m.portal)})}</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:18px"><button class="btn btn-dark" id="wLink">${ic('ext',16)} ${t('{p} link',{p:esc(m.portal)})}</button><span class="status ${wp?.linked?'ok':'bad'}">${ic(wp?.linked?'check':'x',14)} ${wp?.linked?t('Linked'):t('Link not created')}</span></div></div>
+      ${!wp?.linked?'<p class="muted" style="margin-top:12px;font-size:14px">'+t("You can also continue and connect later from the plant page.")+'</p>':''}`; },
     inverter:()=>{ const m = MFR[d.mfr]; const auto = wp?.linked; if (auto && !d.model){ d.model = m.models[1]||m.models[0]; d.serial = (d.mfr.slice(0,2)+'2311'+String(Math.floor(Math.random()*1e8)).padStart(8,'0')).toUpperCase(); d.batteries=[{mfr:d.mfr, model:m.batt[0]}]; }
-      return `<h2>Choose inverter and battery</h2><p class="sub">${auto?`We retrieved your plant setup from ${esc(m.portal)}. Check it and continue.`:'We could not retrieve the plant setup. Please enter your details manually.'}</p>
-      <div class="eyebrow">Inverter (${esc(d.mfr)})</div>
-      <div class="form-grid" style="margin-top:10px"><div class="field"><label>Select model</label><select class="select" id="wModel"><option value="">Select model</option>${m.models.map(x=>`<option ${x===d.model?'selected':''}>${x}</option>`).join('')}</select></div>
-        <div class="field"><label>Inverter serial number</label><input class="input" id="wSerial" maxlength="14" value="${esc(d.serial)}" placeholder="14 characters"><small class="muted">${d.serial.length}/14</small></div></div>
-      <div style="display:flex;align-items:center;margin-top:22px"><div class="eyebrow">Battery</div><button class="btn btn-ghost btn-sm" style="margin-left:auto" id="wBattAdd">${ic('plus',16)} Add battery</button></div>
-      ${d.batteries.length?d.batteries.map((b,i)=>`<div class="batt-row"><div class="field"><label>Manufacturer</label><select class="select" data-bm="${i}">${Object.keys(MFR).map(k=>`<option ${k===b.mfr?'selected':''}>${k}</option>`).join('')}</select></div>
-        <div class="field"><label>Select model</label><select class="select" data-bmo="${i}">${MFR[b.mfr].batt.map(x=>`<option ${x===b.model?'selected':''}>${x}</option>`).join('')}</select></div><button class="btn btn-ghost" data-bdel="${i}" title="Remove">${ic('trash',16)}</button></div>`).join(''):'<div class="empty">No battery added. The planner needs a battery to shift energy.</div>'}`; },
-    ev:()=>`<h2>EV charger</h2><p class="sub">Optional. Lets SmartCharge protect the house battery while the car charges.</p>
-      <div class="row"><div class="lbl">I have an EV charger</div><button class="toggle ${d.ev.has?'on':''}" id="wEv" type="button"></button></div>
-      ${d.ev.has?`<div class="form-grid" style="margin-top:12px"><div class="field"><label>Charger</label><select class="select" id="wEvB">${['Easee Home','Zaptec Go','Wallbox Pulsar Plus','Tesla Wall Connector','Other'].map(x=>`<option ${x===d.ev.brand?'selected':''}>${x}</option>`).join('')}</select></div>
-        <div class="field"><label>Max power</label><select class="select" id="wEvP">${[3.7,7.4,11,22].map(x=>`<option value="${x}" ${x==d.ev.power?'selected':''}>${x} kW</option>`).join('')}</select></div></div>`:''}`,
-    key:()=>`<h2>Product key</h2><p class="sub">Activate AI management now, or do it later from the plant page.</p>
-      <div class="field"><label>Product key</label><div style="display:flex;gap:10px"><input class="input" id="wKey" value="${esc(d.key)}" placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" style="font-family:monospace;text-transform:uppercase"><button class="btn btn-ghost" id="wKeyDemo">Demo key</button></div></div>
-      <div class="plan" style="display:flex;align-items:center;gap:20px;flex-wrap:wrap"><div><b>SmartCharge DK Annual</b><div class="muted" style="font-size:14px">1 inverter · DK and DE · cancel anytime</div></div><div class="price" style="margin:0 0 0 auto;font-size:30px">EUR 132<small> / year</small></div><button class="btn btn-dark" id="wSub">Subscribe (demo)</button></div>`
+      return `<h2>${t("Choose inverter and battery")}</h2><p class="sub">${auto?t('We retrieved your plant setup from {p}. Check it and continue.',{p:esc(m.portal)}):t('We could not retrieve the plant setup. Please enter your details manually.')}</p>
+      <div class="eyebrow">${t('Inverter')} (${esc(d.mfr)})</div>
+      <div class="form-grid" style="margin-top:10px"><div class="field"><label>${t("Select model")}</label><select class="select" id="wModel"><option value="">${t("Select model")}</option>${m.models.map(x=>`<option ${x===d.model?'selected':''}>${x}</option>`).join('')}</select></div>
+        <div class="field"><label>${t("Inverter serial number")}</label><input class="input" id="wSerial" maxlength="14" value="${esc(d.serial)}" placeholder="14 characters"><small class="muted">${d.serial.length}/14</small></div></div>
+      <div style="display:flex;align-items:center;margin-top:22px"><div class="eyebrow">${t("Battery")}</div><button class="btn btn-ghost btn-sm" style="margin-left:auto" id="wBattAdd">${ic('plus',16)} ${t("Add battery")}</button></div>
+      ${d.batteries.length?d.batteries.map((b,i)=>`<div class="batt-row"><div class="field"><label>${t("Manufacturer")}</label><select class="select" data-bm="${i}">${Object.keys(MFR).map(k=>`<option ${k===b.mfr?'selected':''}>${k}</option>`).join('')}</select></div>
+        <div class="field"><label>${t("Select model")}</label><select class="select" data-bmo="${i}">${MFR[b.mfr].batt.map(x=>`<option ${x===b.model?'selected':''}>${x}</option>`).join('')}</select></div><button class="btn btn-ghost" data-bdel="${i}" title="${t("Remove")}">${ic('trash',16)}</button></div>`).join(''):'<div class="empty">'+t("No battery added. The planner needs a battery to shift energy.")+'</div>'}`; },
+    ev:()=>`<h2>${t("EV charger")}</h2><p class="sub">${t("Optional. Lets SmartCharge protect the house battery while the car charges.")}</p>
+      <div class="row"><div class="lbl">${t("I have an EV charger")}</div><button class="toggle ${d.ev.has?'on':''}" id="wEv" type="button"></button></div>
+      ${d.ev.has?`<div class="form-grid" style="margin-top:12px"><div class="field"><label>${t("Charger")}</label><select class="select" id="wEvB">${['Easee Home','Zaptec Go','Wallbox Pulsar Plus','Tesla Wall Connector','Other'].map(x=>`<option ${x===d.ev.brand?'selected':''}>${x}</option>`).join('')}</select></div>
+        <div class="field"><label>${t("Max power")}</label><select class="select" id="wEvP">${[3.7,7.4,11,22].map(x=>`<option value="${x}" ${x==d.ev.power?'selected':''}>${x} kW</option>`).join('')}</select></div></div>`:''}`,
+    key:()=>`<h2>${t("Product key")}</h2><p class="sub">${t("Activate AI management now, or do it later from the plant page.")}</p>
+      <div class="field"><label>${t("Product key")}</label><div style="display:flex;gap:10px"><input class="input" id="wKey" value="${esc(d.key)}" placeholder="${t("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")}" style="font-family:monospace;text-transform:uppercase"><button class="btn btn-ghost" id="wKeyDemo">${t("Demo key")}</button></div></div>
+      <div class="plan" style="display:flex;align-items:center;gap:20px;flex-wrap:wrap"><div><b>${t("SmartCharge DK Annual")}</b><div class="muted" style="font-size:14px">${t('1 inverter · DK and DE · cancel anytime')}</div></div><div class="price" style="margin:0 0 0 auto;font-size:30px">${t("EUR 132")}<small> / year</small></div><button class="btn btn-dark" id="wSub">${t("Subscribe (demo)")}</button></div>`
   }[k]();
-  $('#main').innerHTML = `<div class="wizard"><aside class="wsteps"><h3>Add new system</h3>
-      ${steps.map((s,i)=>`<div class="wstep ${i<W.i?'done':''} ${i===W.i&&!W.transfer?'cur':''}"><span class="n">${i<W.i?ic('check',14):ic(STEP[s][1],15)}</span>${STEP[s][0]}</div>`).join('')}
-      ${wp?`<div style="margin-top:24px;font-size:13px;color:rgba(255,255,255,.7)">${ic('check',14)} Saved as plant #${wp.id}</div>`:''}</aside>
+  $('#main').innerHTML = `<div class="wizard"><aside class="wsteps"><h3>${t("Add new system")}</h3>
+      ${steps.map((s,i)=>`<div class="wstep ${i<W.i?'done':''} ${i===W.i&&!W.transfer?'cur':''}"><span class="n">${i<W.i?ic('check',14):ic(STEP[s][1],15)}</span>${t(STEP[s][0])}</div>`).join('')}
+      ${wp?`<div style="margin-top:24px;font-size:13px;color:rgba(255,255,255,.7)">${ic('check',14)} ${t('Saved as plant')} #${wp.id}</div>`:''}</aside>
     <section class="wbody"><div class="wcontent">${body}${W.err?`<p class="err-text" style="margin-top:12px;font-size:14px">${esc(W.err)}</p>`:''}</div>
-      <div class="wfoot"><button class="btn btn-ghost" id="wBack">${ic('left',18)} ${W.i===0&&!W.transfer?'Cancel':'Back'}</button>
-        ${k==='transfer'?`<button class="btn btn-dark" id="wDone">Go to dashboard</button>`:`<button class="btn ${last?'btn-orange':'btn-dark'}" id="wNext">${last?'Finish '+ic('check',18):'Next '+ic('right',18)}</button>`}</div></section></div>`;
+      <div class="wfoot"><button class="btn btn-ghost" id="wBack">${ic('left',18)} ${W.i===0&&!W.transfer?t('Cancel'):t('Back')}</button>
+        ${k==='transfer'?`<button class="btn btn-dark" id="wDone">${t("Go to dashboard")}</button>`:`<button class="btn ${last?'btn-orange':'btn-dark'}" id="wNext">${last?t('Finish')+' '+ic('check',18):t('Next')+' '+ic('right',18)}</button>`}</div></section></div>`;
   bindWizard(k, steps);
 }
 function choice(field, v, icon, title, text, color){ return `<button class="choice ${W.d[field]===v?'sel':''}" data-pick="${field}" data-v="${v}"><div class="ic" style="background:${color}">${ic(icon,24)}</div><b>${esc(title)}</b><span>${esc(text)}</span></button>`; }
@@ -962,7 +1149,7 @@ function bindWizard(k, steps){
   const on = (id, ev, fn) => { const el = $(id); if (el) el[ev] = fn; };
   on('#wName','oninput', e=>d.name=e.target.value);
   on('#wQ','oninput', e=>{ d.q=e.target.value; const v=d.q.toLowerCase().trim(); const s=$('#wSug'); const hits = v?CITIES.filter(c=>c.label.toLowerCase().includes(v)):[];
-    s.innerHTML = hits.map((c,i)=>`<div data-city="${CITIES.indexOf(c)}">${ic('pin',14)} ${esc(c.label)}</div>`).join('') || (v?'<div class="muted">No match in demo geocoder</div>':''); s.classList.toggle('hidden', !v);
+    s.innerHTML = hits.map((c,i)=>`<div data-city="${CITIES.indexOf(c)}">${ic('pin',14)} ${esc(c.label)}</div>`).join('') || (v?'<div class="muted">'+t("No match in demo geocoder")+'</div>':''); s.classList.toggle('hidden', !v);
     $$('[data-city]',s).forEach(x=>x.onclick=()=>{ d.loc=clone(CITIES[+x.dataset.city]); d.q=d.loc.label; W.err=''; renderWizard(); }); });
   on('#wStreet','oninput', e=>d.loc.street=e.target.value);
   on('#wLink','onclick', ()=>connectCloud(wp, renderWizard));
@@ -1004,34 +1191,34 @@ function finishWizard(){
   const d = W.d, p = getPlant(W.plantId);
   p.inverters = [{serial:d.serial.toUpperCase(), model:d.model, mfr:d.mfr, batteries:clone(d.batteries)}];
   p.ev = d.ev.has ? clone(d.ev) : {has:false};
-  if (d.key){ p.key=d.key; p.plan = d.sub ? 'SmartCharge DK Annual' : 'Installer key'; }
-  S.plantId = p.id; W = null; toast(`${p.name} is ready`); go(`#/plants/${p.id}/plant`);
+  if (d.key){ p.key=d.key; p.plan = d.sub ? t('SmartCharge DK Annual') : t('Installer key'); }
+  S.plantId = p.id; W = null; toast(t('{n} is ready',{n:p.name})); go(`#/plants/${p.id}/plant`);
 }
 
 /* ---------- support ---------- */
 function renderSupport(){
-  const cards = [['mail','Email us','info@axiomnovus.com','Typical reply within one working day',false],['phone','Call us','+45 00 00 00 00','Check phone hours on axiomnovus.com',false],['chat','Chat now','Talk to an energy advisor','Online now',true],
-    ['card','Change subscription','SmartCharge DK Annual','Upgrade, downgrade or cancel',false],['book','Guides','Set-up and inverter guides','Huawei, SolaX, Fronius and more',false],['help','FAQ','Common questions','Savings, AI plans, EV lock',false]];
+  const cards = [['mail',t('Email us'),'info@axiomnovus.com',t('Typical reply within one working day'),false],['phone',t('Call us'),'+45 00 00 00 00',t('Check phone hours on axiomnovus.com'),false],['chat',t('Chat now'),t('Talk to an energy advisor'),t('Online now'),true],
+    ['card',t('Change subscription'),t('SmartCharge DK Annual'),t('Upgrade, downgrade or cancel'),false],['book',t('Guides'),t('Set-up and inverter guides'),t('Huawei, SolaX, Fronius and more'),false],['help','FAQ',t('Common questions'),t('Savings, AI plans, EV lock'),false]];
   $('#main').innerHTML = `<div class="page"><section class="hero" style="min-height:240px;grid-template-columns:1fr;background:linear-gradient(100deg,rgba(22,28,59,.9),rgba(22,28,59,.35)),url('https://axiomnovus.com/wp-content/uploads/2023/08/istock-1206142686-scaled.jpg') center/cover,var(--navy)">
-    <div><div class="eyebrow">Support</div><h1 style="font-size:48px">How can we help?</h1><p>Axiom Novus engineers support you from design to daily operation.</p></div></section>
+    <div><div class="eyebrow">${t("Support")}</div><h1 style="font-size:48px">${t("How can we help?")}</h1><p>${t("Axiom Novus engineers support you from design to daily operation.")}</p></div></section>
     <div class="supp">${cards.map(([i,t,s,n,f],x)=>`<div class="card ${f?'feature':''}" data-sup="${x}"><div class="ic">${ic(i,24)}</div><b style="font-size:18px">${t}</b><div>${esc(s)}</div><small>${esc(n)}</small></div>`).join('')}</div></div>`;
-  $$('[data-sup]').forEach(c=>c.onclick=()=>toast(`Demo: “${cards[+c.dataset.sup][1]}” would open here`));
+  $$('[data-sup]').forEach(c=>c.onclick=()=>toast(t('Demo: “{n}” would open here',{n:cards[+c.dataset.sup][1]})));
 }
 
 /* ---------- account ---------- */
 function renderAccount(){
   const u = S.user;
-  $('#main').innerHTML = `<div class="page"><div class="phead"><h2>Account</h2><div class="acts"><button class="btn btn-outline-danger btn-sm" id="delAcc">${ic('trash',16)} Delete account</button></div></div>
-    <section class="card" data-card="Profile"><div class="card-h"><div class="ic">${ic('user')}</div><div><h3>Profile</h3><small>Used for reports and notifications</small></div></div>
-      <div class="form-grid"><div class="field"><label>First name</label><input class="input" data-k="first" data-t="str" data-req="1" value="${esc(u.first)}"></div><div class="field"><label>Last name</label><input class="input" data-k="last" data-t="str" data-req="1" value="${esc(u.last)}"></div>
-        <div class="field"><label>Email</label><input class="input" data-k="email" data-t="str" value="${esc(u.email)}"></div>
-        <div class="field"><label>Phone number</label><div style="display:flex;gap:8px"><select class="select" style="width:110px" data-k="phoneCode" data-t="str">${['+45','+49','+46','+47','+92','+44'].map(c=>`<option ${c===u.phoneCode?'selected':''}>${c}</option>`).join('')}</select><input class="input" data-k="phone" data-t="str" value="${esc(u.phone)}"></div></div>
-        <div class="field"><label>Preferred language</label>${sel('lang',['English','Dansk','Deutsch','Svenska'],u.lang)}</div><div class="field"><label>Send savings report</label>${sel('report',['Weekly','Monthly','Quarterly','Never'],u.report)}</div></div>${foot()}</section>
-    <section class="card"><div class="card-h"><div class="ic">${ic('card')}</div><div><h3>Subscription plans</h3><small>${S.plants.filter(p=>p.key).length} of ${S.plants.length} plants have AI management</small></div></div>
-      ${S.plants.map(p=>`<div class="list-row">${ic(p.type==='ci'?'factory':'home',18)}<div><b>${esc(p.name)}</b><div class="muted" style="font-size:13px">${p.key?esc(p.plan):'No product key'}</div></div><span style="margin-left:auto">${p.key?'<span class="status ok">Active</span>':`<button class="btn btn-orange btn-sm" data-subp="${p.id}">Subscribe ${ic('right',14)}</button>`}</span></div>`).join('')}</section></div>`;
+  $('#main').innerHTML = `<div class="page"><div class="phead"><h2>${t("Account")}</h2><div class="acts"><button class="btn btn-outline-danger btn-sm" id="delAcc">${ic('trash',16)} ${t("Delete account")}</button></div></div>
+    <section class="card" data-card="Profile"><div class="card-h"><div class="ic">${ic('user')}</div><div><h3>${t("Profile")}</h3><small>${t("Used for reports and notifications")}</small></div></div>
+      <div class="form-grid"><div class="field"><label>${t("First name")}</label><input class="input" data-k="first" data-t="str" data-req="1" value="${esc(u.first)}"></div><div class="field"><label>${t("Last name")}</label><input class="input" data-k="last" data-t="str" data-req="1" value="${esc(u.last)}"></div>
+        <div class="field"><label>${t("Email")}</label><input class="input" data-k="email" data-t="str" value="${esc(u.email)}"></div>
+        <div class="field"><label>${t("Phone number")}</label><div style="display:flex;gap:8px"><select class="select" style="width:110px" data-k="phoneCode" data-t="str">${['+45','+49','+46','+47','+92','+44'].map(c=>`<option ${c===u.phoneCode?'selected':''}>${c}</option>`).join('')}</select><input class="input" data-k="phone" data-t="str" value="${esc(u.phone)}"></div></div>
+        <div class="field"><label>${t("Preferred language")}</label>${sel('lang',['English','Dansk','Deutsch','Svenska'],u.lang)}</div><div class="field"><label>${t("Send savings report")}</label>${sel('report',['Weekly','Monthly','Quarterly','Never'],u.report)}</div></div>${foot()}</section>
+    <section class="card"><div class="card-h"><div class="ic">${ic('card')}</div><div><h3>${t("Subscription plans")}</h3><small>${t('{a} of {b} plants have AI management',{a:S.plants.filter(p=>p.key).length,b:S.plants.length})}</small></div></div>
+      ${S.plants.map(p=>`<div class="list-row">${ic(p.type==='ci'?'factory':'home',18)}<div><b>${esc(p.name)}</b><div class="muted" style="font-size:13px">${p.key?esc(t(p.plan)):t('No product key')}</div></div><span style="margin-left:auto">${p.key?'<span class="status ok">'+t("Active")+'</span>':`<button class="btn btn-orange btn-sm" data-subp="${p.id}">Subscribe ${ic('right',14)}</button>`}</span></div>`).join('')}</section></div>`;
   bindCards(S.user, route);
   $$('[data-subp]').forEach(b=>b.onclick=()=>openKeyModal(getPlant(b.dataset.subp), renderAccount));
-  $('#delAcc').onclick = () => { const o = modal(`<h3>Delete account<button data-close>${ic('x')}</button></h3><p class="muted">This would delete your account and all ${S.plants.length} plants. In this demo nothing is deleted.</p><div class="foot"><button class="btn btn-ghost" data-close>Cancel</button><button class="btn btn-orange" id="ok">I understand</button></div>`); $('#ok',o).onclick=()=>{ o.remove(); toast('Demo: account deletion requested'); }; };
+  $('#delAcc').onclick = () => { const o = modal(`<h3>${t("Delete account")}<button data-close>${ic('x')}</button></h3><p class="muted">${t('This would delete your account and all {n} plants. In this demo nothing is deleted.',{n:S.plants.length})}</p><div class="foot"><button class="btn btn-ghost" data-close>${t("Cancel")}</button><button class="btn btn-orange" id="ok">${t("I understand")}</button></div>`); $('#ok',o).onclick=()=>{ o.remove(); toast('Demo: account deletion requested'); }; };
 }
 
 /* ---------- boot ---------- */
